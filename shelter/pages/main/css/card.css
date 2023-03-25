@@ -1,3 +1,7 @@
+.card {
+  align-items: center;
+}
+
 @font-face {
   font-family: "Georgia";
   src: url("Georgia-Bold.woff2") format("woff2"), url("Georgia-Bold.woff") format("woff");
@@ -46,4 +50,15 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-}/*# sourceMappingURL=fonts.css.map */
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #FAFAFA;
+  width: 270px;
+  height: 435px;
+}
+.card__name {
+  font-size: 30px;
+}/*# sourceMappingURL=card.css.map */

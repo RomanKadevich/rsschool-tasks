@@ -6,10 +6,13 @@
 }
 
 html {
-  font-family: "georgiaregular", "georgiabold_italic", "Arial", Times, serif;
+  font-family: "Arial", Times, serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
   cursor: pointer;
 }
@@ -18,7 +21,7 @@ button {
   cursor: pointer;
 }
 
-p {
+p, h1, h2 {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -38,32 +41,4 @@ ul {
   margin: 0 auto;
   padding-left: 25px;
   padding-right: 25px;
-}
-
-.header {
-  &__container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-}
-
-.nav {
-  &__list {
-    display: flex;
-  }
-
-  &__item:not(:last-child) {
-    margin-right: 35px;
-  }
-}
-
-.logo {
-  &__heading {
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    color: $logocolor;
-  }
 }

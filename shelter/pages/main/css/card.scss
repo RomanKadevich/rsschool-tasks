@@ -1,3 +1,5 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
 
 .card{
     display: flex;
@@ -12,17 +14,4 @@
         font-size:30px;
     }
 
-    &__btn{
-      
-        @extend %align-items-for-column;
-        
-        width: 187px;
-        height: 52px;
-        border: 2px solid $btn-border-color;
-        border-radius: 100px;
-        font-family: 'Georgia';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
  }
-}

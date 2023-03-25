@@ -47,22 +47,43 @@
   font-style: normal;
   font-display: swap;
 }
-.card {
+header {
+  position: absolute;
+  width: 100%;
+}
+
+.header {
+  padding-top: 30px;
+}
+.header__container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
-  background-color: #FAFAFA;
-  width: 270px;
-  height: 435px;
-  border-radius: 9px 9px 0px 0px;
+  padding-top: 30px;
 }
-.card__name {
+
+.nav__list {
+  display: flex;
+}
+.nav__item:not(:last-child) {
+  margin-right: 35px;
+}
+.nav__link {
+  font-size: 15px;
+  color: #CDCDCD;
+}
+
+.logo__heading {
+  margin-bottom: 10px;
   font-family: "Georgia";
-  font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 32px;
+  color: #f1cdb3;
+  letter-spacing: 0.06em;
 }
-.card__btn {
-  background-color: #FAFAFA;
-}/*# sourceMappingURL=card.css.map */
+.logo__description {
+  font-size: 13px;
+  color: #FFFFFF;
+  letter-spacing: 0.1em;
+  text-align: center;
+}/*# sourceMappingURL=header.css.map */

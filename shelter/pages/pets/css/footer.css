@@ -47,22 +47,70 @@
   font-style: normal;
   font-display: swap;
 }
-.card {
+.footer {
+  padding-top: 40px;
+  background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 160px;
+}
+.footer__img {
+  grid-column: 3/span 1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  align-self: end;
+}
+
+.contact-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #FAFAFA;
-  width: 270px;
-  height: 435px;
-  border-radius: 9px 9px 0px 0px;
-}
-.card__name {
+  padding-top: 16px;
+  padding-bottom: 50px;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
 }
-.card__btn {
-  background-color: #FAFAFA;
-}/*# sourceMappingURL=card.css.map */
+.contact-box a {
+  display: flex;
+  align-items: center;
+  color: #F1CDB3;
+}
+.contact-box span {
+  flex-shrink: 0;
+  display: inline-block;
+  margin-right: 20px;
+  background-size: cover;
+}
+.contact-box__heading {
+  color: #FFFFFF;
+}
+.contact-box__email {
+  margin-top: 40px;
+}
+.contact-box__email span {
+  width: 40px;
+  height: 32px;
+  background: url("../../../assets/img/img/items/icon-email.svg") center center no-repeat;
+}
+.contact-box__tel {
+  margin-top: 40px;
+}
+.contact-box__tel span {
+  width: 40px;
+  height: 32px;
+  background: url("../../../assets/img/img/items/phone.svg") center center no-repeat;
+}
+.contact-box__adress {
+  margin-top: 34px;
+}
+.contact-box__adress span {
+  width: 22px;
+  height: 32px;
+  background: url("../../../assets/img/img/items/icon-marker.svg") center center no-repeat;
+}/*# sourceMappingURL=footer.css.map */

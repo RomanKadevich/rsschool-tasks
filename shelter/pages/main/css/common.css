@@ -87,4 +87,13 @@ ul {
   margin: 0 auto;
   padding-left: 25px;
   padding-right: 25px;
+}
+
+.section__heading {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: 0.06em;
+  line-height: 130%;
 }/*# sourceMappingURL=common.css.map */

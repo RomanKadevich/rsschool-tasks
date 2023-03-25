@@ -1,0 +1,81 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
+@import '_mixins.scss';
+
+.in-addition {
+    background-color: $backfround-color-our-friends;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: 100%;
+        gap: 20px;
+        padding-top: 54px;
+        padding-bottom: 100px;
+    }
+
+    &__image {
+        grid-column: 2/ span 4;
+    }
+
+    &__info {
+        grid-column: 6/ span 3;
+    }
+
+    &__heading {
+        @include margin-info-inadditional;
+        padding-right: 80px;
+
+    }
+
+    &__description {
+        @include margin-info-inadditional;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 0.06em;
+    }
+
+    &__check {
+
+        @include margin-info-inadditional;
+        padding: 10px 15px;
+        width: 349px;
+        height: 43px;
+        background: $btn-border-color;
+        border-radius: 9px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+
+    &__check-img {
+
+        width: 30px;
+        height: 23px;
+        margin-right: 15px;
+        background: url('../../../assets/img/img/items/credit-card.svg') center center no-repeat;
+        background-size: cover;
+    }
+
+    &__check-num {
+        display: inline-block;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        color: $section-heading-textcolor;
+    }
+
+    &__text {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $text-italic-inadditional;
+    }
+}

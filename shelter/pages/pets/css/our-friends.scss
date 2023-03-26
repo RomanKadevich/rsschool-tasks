@@ -16,14 +16,16 @@
     }
 
     &__info {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 30px;
     }
 
     &__nav-btn {
         flex: 0 0 auto;
-       align-self: center;
+        align-self: center;
         width: 52px;
         height: 52px;
         border: 2px solid $btn-border-color;
@@ -37,5 +39,16 @@
         padding: 15px 42px;
         width: 261px;
         background: $btn-border-color;
+    }
+
+    &__nav{
+        margin-top: 40px;
+    }
+    &__nav-list{
+        display: flex;
+        justify-content: space-between;
+        max-width: 340px;
+        margin: 0 auto;
+  
     }
 }

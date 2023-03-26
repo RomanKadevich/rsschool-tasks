@@ -59,9 +59,11 @@
   margin-bottom: 60px;
 }
 .our-friends__info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 30px;
 }
 .our-friends__nav-btn {
   flex: 0 0 auto;
@@ -78,4 +80,13 @@
   padding: 15px 42px;
   width: 261px;
   background: #F1CDB3;
+}
+.our-friends__nav {
+  margin-top: 40px;
+}
+.our-friends__nav-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 340px;
+  margin: 0 auto;
 }/*# sourceMappingURL=our-friends.css.map */

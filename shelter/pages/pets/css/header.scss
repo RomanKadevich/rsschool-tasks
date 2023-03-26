@@ -1,18 +1,16 @@
 @import "_variables.scss";
 @import "../../../assets/styles/fonts.scss";
-header {
-    position: absolute;
-    width: 100%;
-  }
+
   
   .header {
-    padding-top: 30px;
+
   
     &__container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-top: 30px;
+      padding-bottom: 30px;
     }
   
   }
@@ -28,7 +26,7 @@ header {
   
     &__link {
       font-size: 15px;
-      color: $nav-link-color;
+      color: $section-heading-textcolor;
     }
   }
   
@@ -38,13 +36,13 @@ header {
       font-family: "Georgia";
       font-weight: 400;
       font-size: 32px;
-      color: $logocolor;
+      color: $section-heading-textcolor;
       letter-spacing: 0.06em;
     }
   
     &__description {
       font-size: 13px;
-      color: $white-textcolor;
+      color: $btn-dark-rextcolor;
       letter-spacing: 0.1em;
       text-align: center;
     }

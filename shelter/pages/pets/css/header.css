@@ -47,19 +47,12 @@
   font-style: normal;
   font-display: swap;
 }
-header {
-  position: absolute;
-  width: 100%;
-}
-
-.header {
-  padding-top: 30px;
-}
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .nav__list {
@@ -70,7 +63,7 @@ header {
 }
 .nav__link {
   font-size: 15px;
-  color: #CDCDCD;
+  color: #545454;
 }
 
 .logo__heading {
@@ -78,12 +71,12 @@ header {
   font-family: "Georgia";
   font-weight: 400;
   font-size: 32px;
-  color: #f1cdb3;
+  color: #545454;
   letter-spacing: 0.06em;
 }
 .logo__description {
   font-size: 13px;
-  color: #FFFFFF;
+  color: #292929;
   letter-spacing: 0.1em;
   text-align: center;
 }/*# sourceMappingURL=header.css.map */

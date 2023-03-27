@@ -12,20 +12,20 @@
 <body>
     <header>
         <div class="container header__container">
-            <div class="logo">
+            <a class="logo" href="#">
                 <div class="logo__heading">
                     Cozy House
                 </div>
                 <div class="logo__description">
                     Shelter for pets in Boston
                 </div>
-            </div>
+            </a>
             <nav class="header__nav nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link">About the shelter</a></li>
-                    <li class="nav__item"><a href="../pets/index.html" class="nav__link">Our pets</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Help the shelter</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Contacts</a></li>
+                    <li class="nav__item"><a href="../main/index.html" class="nav__link">About the shelter</a></li>
+                    <li class="nav__item nav__link--active"><a href="../pets/index.html" class="nav__link">Our pets</a></li>
+                    <li class="nav__item"><a href="../main/index.html#help" class="nav__link">Help the shelter</a></li>
+                    <li class="nav__item"><a href="#footer" class="nav__link">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -82,7 +82,7 @@
                 <nav class="our-friends__nav">
                     <ul class="our-friends__nav-list">
                         <li class="our-friends__nav-item">
-                            <button class="our-friends__nav-btn">
+                            <button class="our-friends__nav-btn our-friends__nav-btn--disable">
                                 <svg width="25"
                                     height="11" viewBox="0 0 25 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -92,7 +92,7 @@
                             </button>
                         </li>
                         <li class="our-friends__nav-item">
-                            <button class="our-friends__nav-btn">
+                            <button class="our-friends__nav-btn our-friends__nav-btn--disable">
                                 <svg width="10"
                                     height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -101,7 +101,7 @@
                                 </svg>
                             </button>
                         </li>
-                        <li class="our-friends__nav-item"><button class="our-friends__nav-btn">1</button></li>
+                        <li class="our-friends__nav-item"><button class="our-friends__nav-btn our-friends__nav-btn--active">1</button></li>
                         <li class="our-friends__nav-item">
                             <button class="our-friends__nav-btn">
                                 <svg width="10" height="11" viewBox="0 0 10 11" fill="none"
@@ -127,20 +127,20 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container footer__container">
             <div class="footer__contact-box contact-box">
-                <h2 class="contact-box__heading section__heading">For questions and suggestions</h2>
+                <div class="contact-box__heading section__heading">For questions and suggestions</div>
                 <a class="contact-box__email" href="mailto:email@shelter.com"><span></span>email@shelter.com</a>
                 <a class="contact-box__tel" href="tel:+136745677554"><span></span>+13 674 567 75 54</a>
             </div>
-            <adress class="footer__contact-box contact-box">
-                <h2 class="contact-box__heading section__heading">We are waiting for your visit</h2>
+            <address class="footer__contact-box contact-box">
+                <div class="contact-box__heading section__heading">We are waiting for your visit</div>
                 <a class="contact-box__adress" href="https://goo.gl/maps/Zs45mk9KBJNtaMtE9"><span></span>1 Central
-                    Street, Boston (entrance from the&nbsp;store)</a>
+                    Street, Boston (entrance&nbsp;from&nbsp;the&nbsp;store)</a>
                 <a class="contact-box__adress" href="https://goo.gl/maps/jrF6TTXf9zXKkQmS6"><span></span>18 South Park,
                     London</a>
-            </adress>
+            </address>
             <img src="../../assets/img/img/img/footer-puppy.png" alt="dog" class="footer__img">
         </div>
         

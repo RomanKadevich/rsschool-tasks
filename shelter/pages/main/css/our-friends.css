@@ -64,6 +64,9 @@
   margin-bottom: 60px;
 }
 .our-friends__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
   align-self: center;
   width: 52px;

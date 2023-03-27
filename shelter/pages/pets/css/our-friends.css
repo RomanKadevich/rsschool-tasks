@@ -49,6 +49,7 @@
 }
 .our-friends {
   background-color: #F6F6F6;
+  max-width: 100%;
 }
 .our-friends__container {
   padding-top: 80px;
@@ -66,6 +67,9 @@
   grid-row-gap: 30px;
 }
 .our-friends__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
   align-self: center;
   width: 52px;

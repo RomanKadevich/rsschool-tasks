@@ -1,0 +1,75 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
+@import "card.scss";
+
+.logo {
+
+  &:hover {
+    transition: color 300ms ease-in-out;
+
+    .logo__heading {
+      color: $btn-dark-rextcolor;
+    }
+  }
+}
+
+.nav {
+  &__link--active {
+    border-bottom: 3px solid $btn-border-color;
+  }
+
+  &__link {
+    transition: border-bottom 200ms ease, color 300ms ease-in-out;
+  }
+
+  &__link:hover {
+    color: $btn-dark-rextcolor
+  }
+
+  &__link:active {
+    color: $btn-dark-rextcolor;
+    border-bottom: 3px solid $btn-border-color;
+  }
+}
+
+.card {
+  transition: box-shadow 300ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+}
+
+.btn {
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $btn-hover-color;
+    border-color: $btn-hover-color;
+  }
+}
+
+.our-friends__nav-btn {
+  &--active{
+    background-color: $btn-border-color;
+  }
+  &--disable{
+    border-color: $nav-link-color;
+    pointer-events: none;
+
+  }
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $btn-hover-color;
+    border-color: $btn-hover-color;
+  }
+}
+
+.contact-box {
+  transition: color 300ms ease-in-out;
+  a:hover {
+    color: $btn-hover-color;
+  }
+
+}

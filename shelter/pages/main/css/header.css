@@ -73,6 +73,9 @@ header {
   color: #CDCDCD;
 }
 
+.logo {
+  display: inline-block;
+}
 .logo__heading {
   margin-bottom: 10px;
   font-family: "Georgia";

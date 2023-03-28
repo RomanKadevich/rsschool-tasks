@@ -1016,6 +1016,7 @@ header {
 .nav__link--active {
   color: #FFFFFF;
   border-bottom: 3px solid #F1CDB3;
+  pointer-events: none;
 }
 .nav__link {
   transition: border-bottom 200ms ease, color 300ms ease-in-out;

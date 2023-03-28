@@ -16,6 +16,7 @@
 .nav {
   &__link--active {
     border-bottom: 3px solid $btn-border-color;
+    pointer-events: none;
   }
 
   &__link {

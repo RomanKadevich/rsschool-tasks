@@ -1,0 +1,102 @@
+@media only screen and (max-width: 1050px) and (min-width: 930px) {
+    .not-only {
+        padding-top: 0;
+
+        &__info {
+            padding-bottom: 160px;
+        }
+    }
+
+    .about {
+        &__container {
+
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            ;
+            padding: 93px 190px 83px 175px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .about {
+        &__container {
+
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            ;
+            padding: 93px 190px 83px 175px;
+        }
+    }
+
+    .our-friends {
+        &__card:nth-child(3) {
+            display: none;
+            ;
+        }
+    }
+    .footer {
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+    
+        &__img {
+            grid-row: 2/ span 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 929px) {
+    .not-only {
+        &__info {
+            padding-left: 54.5px;
+            padding-right: 54.5px;
+            padding-bottom: 100px;
+            grid-column: 1/span 5;
+        }
+
+        &__heading {
+            padding-right: 200px;
+        }
+
+        &__container {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        &__image {
+            grid-column: 1 / span 5;
+            grid-row: 2 / span 1;
+            padding-left: 69px;
+            padding-right: 70px;
+
+        }
+    }
+
+    .help {
+        &__item {
+            flex: 1 0 33.3%;
+
+        }
+    }
+    .in-addition {
+        &__container {
+            padding-left: 131px;
+            padding-right: 132px;
+            grid-template-columns: 1fr;
+            grid-template-rows: 2fr;
+        }
+        &__info{
+            padding-left: 62px;
+            padding-right: 62px;
+            grid-row: 1/span 1;
+            grid-column: 1/span 1;
+        }
+        &__image{
+            grid-row: 2/span 1;
+             grid-column: 1/span 1;
+        }
+    }
+}

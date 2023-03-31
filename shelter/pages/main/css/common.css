@@ -58,10 +58,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  min-width: 1279px;
-}
-
 a {
   display: inline-block;
   text-decoration: none;

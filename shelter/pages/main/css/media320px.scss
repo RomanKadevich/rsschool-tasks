@@ -314,7 +314,8 @@
             padding-left: 30px;
         }
         &__description{
-            margin-bottom: 8px;
+            margin-bottom: 26px;
+            font-size: 13px;
         }
         &__check-num {
             font-size: 15px;
@@ -322,12 +323,19 @@
         }
 
         &__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding-left: 0;
             padding-right: 0;
         }
 
-        &__check {
+        &__link {
             max-width: 349px;
+        }
+        &__check{
+            max-width: 349px;
+            width: auto;
         }
         &__image{
             margin-top: 15px;
@@ -338,22 +346,35 @@
 
         &__container {
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: auto;
         }
 
         &__contact-box {
 
             padding-left: 0;
             padding-right: 0;
-
+            a{
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
             &:nth-child(1) {
                 grid-row: 1/span 1;
                 grid-column: auto;
+                padding-bottom: 23px;
+                
             }
 
             &:nth-child(2) {
+                .section__heading{
+                    padding-right: 10px;
+                }
                 grid-row: 2/span 1;
                 grid-column: auto;
+                a{
+                    margin-top: 38px;
+                   
+                }
             }
         }
 

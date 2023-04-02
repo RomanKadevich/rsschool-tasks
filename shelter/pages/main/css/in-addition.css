@@ -60,6 +60,8 @@
 }
 .in-addition__image {
   grid-column: 2/span 4;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .in-addition__info {
   grid-column: 6/span 3;
@@ -79,7 +81,7 @@
 .in-addition__check {
   margin-bottom: 20px;
   padding: 10px 15px;
-  width: 349px;
+  max-width: 349px;
   height: 43px;
   background: #F1CDB3;
   border-radius: 9px;

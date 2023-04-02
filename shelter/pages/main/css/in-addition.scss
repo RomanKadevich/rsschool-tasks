@@ -16,6 +16,7 @@
 
     &__image {
         grid-column: 2/ span 4;
+        object-fit: cover;
     }
 
     &__info {
@@ -41,7 +42,7 @@
 
         @include margin-info-inadditional;
         padding: 10px 15px;
-        width: 349px;
+        max-width: 349px;
         height: 43px;
         background: $btn-border-color;
         border-radius: 9px;

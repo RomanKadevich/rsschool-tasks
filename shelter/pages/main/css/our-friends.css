@@ -75,6 +75,9 @@
   border-radius: 100px;
   background-color: #F6F6F6;
 }
+.our-friends__nav-btn-mob {
+  display: none;
+}
 .our-friends__btn {
   display: block;
   margin: 0 auto;

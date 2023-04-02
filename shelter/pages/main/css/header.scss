@@ -30,6 +30,9 @@ header {
       font-size: 15px;
       color: $nav-link-color;
     }
+    &__burger{
+      display: none;
+    }
   }
   
   .logo {

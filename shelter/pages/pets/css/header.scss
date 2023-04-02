@@ -28,6 +28,9 @@
       font-size: 15px;
       color: $section-heading-textcolor;
     }
+    &__burger{
+      display: none;
+    }
   }
   
   .logo {

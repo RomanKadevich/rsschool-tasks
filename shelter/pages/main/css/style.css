@@ -1323,11 +1323,15 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+  .footer__tel {
+    margin-top: 30px;
+  }
   .footer__contact-box {
     padding-left: 0;
     padding-right: 0;
   }
   .footer__contact-box a {
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -1345,7 +1349,7 @@ header {
     padding-right: 10px;
   }
   .footer__contact-box:nth-child(2) a {
-    margin-top: 38px;
+    margin-top: 18px;
   }
   .footer__img {
     grid-column: auto;

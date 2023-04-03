@@ -68,6 +68,9 @@
   font-size: 15px;
   color: #545454;
 }
+.nav__burger {
+  display: none;
+}
 
 .logo__heading {
   margin-bottom: 10px;

@@ -72,6 +72,9 @@ header {
   font-size: 15px;
   color: #CDCDCD;
 }
+.nav__burger {
+  display: none;
+}
 
 .logo {
   display: inline-block;

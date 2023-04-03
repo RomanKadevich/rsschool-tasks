@@ -1,0 +1,27 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
+
+.about {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        padding: 93px 190px 83px 175px;
+    }
+
+    &__heading {
+        padding-right: 119px;
+        margin-bottom: 25px;
+        color: $section-heading-textcolor;
+    }
+
+    &__description {
+        font-size: 15px;
+        line-height: 160%;
+        color: $text-description-darkcolor;
+
+    }
+    &__first-text{
+        margin-bottom: 25px;
+    }
+}

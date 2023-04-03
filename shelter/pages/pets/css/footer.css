@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-BoldItalic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia.woff2") format("woff2"), url("../../../assets/fonts/Georgia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Italic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/ArialMT.woff2") format("woff2"), url("../../../assets/fonts/ArialMT.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-BoldMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-BoldMT.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+.footer {
+  padding-top: 40px;
+  background: url(../../../assets/img/img/img/noise_transparent@2x.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 160px;
+}
+.footer__img {
+  grid-column: 3/span 1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  align-self: end;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 50px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+.contact-box a {
+  display: flex;
+  align-items: center;
+  color: #F1CDB3;
+}
+.contact-box span {
+  flex-shrink: 0;
+  display: inline-block;
+  margin-right: 20px;
+  background-size: cover;
+}
+.contact-box__heading {
+  color: #FFFFFF;
+}
+.contact-box__email {
+  margin-top: 40px;
+}
+.contact-box__email span {
+  width: 40px;
+  height: 32px;
+  background: url("../../../assets/img/img/items/icon-email.svg") center center no-repeat;
+}
+.contact-box__tel {
+  margin-top: 40px;
+}
+.contact-box__tel span {
+  width: 40px;
+  height: 32px;
+  background: url("../../../assets/img/img/items/phone.svg") center center no-repeat;
+}
+.contact-box__adress {
+  margin-top: 34px;
+}
+.contact-box__adress span {
+  width: 22px;
+  height: 32px;
+  background: url("../../../assets/img/img/items/icon-marker.svg") center center no-repeat;
+}/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,57 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Arial", Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+// body{
+//   margin: 0;
+// }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+p, h1, h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.section__heading{
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+letter-spacing: 0.06em;
+line-height: 130%;
+}

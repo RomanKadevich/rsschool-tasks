@@ -1,0 +1,14 @@
+@import 'variables.scss';
+
+.btn {
+    width: 187px;
+    height: 52px;
+    border: 2px solid $btn-border-color;
+    border-radius: 100px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    color: $btn-dark-rextcolor;
+}

@@ -1439,7 +1439,7 @@ header {
     background-color: #292929;
     z-index: 10;
     transform: translateX(101%);
-    transition: transform 500ms ease-in-out, box-shadow 500ms ease-in-out;
+    transition: transform 400ms ease-in-out;
   }
   .nav-mob--active {
     transform: none;
@@ -1463,9 +1463,9 @@ header {
     width: 100vw;
     z-index: -9;
     opacity: 0;
-    background-color: #212133;
+    background-color: #292929;
     transition-property: opacity;
-    transition-duration: 500ms;
+    transition-duration: 400ms;
     transition-timing-function: ease-in-out;
   }
   .screen-active {

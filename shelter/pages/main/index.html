@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
-    <link rel="icon" type="image/x-icon" href="../../assets/img/img/items/favicon.png" >
+    <link rel="icon" type="image/x-icon" href="../../assets/img/img/items/favicon.png">
     <link rel="stylesheet" href="../../assets/styles/normalize.css">
     <link rel="stylesheet" href="../main/css/style.css">
     <script src="script.js"></script>
 </head>
 
 <body>
+    <div class="screen" id="screen">
+    </div>
     <header>
         <div class="container header__container">
             <a class="logo" href="#">
@@ -23,6 +25,16 @@
                     Shelter for pets in Boston
                 </div>
             </a>
+            <nav class="nav-mob" id="menu">
+                <ul class="nav-mob__list">
+                    <li class="nav-mob__item"><a href="../main/index.html" class="nav-mob__link nav__link--active">About
+                            the
+                            shelter</a></li>
+                    <li class="nav-mob__item"><a href="../pets/index.html" class="nav-mob__link">Our pets</a></li>
+                    <li class="nav-mob__item"><a href="#help" class="nav-mob__link">Help the shelter</a></li>
+                    <li class="nav-mob__item"><a href="#footer" class="nav-mob__link">Contacts</a></li>
+                </ul>
+            </nav>
             <nav class="header__nav nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="../main/index.html" class="nav__link nav__link--active">About the
@@ -31,7 +43,7 @@
                     <li class="nav__item"><a href="#help" class="nav__link">Help the shelter</a></li>
                     <li class="nav__item"><a href="#footer" class="nav__link">Contacts</a></li>
                 </ul>
-                <div class="nav__burger">
+                <div class="nav__burger" id="burger">
                     <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line y1="21" x2="30" y2="21" stroke="#F1CDB3" stroke-width="2" />
                         <line y1="11" x2="30" y2="11" stroke="#F1CDB3" stroke-width="2" />
@@ -47,7 +59,8 @@
                 <div class="not-only__info">
                     <h1 class="not-only__heading">Not only people need&nbsp;a&nbsp;house</h1>
                     <p class="not-only__description">We offer to give a chance to a little and nice puppy with an
-                        extremely wide and open heart. He or she will love you more than anybody else in the world, you&nbsp;will&nbsp;see!</p>
+                        extremely wide and open heart. He or she will love you more than anybody else in the world,
+                        you&nbsp;will&nbsp;see!</p>
                     <a href="#ourFriends" class="btn not-only__btn">Make a friend</a>
                 </div>
                 <div class="not-only__image">
@@ -63,13 +76,19 @@
                 <div class="about__info">
                     <h2 class="about__heading section__heading">About the shelter “Cozy House”</h2>
                     <div class="about__description">
-                        <p class="about__first-text">Currently we have 121 dogs and 342 cats on our hands and statistics
-                            show that only 20% of them will find a family. The others will continue to live with us and
+                        <p class="about__first-text">Currently we have 121 dogs and 342 cats on our hands and
+                            statistics
+                            show that only 20% of them will find a family. The others will continue to live with us
+                            and
                             will be waiting for a lucky chance to become dearly loved.</p>
-                        <p class="about__second-text">We feed our wards with the best food and make sure that they do
-                            not get sick, feel comfortable (including psychologically) and well. We are supported by 87
-                            volunteers and 28 employees of various skill levels. About 12% of the animals are taken by
-                            the shelter staff. Taking care of the animals, they become attached to the pets and would
+                        <p class="about__second-text">We feed our wards with the best food and make sure that they
+                            do
+                            not get sick, feel comfortable (including psychologically) and well. We are supported by
+                            87
+                            volunteers and 28 employees of various skill levels. About 12% of the animals are taken
+                            by
+                            the shelter staff. Taking care of the animals, they become attached to the pets and
+                            would
                             hardly ever leave them alone.</p>
                     </div>
                 </div>
@@ -198,8 +217,10 @@
                         </a>
                     </div>
                     <p class="in-addition__text">Legal information and lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices
-                        maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent
+                        ultrices
+                        maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                    </p>
                 </div>
             </div>
         </section>
@@ -215,7 +236,8 @@
                 <div class="contact-box__heading section__heading">We are waiting for your visit</div>
                 <a class="contact-box__adress" href="https://goo.gl/maps/Zs45mk9KBJNtaMtE9"><span></span>1 Central
                     Street, Boston (entrance&nbsp;from&nbsp;the&nbsp;store)</a>
-                <a class="contact-box__adress" href="https://goo.gl/maps/jrF6TTXf9zXKkQmS6"><span></span>18 South Park,
+                <a class="contact-box__adress" href="https://goo.gl/maps/jrF6TTXf9zXKkQmS6"><span></span>18 South
+                    Park,
                     London</a>
             </address>
             <img src="../../assets/img/img/img/footer-puppy.png" alt="dog" class="footer__img">
@@ -223,7 +245,9 @@
 
 
     </footer>
+
     <script src="../myCheck.js"></script>
+
 </body>
 
 </html>

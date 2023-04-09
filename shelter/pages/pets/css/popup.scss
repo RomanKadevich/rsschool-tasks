@@ -35,7 +35,7 @@
         width: 900px;
         background-color: $backfround-color-our-friends;
         z-index: 12;
-        border-radius:16px;
+        border-radius: 16px;
 
 
         &--active {
@@ -91,7 +91,6 @@
     }
 
     &__img {
-        
         flex-basis: 55.5%;
         height: 100%;
 
@@ -99,6 +98,7 @@
             display: block;
             width: 100%;
             object-fit: cover;
+            border-bottom-left-radius: 16px;
         }
 
     }

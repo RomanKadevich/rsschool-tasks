@@ -130,6 +130,7 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-bottom-left-radius: 16px;
 }
 
 @media only screen and (max-width: 1008px) {

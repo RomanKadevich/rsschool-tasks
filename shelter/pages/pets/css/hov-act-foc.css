@@ -141,9 +141,15 @@
 
 .card {
   transition: box-shadow 300ms ease-in-out;
+  cursor: pointer;
 }
 .card:hover {
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.card:hover .btn {
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 .btn {

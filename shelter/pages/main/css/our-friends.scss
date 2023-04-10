@@ -6,7 +6,7 @@
 
     &__container {
         padding-top: 80px;
-        padding-bottom: 100px;
+        padding-bottom: 0;
     }
 
     &__heading {
@@ -15,33 +15,4 @@
         
     }
 
-    &__info {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 60px;
-    }
-
-    &__nav-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 auto;
-       align-self: center;
-        width: 52px;
-        height: 52px;
-        border: 2px solid $btn-border-color;
-        border-radius: 100px;
-        background-color: $backfround-color-our-friends;
-        &-mob{
-            display: none;
-        }
-    }
-
-    &__btn {
-        display: block;
-        margin: 0 auto;
-        padding: 15px 42px;
-        width: 261px;
-        background: $btn-border-color;
-    }
 }

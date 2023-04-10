@@ -1,8 +1,9 @@
 @import "_variables.scss";
 @import "../../../assets/styles/fonts.scss";
+
 .our-friends {
   background-color: $backfround-color-our-friends;
-
+  padding-bottom: 100px;
   &__info {
     display: flex;
     justify-content: space-between;
@@ -20,6 +21,15 @@
     border: 2px solid $btn-border-color;
     border-radius: 100px;
     background-color: $backfround-color-our-friends;
+
+    &__left {
+      margin-right: 53px;
+    }
+
+    &__right {
+      margin-left: 53px;
+    }
+
     &-mob {
       display: none;
     }
@@ -39,27 +49,37 @@
   align-items: center;
   justify-content: center;
 }
+
 .carusel {
   display: flex;
   position: relative;
   left: -990px;
 
+
   &__wrapper {
     display: flex;
     max-width: 990px;
     overflow: hidden;
+    flex-shrink: 0;
+
   }
+
   &__left-block {
     display: flex;
     gap: 90px;
+
   }
+
   &__center-block {
     display: flex;
     gap: 90px;
+
   }
+
   &__right-block {
     display: flex;
     gap: 90px;
+
   }
 }
 
@@ -67,66 +87,181 @@
   from {
     left: -990px;
   }
+
   to {
     left: -1980px;
   }
 }
+
 .transition-right {
   animation-name: move-right;
   animation-duration: 5000ms;
 }
+
 @keyframes move-left {
   from {
     left: -990px;
   }
+
   to {
     left: 0;
   }
 }
+
 .transition-left {
   animation-name: move-left;
   animation-duration: 5000ms;
 }
 
-@media only screen and (max-width: 929px) {
+@media only screen and (max-width: 1217px) {
   .carusel {
     left: -620px;
     gap: 40px;
+
     &__wrapper {
       max-width: 580px;
     }
+
     &__left-block {
       gap: 40px;
     }
+
     &__center-block {
       gap: 40px;
     }
+
     &__right-block {
       gap: 40px;
     }
   }
+
+  .our-friends {
+    &__nav-btn {
+      &__left {
+        margin-right: 12px;
+      }
+
+      &__right {
+        margin-left: 12px;
+      }
+    }
+  }
+
   @keyframes move-left-768px {
     from {
       left: -620px;
     }
+
     to {
       left: 0;
     }
   }
+
   .transition-left {
     animation-name: move-left-768px;
     animation-duration: 5000ms;
   }
+
   @keyframes move-right-768px {
     from {
       left: -620px;
     }
+
     to {
       left: -1240px;
     }
   }
+
   .transition-right {
     animation-name: move-right-768px;
     animation-duration: 5000ms;
   }
+
+}
+
+@media only screen and (max-width: 732px) {
+  .our-friends {
+ 
+    padding-bottom: 42px;
+  }
+  .carusel {
+    left: -290px;
+    gap: 20px;
+
+    &__wrapper {
+      max-width: 270px;
+    }
+
+    &__left-block {
+      gap: 20px;
+    }
+
+    &__center-block {
+      gap: 20px;
+    }
+
+    &__right-block {
+      gap: 20px;
+    }
+  }
+  
+  .our-friends {
+   
+
+    &__nav-btn-mob {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 20px;
+        margin-bottom: 42px;
+    }
+
+    &__nav-btn--disable {
+        display: none;
+    }
+    &__info{
+        margin-bottom: 20px;
+    }
+    }
+
+
+
+
+
+  @keyframes move-left-320px {
+    from {
+      left: -290px;
+    }
+
+    to {
+      left: 0;
+    }
+  }
+
+  .transition-left {
+    animation-name: move-left-320px;
+    animation-duration: 5000ms;
+  }
+
+  @keyframes move-right-320px {
+    from {
+      left: -290px;
+    }
+
+    to {
+      left: -580px;
+    }
+  }
+
+  .transition-right {
+    animation-name: move-right-320px;
+    animation-duration: 5000ms;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+
+
+
+
 }

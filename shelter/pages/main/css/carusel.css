@@ -49,6 +49,7 @@
 }
 .our-friends {
   background-color: #F6F6F6;
+  padding-bottom: 100px;
 }
 .our-friends__info {
   display: flex;
@@ -66,6 +67,12 @@
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   background-color: #F6F6F6;
+}
+.our-friends__nav-btn__left {
+  margin-right: 53px;
+}
+.our-friends__nav-btn__right {
+  margin-left: 53px;
 }
 .our-friends__nav-btn-mob {
   display: none;
@@ -93,6 +100,7 @@
   display: flex;
   max-width: 990px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .carusel__left-block {
   display: flex;
@@ -133,7 +141,7 @@
   animation-duration: 5000ms;
 }
 
-@media only screen and (max-width: 929px) {
+@media only screen and (max-width: 1217px) {
   .carusel {
     left: -620px;
     gap: 40px;
@@ -149,6 +157,12 @@
   }
   .carusel__right-block {
     gap: 40px;
+  }
+  .our-friends__nav-btn__left {
+    margin-right: 12px;
+  }
+  .our-friends__nav-btn__right {
+    margin-left: 12px;
   }
   @keyframes move-left-768px {
     from {
@@ -173,5 +187,66 @@
   .transition-right {
     animation-name: move-right-768px;
     animation-duration: 5000ms;
+  }
+}
+@media only screen and (max-width: 732px) {
+  .our-friends {
+    padding-bottom: 42px;
+  }
+  .carusel {
+    left: -290px;
+    gap: 20px;
+  }
+  .carusel__wrapper {
+    max-width: 270px;
+  }
+  .carusel__left-block {
+    gap: 20px;
+  }
+  .carusel__center-block {
+    gap: 20px;
+  }
+  .carusel__right-block {
+    gap: 20px;
+  }
+  .our-friends__nav-btn-mob {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 20px;
+    margin-bottom: 42px;
+  }
+  .our-friends__nav-btn--disable {
+    display: none;
+  }
+  .our-friends__info {
+    margin-bottom: 20px;
+  }
+  @keyframes move-left-320px {
+    from {
+      left: -290px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  .transition-left {
+    animation-name: move-left-320px;
+    animation-duration: 5000ms;
+  }
+  @keyframes move-right-320px {
+    from {
+      left: -290px;
+    }
+    to {
+      left: -580px;
+    }
+  }
+  .transition-right {
+    animation-name: move-right-320px;
+    animation-duration: 5000ms;
+  }
+  .wrapper {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=carusel.css.map */

@@ -1,0 +1,132 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
+.our-friends {
+  background-color: $backfround-color-our-friends;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  &__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    align-self: center;
+    width: 52px;
+    height: 52px;
+    border: 2px solid $btn-border-color;
+    border-radius: 100px;
+    background-color: $backfround-color-our-friends;
+    &-mob {
+      display: none;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 42px;
+    width: 261px;
+    background: $btn-border-color;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carusel {
+  display: flex;
+  position: relative;
+  left: -990px;
+
+  &__wrapper {
+    display: flex;
+    max-width: 990px;
+    overflow: hidden;
+  }
+  &__left-block {
+    display: flex;
+    gap: 90px;
+  }
+  &__center-block {
+    display: flex;
+    gap: 90px;
+  }
+  &__right-block {
+    display: flex;
+    gap: 90px;
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 5000ms;
+}
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0;
+  }
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 5000ms;
+}
+
+@media only screen and (max-width: 929px) {
+  .carusel {
+    left: -620px;
+    gap: 40px;
+    &__wrapper {
+      max-width: 580px;
+    }
+    &__left-block {
+      gap: 40px;
+    }
+    &__center-block {
+      gap: 40px;
+    }
+    &__right-block {
+      gap: 40px;
+    }
+  }
+  @keyframes move-left-768px {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  .transition-left {
+    animation-name: move-left-768px;
+    animation-duration: 5000ms;
+  }
+  @keyframes move-right-768px {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  .transition-right {
+    animation-name: move-right-768px;
+    animation-duration: 5000ms;
+  }
+}

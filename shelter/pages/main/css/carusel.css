@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Georgia";
   src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
@@ -48,116 +47,131 @@
   font-style: normal;
   font-display: swap;
 }
-.screen-popup {
-  position: fixed;
-  display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: 0, 0, 0, 0.5;
-  z-index: -9;
-  background: rgba(41, 41, 41, 0);
+.our-friends {
+  background-color: #F6F6F6;
 }
-.screen-popup--active {
-  transition-property: background-color;
-  transition-duration: 10000ms;
-  transition-timing-function: ease-in-out;
+.our-friends__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.our-friends__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  align-self: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  background-color: #F6F6F6;
+}
+.our-friends__nav-btn-mob {
+  display: none;
+}
+.our-friends__btn {
   display: block;
-  background: rgba(41, 41, 41, 0.6);
-  z-index: 9;
+  margin: 0 auto;
+  padding: 15px 42px;
+  width: 261px;
+  background: #F1CDB3;
 }
 
-.popup {
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.popup__card {
-  position: fixed;
-  display: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  background-color: #F6F6F6;
-  z-index: 12;
-  border-radius: 16px;
-}
-.popup__card--active {
+
+.carusel {
   display: flex;
+  position: relative;
+  left: -990px;
 }
-.popup__exit {
-  cursor: pointer;
-  position: absolute;
-  top: -52px;
-  right: -52px;
+.carusel__wrapper {
+  display: flex;
+  max-width: 990px;
+  overflow: hidden;
 }
-.popup__content {
-  flex-basis: 45%;
-  padding: 50px 20px 88px 29px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
+.carusel__left-block {
+  display: flex;
+  gap: 90px;
 }
-.popup__content li::before {
-  color: #F1CDB3;
-  content: "•";
-  padding-right: 10px;
+.carusel__center-block {
+  display: flex;
+  gap: 90px;
 }
-.popup__content span {
-  font-weight: 700;
-}
-.popup__name {
-  margin-bottom: 10px;
-}
-.popup__info {
-  margin-bottom: 40px;
-}
-.popup__description {
-  margin-bottom: 40px;
-}
-.popup__list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-.popup__img {
-  flex-basis: 55.5%;
-  height: 100%;
-}
-.popup__img img {
-  display: block;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-bottom-left-radius: 16px;
+.carusel__right-block {
+  display: flex;
+  gap: 90px;
 }
 
-@media only screen and (max-width: 1008px) {
-  .popup__info {
-    margin-bottom: 20px;
+@keyframes move-right {
+  from {
+    left: -990px;
   }
-  .popup__description {
-    margin-bottom: 20px;
-  }
-  .popup__card {
-    width: 682px;
-  }
-  .popup__content {
-    padding: 10px 9px 37px 11px;
-  }
-  .popup__exit {
-    right: -40px;
+  to {
+    left: -1980px;
   }
 }
-@media only screen and (max-width: 767px) {
-  .popup__img {
-    display: none;
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 5000ms;
+}
+
+@keyframes move-left {
+  from {
+    left: -990px;
   }
-  .popup__card {
-    width: 240px;
+  to {
+    left: 0;
   }
-  .popup__content {
-    flex-basis: 100%;
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 5000ms;
+}
+
+@media only screen and (max-width: 929px) {
+  .carusel {
+    left: -620px;
+    gap: 40px;
   }
-}/*# sourceMappingURL=popup.css.map */
+  .carusel__wrapper {
+    max-width: 580px;
+  }
+  .carusel__left-block {
+    gap: 40px;
+  }
+  .carusel__center-block {
+    gap: 40px;
+  }
+  .carusel__right-block {
+    gap: 40px;
+  }
+  @keyframes move-left-768px {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  .transition-left {
+    animation-name: move-left-768px;
+    animation-duration: 5000ms;
+  }
+  @keyframes move-right-768px {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  .transition-right {
+    animation-name: move-right-768px;
+    animation-duration: 5000ms;
+  }
+}/*# sourceMappingURL=carusel.css.map */

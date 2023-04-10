@@ -9,8 +9,9 @@
     <link rel="icon" type="image/x-icon" href="../../assets/img/img/items/favicon.png">
     <link rel="stylesheet" href="../../assets/styles/normalize.css">
     <link rel="stylesheet" href="../main/css/style.css">
-    <script src="burger.js"></script>
+    <script src="script.js"></script>
     <script src="popup.js"></script>
+    <script src="carusel.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                     fill="#292929" />
                 <rect x="1" y="1" width="50" height="50" rx="25" stroke="#F1CDB3" stroke-width="2" />
             </svg>
-            <div class="popup__img" ><img id="img" src="" alt=""></div>
+            <div class="popup__img"><img id="img" src="" alt=""></div>
             <div class="popup__content">
                 <h2 class="popup__name section__heading" id="name"></h2>
                 <div class="popup__info">
@@ -128,49 +129,85 @@
                     Our friends who<br>
                     are looking for a house
                 </h2>
-                <div class="our-friends__info">
-                    <button class="our-friends__nav-btn our-friends__nav-btn--disable">
+            </div>
+            <div class="wrapper">
+                <button class="our-friends__nav-btn our-friends__nav-btn--disable" id="btnLEFT">
+                    <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
+                    </svg>
+                </button>
+
+                <div class="our-friends__info carusel__wrapper">
+                    <div class="carusel" id="carusel">
+
+                        <div class="carusel__left-block" id="leftBlock">
+                            <div class="our-friends__card card" data-id="card4">
+                                <img src="../../assets/img/img/img/pets-Sophia.png" alt="Sophia" class="card__image">
+                                <div class="card__name">Sophia</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                            <div class="our-friends__card card" data-id="card5">
+                                <img src="../../assets/img/img/img/pets-timmy.png" alt="Timmy" class="card__image">
+                                <div class="card__name">Timmy</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                            <div class="our-friends__card card" data-id="card6">
+                                <img src="../../assets/img/img/img/pets-charly.png" alt="Charly" class="card__image">
+                                <div class="card__name">Charly</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                        </div>
+                        <div class="carusel__center-block" id="centerBlock">
+                            <div class="our-friends__card card" data-id="card1">
+                                <img src="../../assets/img/img/img/pets-katrine.png" alt="Katrine" class="card__image">
+                                <div class="card__name">Katrine</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                            <div class="our-friends__card card" data-id="card2">
+                                <img src="../../assets/img/img/img/pets-jennifer.png" alt="Jennifer"
+                                    class="card__image">
+                                <div class="card__name">Jennifer</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                            <div class="our-friends__card card" data-id="card3">
+                                <img src="../../assets/img/img/img/pets-woody.png" alt="Woody" class="card__image">
+                                <div class="card__name">Woody</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                        </div>
+                        <div class="carusel__right-block" id="rightBlock">
+                            <div class="our-friends__card card" data-id="card7">
+                                <img src="../../assets/img/img/img/pets-scarlet.png" alt="Scarlett" class="card__image">
+                                <div class="card__name">Scarlett</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                            <div class="our-friends__card card" data-id="card8">
+                                <img src="../../assets/img/img/img/pets-Freddie.png" alt="Freddie" class="card__image">
+                                <div class="card__name">Freddie</div>
+                                <button class="card__btn btn">Learn more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="our-friends__nav-btn our-friends__nav-btn--disable" id="btnRIGHT">
+                    <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
+                    </svg>
+                </button>
+                <div class="our-friends__nav-btn-mob">
+                    <button class="our-friends__nav-btn" id="btnMobLEFT">
                         <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
                         </svg>
                     </button>
-                    <div class="our-friends__card card" data-id="card1">
-                        <img src="../../assets/img/img/img/pets-katrine.png" alt="Katrine" class="card__image">
-                        <div class="card__name">Katrine</div>
-                        <button class="card__btn btn">Learn more</button>
-                    </div>
-                    <div class="our-friends__card card" data-id="card2">
-                        <img src="../../assets/img/img/img/pets-jennifer.png" alt="Jennifer" class="card__image">
-                        <div class="card__name">Jennifer</div>
-                        <button class="card__btn btn">Learn more</button>
-                    </div>
-                    <div class="our-friends__card card" data-id="card3">
-                        <img src="../../assets/img/img/img/pets-woody.png" alt="Woody" class="card__image">
-                        <div class="card__name">Woody</div>
-                        <button class="card__btn btn">Learn more</button>
-                    </div>
-                    <button class="our-friends__nav-btn our-friends__nav-btn--disable">
+                    <button class="our-friends__nav-btn" id="btnMobRIGHT">
                         <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
                         </svg>
                     </button>
-                    <div class="our-friends__nav-btn-mob">
-                        <button class="our-friends__nav-btn">
-                            <svg width="14" height="6" viewBox="0 0 14 6" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
-                            </svg>
-                        </button>
-                        <button class="our-friends__nav-btn">
-                            <svg width="14" height="6" viewBox="0 0 14 6" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
-                            </svg>
-                        </button>
-                    </div>
                 </div>
-                <a href="../pets/index.html" class="our-friends__btn btn">Get to know the rest</a>
             </div>
+            <a href="../pets/index.html" class="our-friends__btn btn">Get to know the rest</a>
         </section>
         <section class="help" id="help">
             <div class="container help__container">

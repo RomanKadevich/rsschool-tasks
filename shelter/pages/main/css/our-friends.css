@@ -57,31 +57,4 @@
 .our-friends__heading {
   text-align: center;
   margin-bottom: 60px;
-}
-.our-friends__info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
-}
-.our-friends__nav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  align-self: center;
-  width: 52px;
-  height: 52px;
-  border: 2px solid #F1CDB3;
-  border-radius: 100px;
-  background-color: #F6F6F6;
-}
-.our-friends__nav-btn-mob {
-  display: none;
-}
-.our-friends__btn {
-  display: block;
-  margin: 0 auto;
-  padding: 15px 42px;
-  width: 261px;
-  background: #F1CDB3;
 }/*# sourceMappingURL=our-friends.css.map */

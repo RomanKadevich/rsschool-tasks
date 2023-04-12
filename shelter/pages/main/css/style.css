@@ -1436,6 +1436,10 @@ header {
     z-index: 9;
   }
 }
+.scroll-hidden {
+  overflow: hidden;
+}
+
 @font-face {
   font-family: "Georgia";
   src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");

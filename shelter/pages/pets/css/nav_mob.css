@@ -96,4 +96,7 @@
     opacity: 0.4;
     z-index: 9;
   }
+}
+.scroll-hidden {
+  overflow: hidden;
 }/*# sourceMappingURL=nav_mob.css.map */

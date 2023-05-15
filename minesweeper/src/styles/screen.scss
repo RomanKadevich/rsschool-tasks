@@ -1,0 +1,151 @@
+@import "_var.scss";
+
+.header {
+    background-color: $headerLight;
+
+}
+
+.nav {
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 46px 73px;
+        font-weight: 400;
+        font-size: 25px;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 54px;
+        color: $lightFontColor
+    }
+
+    &__item:first-child {
+        margin-right: 246px;
+
+    }
+
+    &__item:nth-child(4) {
+        margin-right: 166px;
+        color: $darkFontColor;
+    }
+
+    &__item:nth-child(3) {
+        color: $mediumFontColor;
+    }
+
+    &__item:last-child {
+        color: $darkFontColor;
+    }
+}
+
+.nav-mob {
+
+   
+
+    &__list {
+        position: fixed;
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        z-index: 10;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-101%);
+        transition: transform 400ms ease-in-out;
+        background-color: $headerLight;
+        font-weight: 400;
+        font-size: 30px;
+    }
+    &--active {
+        transform: none;
+    }
+
+    &__item {
+        margin-bottom: 34px;
+        color: $lightFontColor
+    }
+
+    &__item:first-child {
+        margin-bottom: 100px;
+
+    }
+
+    &__item:nth-child(4) {
+        margin-bottom: 100px;
+        color: $darkFontColor;
+    }
+
+    &__item:nth-child(3) {
+        color: $mediumFontColor;
+    }
+
+    &__item:last-child {
+        color: $darkFontColor;
+    }
+    &__burger{
+        display: none;
+    }
+
+}
+
+.scroll-hidden {
+    overflow: hidden;
+}
+
+body {
+    background-color: $bgLight;
+}
+
+.main {
+    background-color: $bgLight;
+}
+
+@media only screen and (max-width: 1200px) {
+    .nav {
+
+        &__item:not(:last-child) {
+            margin-right: 34px;
+            color: $lightFontColor
+        }
+    
+        &__item:first-child {
+            margin-right: 100px;
+    
+        }
+    
+        &__item:nth-child(4) {
+            margin-right: 80px;
+            color: $darkFontColor;
+        }
+}
+}
+
+@media only screen and (max-width: 767px) {
+    .header .container{
+        display: flex;
+        justify-content: end;
+        padding: 36px 0;
+    
+    }
+    .nav-mob {
+        &__list {
+            display: flex;
+            align-items: center;
+        }
+        &__burger{
+            display: block;
+            margin-right: 20px;
+        }
+    }
+    .nav {
+        &__list {
+            display: none;
+        }
+        
+    }
+    .container{
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

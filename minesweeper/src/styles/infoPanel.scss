@@ -1,0 +1,45 @@
+.game {
+    display: flex;
+    justify-content: center;
+
+    &__info-panel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 46px;
+        max-width: 398px;
+        background-color: $infoLight;
+    }
+
+    &__window {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 74px;
+        height: 41px;
+        background: $infoWindowLight;
+        box-shadow: inset 4px 4px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        font-family: 'Consolas';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        color: $darkFontColor
+    }
+
+    &__window:not(:last-child) {
+        margin-right: 46px;
+    }
+
+    &__window:nth-child(2) {
+        height: 66px;
+    }
+}
+
+.start {
+    background-image: url('../assets/start.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+
+}

@@ -43,9 +43,4 @@ export function createScreenLight() {
   burger.addEventListener('click', () => {
     navListMob.classList.toggle('nav-mob--active');
   });
-  //   create main
-  const main = document.createElement('main');
-  main.classList.add('main');
-  main.innerHTML = "<div class = 'container'></div>";
-  document.body.appendChild(main);
 }

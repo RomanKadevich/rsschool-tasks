@@ -1,13 +1,15 @@
 .game {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
 
     &__info-panel {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px 46px;
-        max-width: 398px;
+        max-width: 406px;
         background-color: $infoLight;
     }
 

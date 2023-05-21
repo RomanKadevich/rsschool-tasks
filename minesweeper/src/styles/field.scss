@@ -1,3 +1,4 @@
+@import "_var.scss";
 .game {
     &__field {
         margin-top: 4px;
@@ -11,11 +12,18 @@
     max-width: 406px;
 
     &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 37px;
         height: 37px;
         background-image: url('../assets/item-close.svg');
         background-repeat: no-repeat;
         background-size: contain;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: $darkFontColor;
 
         &:hover {
             cursor: pointer;
@@ -23,11 +31,25 @@
             background-repeat: no-repeat;
             background-size: contain;
         }
+
         &:active {
             cursor: pointer;
             background-image: url('../assets/item-open.svg');
             background-repeat: no-repeat;
             background-size: contain;
         }
+
+        &_open {
+            cursor: pointer;
+            background-image: url('../assets/item-open.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__mines {
+        background-image: url('../assets/mine.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }

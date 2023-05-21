@@ -2,9 +2,10 @@ import { creatFieldWithItemObj } from './createItemObj';
 import { isNeigborWithMine } from './isNeigborWithMine';
 import { openCell } from './openItemsWithoutMines';
 
+export const fieldWithItemsObj = creatFieldWithItemObj(10, 10);
 export function makeGameAction() {
   const field = document.querySelector('.field');
-  const fieldWithItemsObj = creatFieldWithItemObj(10, 10);
+
   const numOfOpenItems = 10 * 10 - 10;
   let minesAdded = false;
   const smile = document.querySelector('#window1');
@@ -12,6 +13,9 @@ export function makeGameAction() {
   const recOpenCells = (event) => {
     const { target } = event;
     if (target.classList.contains('field__item')) {
+      if (target.classList.contains('field__item_withFlag')) {
+        return;
+      }
       const targetRow = parseInt(target.getAttribute('data-row'), 10);
       const targetCol = parseInt(target.getAttribute('data-col'), 10);
 
@@ -77,6 +81,9 @@ export function makeGameAction() {
     }
     const { target } = event;
     if (target.classList.contains('field__item')) {
+      if (target.classList.contains('field__item_withFlag')) {
+        return;
+      }
       const targetRow = parseInt(target.getAttribute('data-row'), 10);
       const targetCol = parseInt(target.getAttribute('data-col'), 10);
 

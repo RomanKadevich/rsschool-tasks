@@ -24,12 +24,26 @@
         font-weight: 400;
         font-size: 20px;
         color: $darkFontColor;
+        user-select: none;
 
         &:hover {
             cursor: pointer;
             background-image: url('../assets/item-hover.svg');
             background-repeat: no-repeat;
             background-size: contain;
+        }
+        &_withFlag{
+            cursor: pointer;
+            background-image: url('../assets/flag.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            // pointer-events: none;
+            &:hover{
+                background-image: url('../assets/flagHover.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+
+            }
         }
 
         // &:active {
@@ -45,6 +59,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             pointer-events: none;
+       
         }
     }
 

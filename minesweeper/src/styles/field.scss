@@ -32,18 +32,19 @@
             background-size: contain;
         }
 
-        &:active {
-            cursor: pointer;
-            background-image: url('../assets/item-open.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
+        // &:active {
+        //     cursor: pointer;
+        //     background-image: url('../assets/item-open.svg');
+        //     background-repeat: no-repeat;
+        //     background-size: contain;
+        // }
 
         &_open {
             cursor: pointer;
             background-image: url('../assets/item-open.svg');
             background-repeat: no-repeat;
             background-size: contain;
+            pointer-events: none;
         }
     }
 
@@ -51,5 +52,15 @@
         background-image: url('../assets/mine.svg');
         background-repeat: no-repeat;
         background-size: contain;
+        pointer-events: none;
+    }
+    &__explosion{
+        background-image: url('../assets/explosion.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+    }
+    &--hover-act-disable{
+        pointer-events: none;
     }
 }

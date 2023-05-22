@@ -1,3 +1,7 @@
+import { fieldWithItemsObj, makeGameAction } from './gameAction';
+import { createInfoPanel } from './infoPanel';
+import { createField } from './field';
+
 export function createScreenLight() {
   // create header
   const header = document.createElement('header');
@@ -40,7 +44,28 @@ export function createScreenLight() {
     navListMob.appendChild(li);
     i++;
   });
+  const newGame = document.querySelector('.nav__item-0');
+  const newGameMob = document.querySelector('.nav-mob__item-0');
   burger.addEventListener('click', () => {
     navListMob.classList.toggle('nav-mob--active');
+  });
+
+  newGameMob.addEventListener('click', () => {
+    createInfoPanel();
+    createField(10, 10);
+    makeGameAction();
+    for (let k = 0; k < 10; k++) {
+      for (let j = 0; j < 10; j++) {
+        fieldWithItemsObj[k][j].withMine = false;
+        fieldWithItemsObj[k][j].open = false;
+      }
+    }
+
+    navListMob.classList.remove('nav-mob--active');
+  });
+  newGame.addEventListener('click', () => {
+    createInfoPanel();
+    createField(10, 10);
+    makeGameAction();
   });
 }

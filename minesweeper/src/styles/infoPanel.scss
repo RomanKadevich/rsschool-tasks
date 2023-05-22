@@ -2,15 +2,21 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+
 
     &__info-panel {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
         padding: 20px 46px;
         max-width: 406px;
         background-color: $infoLight;
+    }
+
+    &__window:nth-child(4) {
+        height: 26px;
+        width: 309px;
     }
 
     &__window {
@@ -26,16 +32,33 @@
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
-        color: $darkFontColor
+        color: $darkFontColor;
+
+        &_start {
+            font-size: 18px;
+        }
+
+        &_win {
+            font-size: 11px;
+
+        }
+
+        &_lost {
+            font-size: 13px;
+        }
     }
 
     &__window:not(:last-child) {
-        margin-right: 46px;
+        // margin-right: 46px;
+        margin-bottom: 17px;
+
     }
 
     &__window:nth-child(2) {
         height: 66px;
     }
+
+
 }
 
 .start {
@@ -45,6 +68,7 @@
     background-size: auto;
 
 }
+
 .successfullClick {
     background-image: url('../assets/succses.svg');
     background-repeat: no-repeat;
@@ -52,6 +76,7 @@
     background-size: auto;
 
 }
+
 .gameOver {
     background-image: url('../assets/game-over.svg');
     background-repeat: no-repeat;
@@ -59,10 +84,37 @@
     background-size: auto;
 
 }
+
 .win {
     background-image: url('../assets/win.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: auto;
 
+}
+
+@media only screen and (max-width: 767px) {
+    .game {
+        &__info-panel {
+
+            max-width: 310px;
+            padding: 19px 28px;
+
+        }
+    
+        &__window {
+            &_start {
+                font-size: 14px;
+            }
+    
+            &_win {
+                font-size: 9px;
+    
+            }
+    
+            &_lost {
+                font-size: 12px;
+            }
+        }
+    }
 }

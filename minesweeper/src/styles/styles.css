@@ -167,10 +167,15 @@ body {
 .game__info-panel {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   padding: 20px 46px;
   max-width: 406px;
   background-color: #8CE85A;
+}
+.game__window:nth-child(4) {
+  height: 26px;
+  width: 309px;
 }
 .game__window {
   display: flex;
@@ -187,8 +192,17 @@ body {
   font-size: 25px;
   color: #AD00FF;
 }
+.game__window_start {
+  font-size: 18px;
+}
+.game__window_win {
+  font-size: 11px;
+}
+.game__window_lost {
+  font-size: 13px;
+}
 .game__window:not(:last-child) {
-  margin-right: 46px;
+  margin-bottom: 17px;
 }
 .game__window:nth-child(2) {
   height: 66px;
@@ -222,6 +236,21 @@ body {
   background-size: auto;
 }
 
+@media only screen and (max-width: 767px) {
+  .game__info-panel {
+    max-width: 310px;
+    padding: 19px 28px;
+  }
+  .game__window_start {
+    font-size: 14px;
+  }
+  .game__window_win {
+    font-size: 9px;
+  }
+  .game__window_lost {
+    font-size: 12px;
+  }
+}
 .game__field {
   margin-top: 4px;
 }
@@ -248,10 +277,11 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-.field__item:hover {
   cursor: pointer;
-  background-image: url("../assets/item-hover.svg");
+}
+.field__item_withFlag {
+  cursor: pointer;
+  background-image: url("../assets/flag.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -261,17 +291,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
-}
-.field__item_open_withFlag {
-  cursor: pointer;
-  background-image: url("../assets/flag.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.field__item_open_withFlag :hover {
-  background-image: url("../assets/flagHover.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 .field__mines {
   background-image: url("../assets/mine.svg");
@@ -287,4 +306,31 @@ body {
 }
 .field--hover-act-disable {
   pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .field__item:hover {
+    cursor: pointer;
+    background-image: url("../assets/item-hover.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .field__item_withFlag {
+    cursor: pointer;
+  }
+  .field__item_withFlag:hover {
+    background-image: url("../assets/flagHover.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .field {
+    gap: 2.34px;
+    max-width: 310px;
+  }
+  .field__item {
+    width: 28.82px;
+    height: 29.16px;
+  }
 }/*# sourceMappingURL=styles.css.map */

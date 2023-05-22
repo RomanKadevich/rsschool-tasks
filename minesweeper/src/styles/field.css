@@ -24,10 +24,11 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-.field__item:hover {
   cursor: pointer;
-  background-image: url("../assets/item-hover.svg");
+}
+.field__item_withFlag {
+  cursor: pointer;
+  background-image: url("../assets/flag.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -37,17 +38,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
-}
-.field__item_open_withFlag {
-  cursor: pointer;
-  background-image: url("../assets/flag.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.field__item_open_withFlag :hover {
-  background-image: url("../assets/flagHover.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 .field__mines {
   background-image: url("../assets/mine.svg");
@@ -63,4 +53,31 @@
 }
 .field--hover-act-disable {
   pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .field__item:hover {
+    cursor: pointer;
+    background-image: url("../assets/item-hover.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .field__item_withFlag {
+    cursor: pointer;
+  }
+  .field__item_withFlag:hover {
+    background-image: url("../assets/flagHover.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .field {
+    gap: 2.34px;
+    max-width: 310px;
+  }
+  .field__item {
+    width: 28.82px;
+    height: 29.16px;
+  }
 }/*# sourceMappingURL=field.css.map */

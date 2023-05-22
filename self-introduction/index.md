@@ -1,4 +1,5 @@
 https://youtu.be/-0e0FjMPA9A
+https://docs.google.com/document/d/1u8c226BMUriNW23pyNP4izVKYvP5r6ng1WZoIpmp02U/edit?usp=sharing
 
 Hello! My name is Roman, I'm 29 years old, and I'd like to tell you about myself and why I decided to change my career and become a frontend developer.
 

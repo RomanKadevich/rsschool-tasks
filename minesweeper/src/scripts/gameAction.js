@@ -14,6 +14,8 @@ export function makeGameAction() {
   const smile = document.querySelector('#window1');
   const movesNum = document.querySelector('#window0');
   let timerId;
+  const soundOfClick = new Audio('./assets/click.mp3');
+  const soundOfExp = new Audio('./assets/exp.mp3');
   function changeTimeWindow() {
     timeCounter++;
     timeWindow.textContent = `${timeCounter}`;
@@ -34,7 +36,7 @@ export function makeGameAction() {
       if (fieldWithItemsObj[targetRow][targetCol].withMine) {
         const targetItem = document.querySelector(`#item-${targetRow}-${targetCol}`);
         targetItem.classList.add('field__explosion');
-
+        soundOfExp.play();
         for (let i = 0; i < 10; i++) {
           for (let j = 0; j < 10; j++) {
             if (fieldWithItemsObj[i][j].withMine && fieldWithItemsObj[i][j]
@@ -49,6 +51,7 @@ export function makeGameAction() {
           windowWithInfo.classList.add('game__window_lost');
         }
         smile.classList.add('gameOver');
+
         field.removeEventListener('click', recOpenCells);
       }
       // присовение свойства open
@@ -62,11 +65,6 @@ export function makeGameAction() {
             const itemEl = document.querySelector(`#item-${i}-${j}`);
             itemEl.classList.add('field__item_open');
             if (fieldWithItemsObj[i][j].open) {
-              // const item = document.querySelector(`#item-${i}-${j}`);
-              // item.classList.add('field__item_open');
-              // // if (fieldWithItemsObj[i][j].withMine) {
-              // //   item.textContent = '';
-              // // }
               if (numOfMines > 0 && (!fieldWithItemsObj[targetRow][targetCol].withMine)) {
                 itemEl.textContent = `${numOfMines}`;
               }
@@ -85,6 +83,7 @@ export function makeGameAction() {
         windowWithInfo.textContent = `Ура! Вы нашли все мины за ${timeRes} сек. и ${movesRes} ход.!`;
         windowWithInfo.classList.add('game__window_win');
       }
+      soundOfClick.play();
     }
   };
   const addMines = (event) => {
@@ -118,11 +117,11 @@ export function makeGameAction() {
       for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
           // показать мины для проверки задания
-          if (fieldWithItemsObj[i][j].withMine && fieldWithItemsObj[i][j]
-            !== fieldWithItemsObj[targetRow][targetCol]) {
-            const item = document.querySelector(`#item-${i}-${j}`);
-            item.classList.add('field__mines');
-          }
+          // if (fieldWithItemsObj[i][j].withMine && fieldWithItemsObj[i][j]
+          //   !== fieldWithItemsObj[targetRow][targetCol]) {
+          //   const item = document.querySelector(`#item-${i}-${j}`);
+          //   item.classList.add('field__mines');
+          // }
 
           const numOfMines = isNeigborWithMine(i, j, fieldWithItemsObj);
           if (fieldWithItemsObj[i][j].open) {
@@ -135,21 +134,11 @@ export function makeGameAction() {
           }
         }
       }
-
+      soundOfClick.play();
       field.removeEventListener('click', addMines);
-      // field.removeEventListener('touchend', addMines);
       field.addEventListener('click', recOpenCells);
-      // field.addEventListener('touchend', recOpenCells);
       smile.classList.add('successfullClick');
     }
   };
-  //  const explosion = document.querySelector('.field__explosion');
-  //   if (explosion){
-  //     explosion.textContent =''
-  //   }
   field.addEventListener('click', addMines);
-  // if ('ontouchstart' in window) {
-  //   field.removeEventListener('click', addMines);
-  //   field.addEventListener('touchend', addMines);
-  // }
 }

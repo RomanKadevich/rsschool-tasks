@@ -31,7 +31,7 @@ module.exports = ({ develop }) => ({
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|mp3)$/i,
         type: 'asset/resource',
       },
       {
@@ -69,6 +69,7 @@ module.exports = ({ develop }) => ({
     new CopyPlugin({
       patterns: [
         { from: './public' },
+        { from: './src/assets', to: 'assets' },
       ],
     }),
     new CleanWebpackPlugin({

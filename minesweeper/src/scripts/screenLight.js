@@ -46,10 +46,52 @@ export function createScreenLight() {
   });
   const newGame = document.querySelector('.nav__item-0');
   const newGameMob = document.querySelector('.nav-mob__item-0');
+  const lightTheme = document.querySelector('.nav__item-4');
+  const lightThemeMob = document.querySelector('.nav-mob__item-4');
+  const darkTheme = document.querySelector('.nav__item-5');
+  const darkThemeMob = document.querySelector('.nav-mob__item-5');
   burger.addEventListener('click', () => {
     navListMob.classList.toggle('nav-mob--active');
   });
+  // включение и выключение темной темы
 
+  darkTheme.addEventListener('click', () => {
+    const infoPanel = document.querySelector('.game__info-panel');
+    const main = document.querySelector('.main');
+    document.body.classList.add('dark_bg');
+    main.classList.add('dark_bg');
+    header.classList.add('dark_header');
+    infoPanel.classList.add('dark_info');
+  });
+
+  lightTheme.addEventListener('click', () => {
+    const infoPanel = document.querySelector('.game__info-panel');
+    const main = document.querySelector('.main');
+    document.body.classList.remove('dark_bg');
+    main.classList.remove('dark_bg');
+    header.classList.remove('dark_header');
+    infoPanel.classList.remove('dark_info');
+  });
+  darkThemeMob.addEventListener('click', () => {
+    const infoPanel = document.querySelector('.game__info-panel');
+    const main = document.querySelector('.main');
+    document.body.classList.add('dark_bg');
+    main.classList.add('dark_bg');
+    header.classList.add('dark_header');
+    infoPanel.classList.add('dark_info');
+    navListMob.classList.remove('nav-mob--active');
+  });
+
+  lightThemeMob.addEventListener('click', () => {
+    const infoPanel = document.querySelector('.game__info-panel');
+    const main = document.querySelector('.main');
+    document.body.classList.remove('dark_bg');
+    main.classList.remove('dark_bg');
+    header.classList.remove('dark_header');
+    infoPanel.classList.remove('dark_info');
+    navListMob.classList.remove('nav-mob--active');
+  });
+  // рестарт кнопкой new game
   newGameMob.addEventListener('click', () => {
     createInfoPanel();
     createField(10, 10);
@@ -67,5 +109,11 @@ export function createScreenLight() {
     createInfoPanel();
     createField(10, 10);
     makeGameAction();
+    for (let k = 0; k < 10; k++) {
+      for (let j = 0; j < 10; j++) {
+        fieldWithItemsObj[k][j].withMine = false;
+        fieldWithItemsObj[k][j].open = false;
+      }
+    }
   });
 }

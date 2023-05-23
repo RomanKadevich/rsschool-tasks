@@ -82,6 +82,15 @@ export function makeGameAction() {
         const timeRes = timeWindow.textContent;
         windowWithInfo.textContent = `Ура! Вы нашли все мины за ${timeRes} сек. и ${movesRes} ход.!`;
         windowWithInfo.classList.add('game__window_win');
+        for (let i = 0; i < 10; i++) {
+          for (let j = 0; j < 10; j++) {
+            if (fieldWithItemsObj[i][j].withMine && fieldWithItemsObj[i][j]
+              !== fieldWithItemsObj[targetRow][targetCol]) {
+              const item = document.querySelector(`#item-${i}-${j}`);
+              item.classList.add('field__mines');
+            }
+          }
+        }
       }
       soundOfClick.play();
     }

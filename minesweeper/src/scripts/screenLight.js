@@ -67,7 +67,7 @@ export function createScreenLight() {
   lightTheme.addEventListener('click', () => {
     const infoPanel = document.querySelector('.game__info-panel');
     const main = document.querySelector('.main');
-    document.body.classList.remove('dark_bg');
+    document.body.className = '';
     main.classList.remove('dark_bg');
     header.classList.remove('dark_header');
     infoPanel.classList.remove('dark_info');
@@ -85,7 +85,7 @@ export function createScreenLight() {
   lightThemeMob.addEventListener('click', () => {
     const infoPanel = document.querySelector('.game__info-panel');
     const main = document.querySelector('.main');
-    document.body.classList.remove('dark_bg');
+    document.body.className = '';
     main.classList.remove('dark_bg');
     header.classList.remove('dark_header');
     infoPanel.classList.remove('dark_info');
@@ -93,6 +93,7 @@ export function createScreenLight() {
   });
   // рестарт кнопкой new game
   newGameMob.addEventListener('click', () => {
+    document.body.className = '';
     createInfoPanel();
     createField(10, 10);
     makeGameAction();
@@ -106,6 +107,7 @@ export function createScreenLight() {
     navListMob.classList.remove('nav-mob--active');
   });
   newGame.addEventListener('click', () => {
+    document.body.className = '';
     createInfoPanel();
     createField(10, 10);
     makeGameAction();

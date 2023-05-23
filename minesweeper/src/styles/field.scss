@@ -27,34 +27,17 @@
         color: $darkFontColor;
         user-select: none;
         cursor: pointer;
-        // &:hover {
-        //     
-        //     background-image: url('../assets/item-hover.svg');
-        //     background-repeat: no-repeat;
-        //     background-size: contain;
-        // }
-
+        &--disable{
+            pointer-events: none;
+        }
         &_withFlag {
             cursor: pointer;
             background-image: url('../assets/flag.svg');
             background-repeat: no-repeat;
             background-size: contain;
 
-            // pointer-events: none;
-            // &:hover {
-            //     background-image: url('../assets/flagHover.svg');
-            //     background-repeat: no-repeat;
-            //     background-size: contain;
-
-            // }
         }
 
-        // &:active {
-        //     cursor: pointer;
-        //     background-image: url('../assets/item-open.svg');
-        //     background-repeat: no-repeat;
-        //     background-size: contain;
-        // }
 
         &_open {
             cursor: pointer;

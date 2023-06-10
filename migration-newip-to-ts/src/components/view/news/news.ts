@@ -26,25 +26,25 @@ class News {
                 if (newsMetaDate) {
                     newsMetaDate.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
                 }
-                const newsDescriptionTitle = newsClone.querySelector('.news__description-title');
+                const newsDescriptionTitle: Element | null = newsClone.querySelector('.news__description-title');
                 if (newsDescriptionTitle) {
                     newsDescriptionTitle.textContent = item.title;
                 }
-                const newsDescriptionSource = newsClone.querySelector('.news__description-source');
+                const newsDescriptionSource: Element | null = newsClone.querySelector('.news__description-source');
                 if (newsDescriptionSource) {
                     newsDescriptionSource.textContent = item.source.name;
                 }
-                const newsDescriptionContent = newsClone.querySelector('.news__description-content');
+                const newsDescriptionContent: Element | null = newsClone.querySelector('.news__description-content');
                 if (newsDescriptionContent) {
                     newsDescriptionContent.textContent = item.description;
                 }
-                const newsReadMore = newsClone.querySelector('.news__read-more a');
+                const newsReadMore: Element | null = newsClone.querySelector('.news__read-more a');
                 if (newsReadMore) {
                     newsReadMore.setAttribute('href', item.url);
                 }
                 fragment.append(newsClone);
             });
-            const newsEl = document.querySelector('.news');
+            const newsEl: Element | null = document.querySelector('.news');
             if (newsEl) {
                 newsEl.innerHTML = '';
                 newsEl.appendChild(fragment);

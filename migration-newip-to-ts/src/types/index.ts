@@ -12,3 +12,9 @@ export interface Source {
     publishedAt: string;
     title: string;
 }
+
+export interface ApiData {
+    status: string;
+    sources: Source[];
+    articles: Source[];
+}

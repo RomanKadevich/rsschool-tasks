@@ -4,7 +4,6 @@ import { Source } from '../../../types/index';
 class News {
     draw(data: Source[]): void {
         const news: Source[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
-
         const fragment: DocumentFragment = document.createDocumentFragment() as DocumentFragment;
         const newsItemTemp: HTMLTemplateElement | null = document.querySelector<HTMLTemplateElement>('#newsItemTemp');
         if (newsItemTemp) {

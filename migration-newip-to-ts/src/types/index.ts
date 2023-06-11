@@ -18,3 +18,23 @@ export interface ApiData {
     sources: Source[];
     articles: Source[];
 }
+export interface LoaderData {
+    baseLink: string;
+    options: { apiKey: string };
+}
+export interface RespData {
+    endpoint: string;
+    options?: {
+        apiKey?: string,
+        sources?: string;
+    };
+}
+
+export interface FetchResponse<T> {
+    ok: boolean;
+    status: number;
+    statusText: string;
+    json(): Promise<T>;
+}
+
+export type Callback<T> = (data: T) => void;

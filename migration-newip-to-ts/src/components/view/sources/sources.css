@@ -3,10 +3,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    height: 140px;
+    height: 130px;
     overflow: auto;
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
+    scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 .sources::-webkit-scrollbar{
      width: 7px;
@@ -31,6 +33,8 @@
     color: #70d6ff;
     transition: 0.25s;
     cursor: pointer;
+    scroll-snap-align: start;
+    border-radius: 5px;
 }
 
 .source__item:hover,
@@ -38,7 +42,7 @@
     border-color: #3fcc59;
     color: #69db7e;
     box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
-    transform: translateY(-0.25em);
+    transform: scale(98%)
 }
 
 .source__item-name {

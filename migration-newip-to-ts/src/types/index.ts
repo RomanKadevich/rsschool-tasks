@@ -1,22 +1,22 @@
 export interface Source {
-    id: string;
-    name: string;
-    description: string;
-    url: string;
-    category: string;
-    language: string;
-    country: string;
-    urlToImage: string;
-    source: { name: string };
-    author: string;
-    publishedAt: string;
-    title: string;
+    readonly id: string;
+    readonly name: string;
+    readonly description: string;
+    readonly url: string;
+    readonly category: string;
+    readonly language: string;
+    readonly country: string;
+    readonly urlToImage: string;
+    readonly source: { name: string };
+    readonly author: string;
+    readonly publishedAt: string;
+    readonly title: string;
 }
 
 export interface ApiData {
-    status: string;
-    sources: Source[];
-    articles: Source[];
+    readonly status: string;
+    readonly sources: Source[];
+    readonly articles: Source[];
 }
 export interface LoaderData {
     baseLink: string;
@@ -38,3 +38,9 @@ export interface FetchResponse<T> {
 }
 
 export type Callback<T> = (data: T) => void;
+export enum HttpStatus {
+    Unauthorized = 401,
+    NotFound = 404,
+    ServerError = 500,
+    TooManyRequests = 429,
+}

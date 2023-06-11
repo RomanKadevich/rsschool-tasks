@@ -1,4 +1,4 @@
-import { RespData, FetchResponse, Callback } from '../../types/index';
+import { RespData, FetchResponse, Callback, HttpStatus } from '../../types/index';
 class Loader {
     baseLink: string;
     options: { apiKey?: string };
@@ -18,7 +18,12 @@ class Loader {
 
     private errorHandler<T>(res: FetchResponse<T>): FetchResponse<T> {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (
+                res.status === HttpStatus.Unauthorized ||
+                res.status === HttpStatus.NotFound ||
+                res.status === HttpStatus.ServerError ||
+                res.status === HttpStatus.TooManyRequests
+            )
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }

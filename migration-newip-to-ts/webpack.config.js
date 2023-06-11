@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index'),
@@ -24,7 +25,7 @@ const baseConfig = {
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, './dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -32,7 +33,15 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
-        new EslingPlugin({ extensions: 'ts' })
+        new EslingPlugin({ extensions: 'ts' }),
+        new CopyPlugin({
+            patterns: [
+                {
+                  from: path.resolve(__dirname, 'src/img'),
+                  to:   path.resolve(__dirname, './dist/img')
+                }
+              ]
+            })
     ],
 };
 

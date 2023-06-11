@@ -2,10 +2,13 @@ body {
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
+    
 }
 
 header {
-    padding: 10px 30px;
+   display: flex;
+   justify-content: center;
+    padding: 10px 13px;
 }
 
 header h1 {

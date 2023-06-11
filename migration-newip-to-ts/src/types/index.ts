@@ -25,7 +25,7 @@ export interface LoaderData {
 export interface RespData {
     endpoint: string;
     options?: {
-        apiKey?: string,
+        apiKey?: string;
         sources?: string;
     };
 }

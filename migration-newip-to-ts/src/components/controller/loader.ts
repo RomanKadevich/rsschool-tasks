@@ -1,7 +1,10 @@
 import { RespData, FetchResponse, Callback, HttpStatus } from '../../types/index';
+
 class Loader {
     baseLink: string;
+
     options: { apiKey?: string };
+
     constructor(baseLink: string, options: { apiKey: string }) {
         this.baseLink = baseLink;
         this.options = options;

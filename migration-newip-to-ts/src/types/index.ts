@@ -18,17 +18,18 @@ export interface ApiData {
     readonly sources: Source[];
     readonly articles: Source[];
 }
-export interface LoaderData {
-    baseLink: string;
-    options: { apiKey: string };
-}
+
 export interface RespData {
     endpoint: string;
     options?: {
         apiKey?: string;
         sources?: string;
     };
+    baseLink?: string;
 }
+
+export type LoaderData  = Pick<RespData, 'baseLink' | 'options'>
+
 
 export interface FetchResponse<T> {
     ok: boolean;
@@ -38,6 +39,7 @@ export interface FetchResponse<T> {
 }
 
 export type Callback<T> = (data: T) => void;
+
 export enum HttpStatus {
     Unauthorized = 401,
     NotFound = 404,

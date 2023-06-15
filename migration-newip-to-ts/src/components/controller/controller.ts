@@ -12,8 +12,8 @@ class AppController extends AppLoader {
     }
 
     public getNews(e: Event, callback: Callback<void>): void {
-        let target: HTMLElement | Node | null = e.target as HTMLElement | Node | null;
-        const newsContainer: HTMLElement | Node | null = e.currentTarget as HTMLElement | Node | null;
+        let target: HTMLElement | null = e.target as HTMLElement | null;
+        const newsContainer: HTMLElement | null = e.currentTarget as HTMLElement | null;
 
         while (target !== newsContainer) {
             if (target && target instanceof HTMLElement) {
@@ -35,7 +35,7 @@ class AppController extends AppLoader {
                     }
                     return;
                 }
-                target = target.parentNode;
+                target = target.parentNode as HTMLElement | null;;
             }
         }
     }

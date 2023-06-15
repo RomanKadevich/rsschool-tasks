@@ -12,9 +12,9 @@ class App {
     }
 
     public start(): void {
-        const docElement: Element | null = document.querySelector('.sources');
+        const docElement: HTMLElement | null = document.querySelector('.sources');
         if (docElement) {
-            docElement.addEventListener('click', (e: Event) =>
+            docElement.addEventListener('click', (e: MouseEvent | TouchEvent) =>
                 this.controller.getNews(e, (data) => this.view.drawNews(data))
             );
             this.controller.getSources((data) => {

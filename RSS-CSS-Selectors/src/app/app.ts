@@ -1,12 +1,16 @@
-export class App{
-    private static container: HTMLElement = document.body;
-    
-    constructor(){
-        // this.startPage = new FirstLevel();
-    }
+import { Navigation } from '../navigation/index';
+export class App {
+  private container: HTMLElement = document.body;
 
-    run(){
+  private navigation: Navigation;
 
-    }
+  constructor() {
+    this.navigation = new Navigation('level-0');
+  }
+
+  run() {
+    this.container.className = 'row';
+    this.container.append(this.navigation.render());
+  }
 }
 

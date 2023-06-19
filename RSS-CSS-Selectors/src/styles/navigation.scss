@@ -1,0 +1,21 @@
+@import './var';
+.navigation{
+    display: flex;
+    height: 100vh;
+    background-color: $navigation_bg;
+
+}
+.navBtn{
+    width: 26px;
+    height: 26px;
+    &0{
+        background-image: url('../assets/arrowlink_left.svg');
+        background-size: cover;
+        cursor: pointer;
+    }
+    &1{
+        background-image: url('../assets/arrowlink_right.svg');
+        background-size: cover;
+        cursor: pointer;
+    }
+}

@@ -3,6 +3,9 @@
     display: flex;
     height: 100vh;
     background-color: $navigation_bg;
+    position: sticky;
+  top: 0;
+  right: 0;
 
 }
 .navBtn{

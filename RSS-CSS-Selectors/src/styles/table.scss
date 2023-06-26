@@ -28,12 +28,7 @@ background-image: url('../assets/plate-blue.svg');
 background-image: url('../assets/bento.svg');
 background-size: cover;
 }
-.level-info{
-color: $level-info_color;
-font-size: 25px;
-font-family: Exo;
-font-weight: 600;
-}
+
 .btn-floating{
     background-color: rgba(0,0,0,0.1);
     &:hover{
@@ -42,4 +37,10 @@ font-weight: 600;
 }
 .radius{
     border-radius: 10%;
+}
+.level-info{
+color: $level-info_color;
+font-size: 25px;
+font-family: Exo;
+font-weight: 600;
 }

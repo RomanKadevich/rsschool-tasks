@@ -21,6 +21,8 @@ export class Level1 extends Level {
     this.renderHeader('SELECT THE PLATE');
     const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements);
     this.container.append(tableHTML);
+
+    this.container.append(this.Editor.render(`textarea-${this.container.id}`));
     return this.container;
   }
 }

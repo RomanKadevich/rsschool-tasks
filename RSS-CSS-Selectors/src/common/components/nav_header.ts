@@ -1,12 +1,13 @@
-
+import { currentHash } from '../templates/vars';
 export class NavigationHeader {
-    private container:HTMLElement;
-    constructor(){
-        this.container = document.createElement('div');
-        this.container.className = "navigation__header";
-    }
+  private container:HTMLElement;
+
+  constructor() {
+    this.container = document.createElement('div');
+    this.container.className = 'navigation__header';
+  }
     
-    renderNavButtons() {
+  renderNavButtons() {
     const navBtns: HTMLElement[] = [];
     
     for (let i = 0; i < 2; i++) {
@@ -16,9 +17,24 @@ export class NavigationHeader {
       navBtns.push(navBtn);
     }
     const [navBtn1, navBtn2] = navBtns;
-    this.container.append(navBtn1);
-    this.container.append(navBtn2);
-    return this.container;   
+    return navBtns;
   }
+
+  renderLevelInfo() {
+    const levelInfo: HTMLElement = document.createElement('h2');
+    levelInfo.textContent = `Level ${currentHash} of 10`;
+    levelInfo.className = 'level-info';
+    return levelInfo;
+   
+   
+  }
+
+  render() {
+    this.container.append(this.renderLevelInfo());
+    this.container.append(this.renderNavButtons()[0]);
+    this.container.append(this.renderNavButtons()[1]);
+    return this.container;
+  }
+  
 
 } 

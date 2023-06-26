@@ -1,4 +1,4 @@
-import { Navigation } from '../navigation/index';
+import { Navigation1 } from '../navigation/index';
 import { Level1 } from '../levels/level_1';
 import { Level2 } from '../levels/level_2';
 import { Level3 } from '../levels/level_3';
@@ -7,14 +7,14 @@ import { LevelsIds } from '../levels/levels_enums';
 export class App {
   private static container: HTMLElement =  document.body;
 
-  private navigation: Navigation;
+  private navigation: Navigation1;
 
   private static currId = 'current-level';
 
   private startLevel: Level1;
 
   constructor() {
-    this.navigation = new Navigation('nav-1');
+    this.navigation = new Navigation1('nav-1');
     this.startLevel = new Level1('lev-1');
    
   }
@@ -61,7 +61,6 @@ export class App {
     const navigation: HTMLElement | null = document.querySelector('.navigation');
     if (navigation) {App.renderNewLevel('level-1', navigation);}
     this.listenHashChange();
-    
     this.navigation.changeLevel(3);
    
   }

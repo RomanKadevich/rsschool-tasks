@@ -1,0 +1,18 @@
+@import './var';
+
+.table{
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 17px 20px 27px 20px;
+    border-radius: 10px;
+    gap: 19px;
+background: linear-gradient(180deg, #FFE074 0%, #F48926 66.15%);
+box-shadow: 0px 40px 10px 0px rgba(0, 0, 0, 0.20);
+}
+.plate{
+    width: 90.77px;
+height: 90.953px;
+background-image: url('../assets/plate.svg');
+        background-size: cover;
+}

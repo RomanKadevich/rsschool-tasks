@@ -11,7 +11,11 @@ export class Navigation {
     this.container.id = id;
     this.navigatonHeader = new NavigationHeader();
   }
-    
+
+  static changeLevelInfo(currentHash:number) {
+    const levelInfo: HTMLElement | null = document.querySelector('.level-info');
+    if (levelInfo) {    levelInfo.textContent = `Level ${currentHash} of 10`;}
+  }
     
   changeLevel(maxLevel:number) {
     const navBtn1HTML:HTMLElement | null = document.querySelector('#navBtn0');
@@ -22,8 +26,7 @@ export class Navigation {
         if ((currentHash + 1) <= maxLevel) {
           window.location.hash = `${hashes[currentHash]}`;
           currentHash = +window.location.hash.slice(7);
-          const levelInfo: HTMLElement | null = document.querySelector('.level-info');
-          if (levelInfo) {    levelInfo.textContent = `Level ${currentHash} of 10`;}
+        //   Navigation.changeLevelInfo(currentHash)
         }
       });
       navBtn1HTML.addEventListener('click', ()=>{
@@ -31,8 +34,7 @@ export class Navigation {
           window.location.hash = `${hashes[currentHash - 2]}`;
         
           currentHash = +window.location.hash.slice(7);
-          const levelInfo: HTMLElement | null = document.querySelector('.level-info');
-          if (levelInfo) {    levelInfo.textContent = `Level ${currentHash} of 10`;}
+        //   Navigation.changeLevelInfo(currentHash)
         }
       });
     }

@@ -12,4 +12,8 @@ export enum TablesIds {
 
 export enum TableItems {
   plate = 'plate',
+  plateBlue = 'plate-blue',
+  bento = 'bento',
+  pulse = ' btn-floating pulse',
+  squareRadius = ' radius',
 }

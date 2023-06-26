@@ -4,6 +4,7 @@ import { Level2 } from '../levels/level_2';
 import { Level3 } from '../levels/level_3';
 import { Level } from '../common/templates/level';
 import { LevelsIds } from '../levels/levels_enums';
+import { Navigation } from '../common/templates/navigation';
 export class App {
   private static container: HTMLElement =  document.body;
 
@@ -49,9 +50,14 @@ export class App {
 
   private listenHashChange() {
     window.addEventListener('hashchange', ()=>{
-      const hash = window.location.hash.slice(1);
+      const hashName = window.location.hash;
+      const hash = hashName.slice(1);
       const navigation: HTMLElement | null = document.querySelector('.navigation');
-      if (navigation) {App.renderNewLevel(hash, navigation);}
+      if (navigation) {
+        App.renderNewLevel(hash, navigation);
+        const currentHash = +hashName.slice(7);
+        Navigation.changeLevelInfo(currentHash);
+      }
     });
   }
 

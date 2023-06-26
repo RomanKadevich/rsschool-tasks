@@ -5,8 +5,8 @@ import { TableItems, TablesIds } from './levels_enums';
 
 
 const listOfElements:itemsOfTable = 
-{ firstItem:TableItems.plate,
-  secondItem:TableItems.plate };
+{ firstItem:TableItems.plate + TableItems.pulse,
+  secondItem:TableItems.plate + TableItems.pulse };
 
 export class Level1 extends Level {
   private table: Table;

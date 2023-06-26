@@ -10,3 +10,12 @@
   h2{
     margin: 0;
   }
+  @keyframes go-left-right {        /* объявляем имя анимации: "go-left-right" */
+    from { transform: 0; }             /* от: left: 0px */
+    to { transform: 100%} /* до: left: 100%-50px */
+  }
+  items-animation{
+ 
+      animation: go-left-right 3s infinite alternate;
+   
+  }

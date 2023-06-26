@@ -1,25 +1,24 @@
-<svg width="119" height="97" viewBox="0 0 119 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="109" height="97" viewBox="0 0 109 97" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_35_19)">
-<path d="M7 2H100.947L106.976 42.4762L112 87H17.5502L7 2Z" fill="url(#paint0_linear_35_19)"/>
-<path d="M7 1H5.86821L6.00762 2.12318L16.5579 87.1232L16.6667 88H17.5502H112H113.119L112.994 86.8879L107.97 42.3641L107.968 42.3464L107.965 42.3289L101.936 1.85268L101.809 1H100.947H7Z" stroke="black" stroke-width="2"/>
+<path d="M6.76311 7.75315C6.89549 4.53819 9.54034 2 12.758 2H98.1348C101.395 2 104.059 4.60392 104.133 7.86367L105 46L105.85 80.8537C105.932 84.2237 103.223 87 99.8519 87H9.75215C6.34159 87 3.61691 84.1608 3.75722 80.7532L6.76311 7.75315Z" fill="url(#paint0_linear_35_19)"/>
+<path d="M98.1348 1H12.758C9.00406 1 5.9184 3.96122 5.76395 7.71201L2.75807 80.712C2.59437 84.6876 5.77317 88 9.75214 88H99.8519C103.785 88 106.946 84.761 106.85 80.8293L106 45.9773L106 45.9756L105.133 7.84095C105.047 4.03791 101.939 1 98.1348 1Z" stroke="#793030" stroke-width="2"/>
 </g>
 <defs>
-<filter id="filter0_d_35_19" x="0.736412" y="0" width="117.502" height="97" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_35_19" x="0.752014" y="0" width="108.1" height="97" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="2"/>
+<feOffset dy="7"/>
+<feGaussianBlur stdDeviation="0.5"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_35_19"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_35_19" result="shape"/>
 </filter>
-<linearGradient id="paint0_linear_35_19" x1="59.2488" y1="20.7202" x2="59.2488" y2="70.3036" gradientUnits="userSpaceOnUse">
-<stop stop-color="#701E1E"/>
+<linearGradient id="paint0_linear_35_19" x1="-252.201" y1="20.7202" x2="-252.201" y2="70.3036" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A52C2C"/>
 <stop offset="0.0729167" stop-color="#EE043C"/>
-<stop offset="0.270833" stop-color="#AE062E"/>
 <stop offset="0.932292" stop-color="#ED053C"/>
-<stop offset="1" stop-color="#701E1E"/>
+<stop offset="1" stop-color="#A42B2B"/>
 </linearGradient>
 </defs>
 </svg>

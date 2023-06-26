@@ -16,13 +16,13 @@ export class NavigationHeader {
       navBtn.id = `navBtn${i}`;
       navBtns.push(navBtn);
     }
-    const [navBtn1, navBtn2] = navBtns;
+    // const [navBtn1, navBtn2] = navBtns;
     return navBtns;
   }
 
   renderLevelInfo() {
     const levelInfo: HTMLElement = document.createElement('h2');
-    levelInfo.textContent = `Level ${currentHash} of 10`;
+    levelInfo.textContent = 'Level 1 of 10';
     levelInfo.className = 'level-info';
     return levelInfo;
    

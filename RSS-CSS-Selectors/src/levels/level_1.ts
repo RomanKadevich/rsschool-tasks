@@ -22,7 +22,7 @@ export class Level1 extends Level {
     const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements);
     this.container.append(tableHTML);
 
-    this.container.append(this.Editor.render(`textarea-${this.container.id}`));
+    this.container.append(this.Editor.render(`css-${this.container.id}`, `html-${this.container.id}` ));
     return this.container;
   }
 }

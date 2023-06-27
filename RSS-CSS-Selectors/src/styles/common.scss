@@ -1,21 +1,18 @@
+@import './var';
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  html{
+    background-color: $level_bg;
+  }
   .row{
     margin-bottom: 0;
   }
-
-  h2{
-    margin: 0;
-  }
-  @keyframes go-left-right {        /* объявляем имя анимации: "go-left-right" */
-    from { transform: 0; }             /* от: left: 0px */
-    to { transform: 100%} /* до: left: 100%-50px */
-  }
-  items-animation{
- 
-      animation: go-left-right 3s infinite alternate;
-   
-  }
+h3{
+  margin: 0;
+}
+body{
+  overflow-y: hidden;
+}

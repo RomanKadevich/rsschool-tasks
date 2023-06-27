@@ -1,0 +1,45 @@
+@import './var';
+.editor {
+    margin-top: 69px;
+    &__num-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        color:$heading_color;
+        background-color: $navigation_bg;
+    }
+
+    &__heading {
+        padding-top: 13px !important;
+        padding-bottom: 13px !important;
+        padding-left: 13px !important;
+        background-color: $navigation_bg;
+        color: rgba(255, 255, 255, 0.60);
+        font-size: 14px;
+        font-family: Consolas;
+        line-height: 21px;
+        border-bottom: 1px solid $heading_color;
+    }
+}
+.css-editor__textarea{
+    height: 100%;
+    pre{
+        height: 100%;
+    }
+}
+.Html-editor__viewer{
+    height: 100%;
+    pre{
+        height: 100%;
+    }
+}
+pre code.hljs{
+    overflow-x: hidden;
+    max-width: 100%;
+    padding-top: 0;
+    height: 100%;
+}
+.row .col {
+    padding: 0;
+}

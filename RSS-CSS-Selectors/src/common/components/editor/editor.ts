@@ -1,19 +1,27 @@
 import { CssEditor } from './css_editor';
+import { HtmlEditor } from './html_viewer';
+import hljs from 'highlight.js';
+
 export class Editor {
   private container:HTMLElement;
 
   private cssEditor: CssEditor;
 
+  private htmlEditor: HtmlEditor;
+
   constructor() {
     this.container = document.createElement('div');
-    this.container.className = 'editor row';
+    this.container.className = 'row editor';
     this.cssEditor = new CssEditor();
+    this.htmlEditor = new HtmlEditor();
   }
-      
 
 
-  render(id:string) {
-    this.container.append(this.cssEditor.render(id));
+
+  render(cssId:string, htmlId:string) {
+  
+    this.container.append(this.cssEditor.render(cssId));
+    this.container.append(this.htmlEditor.render(htmlId));
     return this.container;
   }
     

@@ -5,6 +5,8 @@ import { Level3 } from '../levels/level_3';
 import { Level } from '../common/templates/level';
 import { LevelsIds } from '../levels/levels_enums';
 import { Navigation } from '../common/templates/navigation';
+import hljs from 'highlight.js';
+
 export class App {
   private static container: HTMLElement =  document.body;
 
@@ -55,19 +57,32 @@ export class App {
       const navigation: HTMLElement | null = document.querySelector('.navigation');
       if (navigation) {
         App.renderNewLevel(hash, navigation);
+        this.highlightCode();
         const currentHash = +hashName.slice(7);
         Navigation.changeLevelInfo(currentHash);
       }
     });
   }
 
+  highlightCode(){
+
+    document.querySelectorAll<HTMLElement>('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  
+    
+  }
+
   run() {
+  
     App.container.className = 'row';
     App.container.append(this.navigation.render());
     const navigation: HTMLElement | null = document.querySelector('.navigation');
     if (navigation) {App.renderNewLevel('level-1', navigation);}
     this.listenHashChange();
     this.navigation.changeLevel(3);
+    this.highlightCode();
+    
    
   }
 

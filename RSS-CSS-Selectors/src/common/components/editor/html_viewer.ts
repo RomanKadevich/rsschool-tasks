@@ -29,6 +29,7 @@ export class HtmlEditor {
   renderHtmlEditorViewer(id:string) {
     const textviewer: HTMLElement =  document.createElement('div');
     textviewer.className = 'Html-editor__viewer col s11';
+    textviewer.id = id;
     // Viewer.placeholder = `Typ Type in a Html selector`;
     const code = '&lt;div class="table"&gt;&lt;plate /&gt;&lt;plate /&gt;&lt;/div&gt;';
     textviewer.innerHTML = '<pre><code class="Highlights">' + `${code}` + '</code></pre>';

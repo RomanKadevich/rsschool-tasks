@@ -1,4 +1,4 @@
-import { currentHash } from '../templates/vars';
+
 export class NavigationHeader {
   private container:HTMLElement;
 

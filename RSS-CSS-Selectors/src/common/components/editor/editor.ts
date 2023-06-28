@@ -1,6 +1,6 @@
 import { CssEditor } from './css_editor';
 import { HtmlEditor } from './html_viewer';
-import hljs from 'highlight.js';
+
 
 export class Editor {
   private container:HTMLElement;

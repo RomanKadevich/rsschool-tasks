@@ -1,5 +1,5 @@
 
-export interface itemsOfTable {
+export interface ItemsOfTable {
   [item:string]: string;
 }
 
@@ -12,7 +12,7 @@ export class Table {
     this.table.id = id;
   }
 
-  renderTableItems(listOfClasses: itemsOfTable ) {
+  renderTableItems(listOfClasses: ItemsOfTable ) {
     let i = 1;
     for (const item in listOfClasses) {
       const itemNode = document.createElement('div');

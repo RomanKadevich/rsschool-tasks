@@ -29,6 +29,7 @@ export class CssEditor {
   renderCssEditorTextarea(id:string) {
     const Textarea: HTMLElement =  document.createElement('div');
     Textarea.className = 'css-editor__textarea col s11';
+    Textarea.id = id;
     // Textarea.placeholder = `Typ Type in a CSS selector`;
     const code = `{
 /* Styles would go here. */

@@ -30,15 +30,14 @@ export class CssEditor {
     const Textarea: HTMLElement =  document.createElement('div');
     Textarea.className = 'css-editor__textarea col s11';
     Textarea.id = id;
-    // Textarea.placeholder = `Typ Type in a CSS selector`;
-    const code = `{
-/* Styles would go here. */
-} 
-/*
-Type a number to skip to a level.
-Ex → "5" for level 5
-*/`;
-    Textarea.innerHTML = '<pre><code class="Css">' + `${code}` + '</code></pre>';
+    const codeCSS = `{
+ /* Styles would go here. */
+ }
+ /*
+ Type a number to skip to a level.
+ Ex → "5" for level 5
+ */`;
+    Textarea.innerHTML = '<pre><code class="Css">' + `${codeCSS}` + '</code></pre>';
     return Textarea;
   }
  

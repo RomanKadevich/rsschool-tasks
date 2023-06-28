@@ -1,5 +1,6 @@
 import { CssEditor } from './css_editor';
 import { HtmlEditor } from './html_viewer';
+import hljs from 'highlight.js';
 
 
 export class Editor {
@@ -16,14 +17,48 @@ export class Editor {
     this.htmlEditor = new HtmlEditor();
   }
 
+  highlightAllTag(tag:string){
+    return `<div class= code>${tag}</div>`;
+  }
+
+  highlightOpenTag(tag:string){
+    return `<div class= code>${tag}`;
+  }
+
+  highlightCloseTag(tag:string){
+    return `${tag}</div>`;
+  }
 
 
-  render(cssId:string, htmlId:string) {
+
+  static highlightCode(){
+
+    document.querySelectorAll<HTMLElement>('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+    const handleMouseOver = (event:MouseEvent)=>{
+      const target = event.target as HTMLElement;
+      if (target.classList.contains('code')){ target.classList.add('hovered-tag');}
+    };
+    
+    const handleMouseOut = (event:MouseEvent)=> {
+      const target = event.target as HTMLElement;
+      if (target.tagName === 'DIV'){ target.classList.remove('hovered-tag');}
+      
+    };
+    document.querySelectorAll<HTMLElement>('.Html-editor__viewer').forEach((elem) => {
+      elem.addEventListener('mouseover', handleMouseOver);
+      elem.addEventListener('mouseout', handleMouseOut);
+    });
+  }
+
+  render(cssId:string, htmlId:string, htmlCode:string) {
   
     this.container.append(this.cssEditor.render(cssId));
-    this.container.append(this.htmlEditor.render(htmlId));
+    this.container.append(this.htmlEditor.render(htmlId, htmlCode));
     return this.container;
   }
+  
     
   
 } 

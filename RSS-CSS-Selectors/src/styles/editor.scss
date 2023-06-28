@@ -30,9 +30,9 @@
 }
 .Html-editor__viewer{
     height: 100%;
-    pre{
-        height: 100%;
-    }
+   background-color: $html-editor_bg;
+   color: $level-info_color
+
 }
 pre code.hljs{
     overflow-x: hidden;
@@ -42,4 +42,11 @@ pre code.hljs{
 }
 .row .col {
     padding: 0;
+}
+.hovered-tag{
+    color:white;
+    cursor: pointer;
+}
+.code{
+    margin-left: 15px;
 }

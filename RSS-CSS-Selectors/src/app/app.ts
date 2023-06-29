@@ -59,6 +59,7 @@ export class App {
       if (navigation) {
         App.renderNewLevel(hash, navigation);
         Editor.highlightCode();
+        Editor.highlightInputCode();
         const currentHash = +hashName.slice(7);
         Navigation.changeLevelInfo(currentHash);
       }
@@ -76,6 +77,7 @@ export class App {
     this.listenHashChange();
     this.navigation.changeLevel(3);
     Editor.highlightCode();
+    Editor.highlightInputCode();
     
    
   }

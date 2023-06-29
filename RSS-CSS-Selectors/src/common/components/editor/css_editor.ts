@@ -26,6 +26,19 @@ export class CssEditor {
     return NumberColumn;
   }
 
+  private renderInput(){
+    const inputBox: HTMLElement =  document.createElement('div');
+    inputBox.className = 'input-box';
+    const inputView: HTMLElement =  document.createElement('div');
+    inputView.className = 'input-view';
+    const input: HTMLInputElement =  document.createElement('input');
+    input.className = 'input';
+    inputBox.append(inputView);
+    inputBox.append(input);
+    return inputBox;
+    
+  }
+
   renderCssEditorTextarea(id:string) {
     const Textarea: HTMLElement =  document.createElement('div');
     Textarea.className = 'css-editor__textarea col s11';
@@ -38,6 +51,8 @@ export class CssEditor {
  Ex → "5" for level 5
  */`;
     Textarea.innerHTML = '<pre><code class="Css">' + `${codeCSS}` + '</code></pre>';
+    const inputView = this.renderInput();
+    Textarea.insertBefore(inputView, Textarea.firstChild);
     return Textarea;
   }
  

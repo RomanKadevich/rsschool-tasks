@@ -29,7 +29,23 @@ export class Editor {
     return `${tag}</div>`;
   }
 
+  static highlightInputCode(){
+    const inputView:HTMLElement | null = document.querySelector('.input-view');
+    const input:HTMLInputElement | null = document.querySelector('.input');
+    let selector: string;
+    if (inputView && input){
+            
+      input.addEventListener('input', ()=>{
+        selector = input.value;
+        inputView.innerHTML = '<pre><code class="Css">' + selector + '</code></pre>';
+        document.querySelectorAll<HTMLElement>('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    }
 
+
+  }
 
   static highlightCode(){
 

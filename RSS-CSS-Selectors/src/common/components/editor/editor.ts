@@ -101,16 +101,33 @@ export class Editor {
     const input: HTMLInputElement | null = document.querySelector('.inputCSS');
 
     const makeCheck = () => {
+      console.log('daa1')
       if (enterBtn && input) {
         let checkingHash = +window.location.hash.slice(7);
         const buttonKey = `btn-level-${checkingHash}`
         if (input.value === checkButtonText[buttonKey]) {
+          console.log('daa')
           if ((checkingHash + 1) <= maxLevel) {
             window.location.hash = `${hashes[checkingHash]}`;
             Navigation.changeLevel(3);
             checkingHash = +window.location.hash.slice(7);
 
           }
+        } else{
+          const editor = document.querySelector('.editor');
+          if(editor){
+            editor.classList.add('animate__animated');
+            editor.classList.add('animate__shakeX');
+            editor.classList.add('animate__animate__faster') 
+            setTimeout(() => {
+              editor.classList.remove('animate__animated');
+              editor.classList.remove('animate__shakeX');
+              editor.classList.remove('animate__animate__faster') 
+
+              
+            }, 800);
+          }
+       
         }
 
       }

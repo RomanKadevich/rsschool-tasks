@@ -14,6 +14,6 @@ export enum TableItems {
   plate = 'plate',
   plateBlue = 'plate-blue',
   bento = 'bento',
-  pulse = ' btn-floating pulse',
+  pulse = ' btn-floating pulse animate__animated animate__pulse animate__infinite',
   squareRadius = ' radius',
 }

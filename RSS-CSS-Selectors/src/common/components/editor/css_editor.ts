@@ -25,14 +25,20 @@ export class CssEditor {
     }
     return NumberColumn;
   }
-
+  private renderEnterButton(){
+    const EnterButton: HTMLElement =  document.createElement('button');
+    EnterButton.className = 'enter-btn';
+    EnterButton.textContent ='enter';
+    return EnterButton;
+  }
   private renderInput(){
     const inputBox: HTMLElement =  document.createElement('div');
-    inputBox.className = 'input-box';
+    inputBox.className = 'inputCSS-box';
     const inputView: HTMLElement =  document.createElement('div');
-    inputView.className = 'input-view';
+    inputView.className = 'inputCSS-view animate__animated animate__infinite animate__flash animate__slower';
     const input: HTMLInputElement =  document.createElement('input');
-    input.className = 'input';
+    input.className = 'inputCSS';
+    inputView.innerHTML = inputView.innerHTML = `<span class='cur'> Typ Type in a CSS selector</span>`;
     inputBox.append(inputView);
     inputBox.append(input);
     return inputBox;
@@ -51,9 +57,16 @@ export class CssEditor {
  Ex → "5" for level 5
  */`;
     Textarea.innerHTML = '<pre><code class="Css">' + `${codeCSS}` + '</code></pre>';
-    const inputView = this.renderInput();
-    Textarea.insertBefore(inputView, Textarea.firstChild);
+    Textarea.insertBefore(this.renderInputBtnBox(), Textarea.firstChild);
     return Textarea;
+  }
+  renderInputBtnBox(){
+    
+    const InputBtnBox:HTMLElement = document.createElement('div');
+    InputBtnBox.className = 'editor__btn-input-box';
+    InputBtnBox.append(this.renderInput())
+    InputBtnBox.append(this.renderEnterButton())
+    return InputBtnBox;
   }
  
  

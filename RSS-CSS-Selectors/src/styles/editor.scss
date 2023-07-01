@@ -21,6 +21,9 @@
         line-height: 21px;
         border-bottom: 1px solid $heading_color;
     }
+    &__btn-input-box{
+        display: flex;
+    }
 }
 .css-editor__textarea{
     height: 100%;
@@ -53,21 +56,28 @@ pre code.hljs{
 .code{
     margin-left: 15px;
 }
-.input{
+.inputCSS{
+
     opacity: 0;
+    caret-color: $navigation_bg;
     position: absolute;
     z-index: 10;
     top: 0;
+    border-bottom: 0;
     &-box{
         position: relative;
+        flex-grow: 1;
     }
     &-view{
         position: relative;
         height: 23px;
         background-color: $css-editor_bg;
+}}
+.cur{
+    margin-left: 1em;
 }
 
-}
+
 .hljs-attribute {
     color: #129900
   }
@@ -81,3 +91,7 @@ pre code.hljs{
   .hljs-selector-tag{
     color: #aa00ff;
   }
+  .enter-btn{
+
+  }
+ 

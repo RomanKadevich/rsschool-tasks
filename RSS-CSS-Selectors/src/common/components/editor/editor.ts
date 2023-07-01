@@ -30,17 +30,32 @@ export class Editor {
   }
 
   static highlightInputCode(){
-    const inputView:HTMLElement | null = document.querySelector('.input-view');
-    const input:HTMLInputElement | null = document.querySelector('.input');
+    const inputView:HTMLElement | null = document.querySelector('.inputCSS-view');
+    const input:HTMLInputElement | null = document.querySelector('.inputCSS');
     let selector: string;
     if (inputView && input){
-            
+      input.addEventListener('click', ()=>{
+        if(!input.value){
+          const cursor = '|';
+          inputView.innerHTML = `<span class='cur'>
+        ${cursor}</span>`;}
+      });
+
       input.addEventListener('input', ()=>{
         selector = input.value;
-        inputView.innerHTML = '<pre><code class="Css">' + selector + '</code></pre>';
+        if(input.value){
+          inputView.classList.remove('animate__animated');
+        }
+        if(!input.value){
+          inputView.classList.add('animate__animated')
+          selector = 'Typ Type in а CSS selector';
+        }
+        inputView.innerHTML = '<pre><code class="Css">'
+         + selector + '</code></pre>';
         document.querySelectorAll<HTMLElement>('pre code').forEach((el) => {
           hljs.highlightElement(el);
         });
+        
       });
     }
 

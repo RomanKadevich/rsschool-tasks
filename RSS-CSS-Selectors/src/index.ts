@@ -6,8 +6,13 @@ hljs.registerLanguage('css', css); // Регистрация языка CSS
 
 
 // Подключение стилей Highlight.js
+
+
 import 'materialize-css/dist/css/materialize.min.css';
 import './styles/style.scss';
+import 'animate.css/animate.min.css';
+
+
 import { App } from './app/app';
 
 

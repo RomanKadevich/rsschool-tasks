@@ -25,10 +25,11 @@ export class CssEditor {
     }
     return NumberColumn;
   }
-  private renderEnterButton(){
+  private renderEnterButton(id:string){
     const EnterButton: HTMLElement =  document.createElement('button');
     EnterButton.className = 'enter-btn';
     EnterButton.textContent ='enter';
+    EnterButton.id = id;
     return EnterButton;
   }
   private renderInput(){
@@ -48,7 +49,6 @@ export class CssEditor {
   renderCssEditorTextarea(id:string) {
     const Textarea: HTMLElement =  document.createElement('div');
     Textarea.className = 'css-editor__textarea col s11';
-    Textarea.id = id;
     const codeCSS = `{
  /* Styles would go here. */
  }
@@ -57,15 +57,15 @@ export class CssEditor {
  Ex → "5" for level 5
  */`;
     Textarea.innerHTML = '<pre><code class="Css">' + `${codeCSS}` + '</code></pre>';
-    Textarea.insertBefore(this.renderInputBtnBox(), Textarea.firstChild);
+    Textarea.insertBefore(this.renderInputBtnBox(id), Textarea.firstChild);
     return Textarea;
   }
-  renderInputBtnBox(){
+  renderInputBtnBox(id:string){
     
     const InputBtnBox:HTMLElement = document.createElement('div');
     InputBtnBox.className = 'editor__btn-input-box';
     InputBtnBox.append(this.renderInput())
-    InputBtnBox.append(this.renderEnterButton())
+    InputBtnBox.append(this.renderEnterButton(id))
     return InputBtnBox;
   }
  

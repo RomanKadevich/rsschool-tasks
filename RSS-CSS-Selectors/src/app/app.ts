@@ -51,7 +51,7 @@ export class App {
     }
   }
 
-  private listenHashChange() {
+  static listenHashChange() {
     window.addEventListener('hashchange', ()=>{
       const hashName = window.location.hash;
       const hash = hashName.slice(1);
@@ -60,8 +60,10 @@ export class App {
         App.renderNewLevel(hash, navigation);
         Editor.highlightCode();
         Editor.highlightInputCode();
-        const currentHash = +hashName.slice(7);
-        Navigation.changeLevelInfo(currentHash);
+        const currHash = +hashName.slice(7);
+        Editor.checkInputText(3)
+        Navigation.changeLevelInfo(currHash);
+        
       }
     });
   }
@@ -74,11 +76,11 @@ export class App {
     App.container.append(this.navigation.render());
     const navigation: HTMLElement | null = document.querySelector('.navigation');
     if (navigation) {App.renderNewLevel('level-1', navigation);}
-    this.listenHashChange();
-    this.navigation.changeLevel(3);
+    App.listenHashChange();
+    Navigation.changeLevel(3);
     Editor.highlightCode();
     Editor.highlightInputCode();
-    
+  
    
   }
 

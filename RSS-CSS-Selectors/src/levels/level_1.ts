@@ -4,6 +4,7 @@ import { ItemsOfTable } from '../common/components/table';
 import { TableItems, TablesIds } from './levels_enums';
 
 
+
 const listOfElements:ItemsOfTable = 
 { firstItem:TableItems.plate + TableItems.pulse,
   secondItem:TableItems.plate + TableItems.pulse };
@@ -23,7 +24,9 @@ export class Level1 extends Level {
     this.container.append(tableHTML);
     const HTMLCode = this.Editor.highlightAllTag('&lt;plate&gt;&lt;/plate&gt;');
 
-    this.container.append(this.Editor.render(`css-${this.container.id}`, `html-${this.container.id}`, HTMLCode ));
+    this.container.append(this.Editor.render(`btn-${this.container.id}`, `html-${this.container.id}`, HTMLCode ));
+   
     return this.container;
+  
   }
 }

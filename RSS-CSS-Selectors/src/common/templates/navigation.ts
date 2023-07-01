@@ -17,7 +17,7 @@ export class Navigation {
     if (levelInfo) {    levelInfo.textContent = `Level ${currentHash} of 10`;}
   }
     
-  changeLevel(maxLevel:number) {
+  static changeLevel(maxLevel:number) {
     const navBtn1HTML:HTMLElement | null = document.querySelector('#navBtn0');
     const navBtn2HTML:HTMLElement | null = document.querySelector('#navBtn1');
     let currentHash = +window.location.hash.slice(7);

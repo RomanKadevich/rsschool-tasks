@@ -17,3 +17,8 @@ export enum TableItems {
   pulse = ' btn-floating pulse animate__animated animate__pulse animate__infinite',
   squareRadius = ' radius',
 }
+
+
+
+
+

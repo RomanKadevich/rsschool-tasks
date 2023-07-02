@@ -6,6 +6,9 @@ import { Level4 } from '../levels/level_4';
 import { Level5 } from '../levels/level_5';
 import { Level6 } from '../levels/level_6';
 import { Level7 } from '../levels/level_7';
+import { Level8 } from '../levels/level_8';
+import { Level9 } from '../levels/level_9';
+import { Level10 } from '../levels/level_10';
 import { Level } from '../common/templates/level';
 import { LevelsIds } from '../levels/levels_enums';
 import { Navigation } from '../common/templates/navigation';
@@ -63,6 +66,18 @@ export class App {
         window.location.hash = `${idLevel}`;
         level = new Level7(idLevel);
         break;
+      case LevelsIds.level8:
+      window.location.hash = `${idLevel}`;
+      level = new Level8(idLevel);
+      break;
+      case LevelsIds.level9:
+        window.location.hash = `${idLevel}`;
+        level = new Level9(idLevel);
+        break;
+      case LevelsIds.level10:
+      window.location.hash = `${idLevel}`;
+      level = new Level10(idLevel);
+      break;
       
     }
     if (level) {
@@ -82,7 +97,7 @@ export class App {
         Editor.highlightCode();
         Editor.highlightInputCode();
         const currHash = +hashName.slice(7);
-        Editor.checkInputText(7)
+        Editor.checkInputText(10)
         Navigation.changeLevelInfo(currHash);
         
       }
@@ -98,7 +113,7 @@ export class App {
     const navigation: HTMLElement | null = document.querySelector('.navigation');
     if (navigation) {App.renderNewLevel('level-1', navigation);}
     App.listenHashChange();
-    Navigation.changeLevel(7);
+    Navigation.changeLevel(10);
     Editor.highlightCode();
     Editor.highlightInputCode();
   

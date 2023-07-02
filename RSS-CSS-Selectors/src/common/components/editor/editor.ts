@@ -15,7 +15,10 @@ const checkButtonText: CheckButtonText = {
   'btn-level-4': 'plate shawarma',
   'btn-level-5': '#fancy chicken',
   'btn-level-6': '.small',
-  'btn-level-7': 'shawarma.small'
+  'btn-level-7': 'shawarma.small',
+  'btn-level-8': 'bento shawarma.small',
+  'btn-level-9': 'plate, bento' || 'plate,bento',
+  'btn-level-10': '*',
 }
 
 export class Editor {
@@ -111,7 +114,7 @@ export class Editor {
         if (input.value === checkButtonText[buttonKey]) {
           if ((checkingHash + 1) <= maxLevel) {
             window.location.hash = `${hashes[checkingHash]}`;
-            Navigation.changeLevel(7);
+            Navigation.changeLevel(10);
             checkingHash = +window.location.hash.slice(7);
 
           }

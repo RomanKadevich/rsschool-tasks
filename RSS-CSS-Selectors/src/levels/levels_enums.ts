@@ -6,6 +6,9 @@ export enum LevelsIds {
   level5 = 'level-5',
   level6 = 'level-6',
   level7 = 'level-7',
+  level8 = 'level-8',
+  level9 = 'level-9',
+  level10 = 'level-10',
 }
 
 export enum TablesIds {
@@ -16,6 +19,9 @@ export enum TablesIds {
   table5 = 'table-5',
   table6 = 'table-6',
   table7 = 'table-7',
+  table8 = 'table-8',
+  table9 = 'table-9',
+  table10 = 'table-10',
 }
 
 export enum TableItems {
@@ -26,8 +32,14 @@ export enum TableItems {
   shawarma ='shawarma',
   shawarmaSmall = 'shawarma-small',
   chicken = 'chicken',
+  chickenSmall = 'chicken-small',
   plateChicken = 'plate-chicken',
+  plateBurger = 'plate-burger',
+  plateBurgerSmall = 'plate-burger-small',
   bentoBurger = 'bento-burger',
+  bentoBurgerSmall = 'bento-burger-small',
+  bentoShawarmaSmall ='bento-shawarma-small',
+  bentoChicken ='bento-chicken',
   burgerSmall = 'burger-small',
   burger = 'burger',
 

@@ -4,10 +4,10 @@ import { Table } from '../common/components/table';
 import { TableItems, TablesIds } from './levels_enums';
 
 const listOfElements:ItemsOfTable = 
-{  firstItem:TableItems.burger,
-  secondItem:TableItems.burgerSmall,
+{  firstItem:TableItems.shawarma,
+  secondItem:TableItems.shawarmaSmall,
   thirdItem: TableItems.bento,
-  fourthItem: TableItems.plateShawarma,
+  fourthItem: TableItems.plateBurger,
   fifthItem: TableItems.plate,
 };
 export class Level7 extends Level {
@@ -20,16 +20,21 @@ export class Level7 extends Level {
  
   render() {
     this.container.className = 'level-container col s8';
-    this.renderHeader('Select the small shawarma');
+    this.renderHeader('Select the small burgers');
     const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements,
-      TableItems.shawarmaSmall+TableItems.pulseShake, 3, 5);
+      TableItems.burgerSmall+TableItems.pulseShake, 3, 5);
     this.container.append(tableHTML);
     const HTMLCode = this.Editor.highlightAllTag('&lt;shawarma&gt;&lt;/shawarma&gt;') +
     this.Editor.highlightAllTag('&lt;shawarma class = "small"&gt;&lt;/shawarma&gt;') 
+    + this.Editor.highlightOpenTag('&lt;bento&gt;')+
+    this.Editor.highlightAllTag('&lt;burger class = "small"&gt;&lt;/burger&gt;')
+    +this.Editor.highlightCloseTag('&lt;/bento&gt;')
     + this.Editor.highlightOpenTag('&lt;plate&gt;')+
-    this.Editor.highlightAllTag('&lt;shawarma class = "small"&gt;&lt;/shawarma&gt;')
+    this.Editor.highlightAllTag('&lt;burger&gt;&lt;/burger&gt;')
+    +this.Editor.highlightCloseTag('&lt;/plate&gt;')+
+    this.Editor.highlightOpenTag('&lt;plate&gt;')+
+    this.Editor.highlightAllTag('&lt;burger class = "small"&gt;&lt;/burger&gt;')
     +this.Editor.highlightCloseTag('&lt;/plate&gt;')
-    + this.Editor.highlightAllTag('&lt;plate&gt;&lt;/plate&gt;') 
  
     this.container.append(this.Editor.render(`btn-${this.container.id}`,
       `html-${this.container.id}`, HTMLCode ));

@@ -28,6 +28,37 @@ background-image: url('../assets/plate-blue.svg');
 background-image: url('../assets/bento.svg');
 background-size: cover;
 }
+.plate-shawarma{
+    width: 105px;
+    height: 90px;
+background-image: url('../assets/plate-shawarma.png');
+background-size: cover;
+}
+.shawarma{
+    width: 105px;
+    height: 90px;
+background-image: url('../assets/shawarma.png');
+background-size: cover;
+}
+.chicken{
+    width: 105px;
+    height: 90px;
+background-image: url('../assets/chicken.png');
+background-size: cover;
+}
+.plate-chicken{
+    width: 105px;
+    height: 90px;
+background-image: url('../assets/plate-chicken.png');
+background-size: cover;
+}
+.bento-burger{
+    width: 105px;
+    height: 90px;
+background-image: url('../assets/bento-burger.png');
+background-size: cover;
+}
+
 
 .btn-floating{
     background-color: rgba(0,0,0,0.1);

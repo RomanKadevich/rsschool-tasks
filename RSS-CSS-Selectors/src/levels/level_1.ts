@@ -19,7 +19,7 @@ export class Level1 extends Level {
 
   render() {
     this.container.className = 'level-container col s8';
-    this.renderHeader('SELECT THE PLATE');
+    this.renderHeader('Select the plates');
     const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements);
     this.container.append(tableHTML);
     const HTMLCode = this.Editor.highlightAllTag('&lt;plate&gt;&lt;/plate&gt;');

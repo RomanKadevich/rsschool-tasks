@@ -23,7 +23,9 @@ export class Navigation {
     let currentHash = +window.location.hash.slice(7);
     if (navBtn1HTML && navBtn2HTML) {
       navBtn2HTML.addEventListener('click', ()=>{
+      
         if ((currentHash + 1) <= maxLevel) {
+
           window.location.hash = `${hashes[currentHash]}`;
           currentHash = +window.location.hash.slice(7);
         //   Navigation.changeLevelInfo(currentHash)

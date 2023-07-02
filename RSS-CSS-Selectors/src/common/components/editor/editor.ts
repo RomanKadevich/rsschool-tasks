@@ -11,7 +11,8 @@ interface CheckButtonText {
 const checkButtonText: CheckButtonText = {
   'btn-level-1': 'plate',
   'btn-level-2': 'bento',
-  'btn-level-3': '#fancy'
+  'btn-level-3': '#fancy',
+  'btn-level-4': 'plate shawarma'
 }
 
 export class Editor {
@@ -109,7 +110,7 @@ export class Editor {
           console.log('daa')
           if ((checkingHash + 1) <= maxLevel) {
             window.location.hash = `${hashes[checkingHash]}`;
-            Navigation.changeLevel(3);
+            Navigation.changeLevel(5);
             checkingHash = +window.location.hash.slice(7);
 
           }

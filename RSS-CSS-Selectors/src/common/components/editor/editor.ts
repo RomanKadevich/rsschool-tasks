@@ -12,7 +12,10 @@ const checkButtonText: CheckButtonText = {
   'btn-level-1': 'plate',
   'btn-level-2': 'bento',
   'btn-level-3': '#fancy',
-  'btn-level-4': 'plate shawarma'
+  'btn-level-4': 'plate shawarma',
+  'btn-level-5': '#fancy chicken',
+  'btn-level-6': '.small',
+  'btn-level-7': 'shawarma.small'
 }
 
 export class Editor {
@@ -102,15 +105,13 @@ export class Editor {
     const input: HTMLInputElement | null = document.querySelector('.inputCSS');
 
     const makeCheck = () => {
-      console.log('daa1')
       if (enterBtn && input) {
         let checkingHash = +window.location.hash.slice(7);
         const buttonKey = `btn-level-${checkingHash}`
         if (input.value === checkButtonText[buttonKey]) {
-          console.log('daa')
           if ((checkingHash + 1) <= maxLevel) {
             window.location.hash = `${hashes[checkingHash]}`;
-            Navigation.changeLevel(5);
+            Navigation.changeLevel(7);
             checkingHash = +window.location.hash.slice(7);
 
           }

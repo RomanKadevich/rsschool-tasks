@@ -19,14 +19,17 @@ export class Level4 extends Level {
   render() {
     this.container.className = 'level-container col s8';
     this.renderHeader('Select the shawarma on the plate');
-    const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements, 2, TableItems.shawarma+TableItems.pulseShake);
+    const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements,
+      TableItems.shawarma+TableItems.pulseShake,2);
     this.container.append(tableHTML);
     const HTMLCode = this.Editor.highlightAllTag('&lt;bento&gt;&lt;/bento&gt;') 
     + this.Editor.highlightOpenTag('&lt;plate&gt;')+
-    this.Editor.highlightAllTag('&lt;shawarma&gt;&lt;/shawarma&gt;')+this.Editor.highlightCloseTag('&lt;/bento&gt;')
+    this.Editor.highlightAllTag('&lt;shawarma&gt;&lt;/shawarma&gt;')+
+    this.Editor.highlightCloseTag('&lt;/plate&gt;')
     + this.Editor.highlightAllTag('&lt;shawarma&gt;&lt;/shawarma&gt;');
  
-    this.container.append(this.Editor.render(`btn-${this.container.id}`, `html-${this.container.id}`, HTMLCode ));
+    this.container.append(this.Editor.render(`btn-${this.container.id}`, 
+      `html-${this.container.id}`, HTMLCode ));
     
     
     return this.container;

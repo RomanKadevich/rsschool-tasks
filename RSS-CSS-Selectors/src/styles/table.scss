@@ -3,6 +3,7 @@
 .table{
     display: inline-flex;
     flex-shrink: 0;
+    align-items: center;
     justify-content: space-between;
     padding: 17px 20px 27px 20px;
     border-radius: 10px;
@@ -11,6 +12,8 @@ background: linear-gradient(180deg, #FFE074 0%, #F48926 66.15%);
 box-shadow: 0px 40px 10px 0px rgba(0, 0, 0, 0.20);
 }
 .plate{
+    display: flex;
+    justify-content: center;
     width: 90.77px;
 height: 90.953px;
 background-image: url('../assets/plate.svg');
@@ -20,46 +23,77 @@ background-image: url('../assets/plate.svg');
     width: 95px;
 height: 90.953px;
 background-image: url('../assets/plate-blue.svg');
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
 }
 .bento{
+    display: flex;
+    justify-content: center;
     width: 105px;
     height: 90px;
 background-image: url('../assets/bento.svg');
-background-size: cover;
+background-size: contain;
+background-repeat: no-repeat;
 }
 .plate-shawarma{
     width: 105px;
     height: 90px;
 background-image: url('../assets/plate-shawarma.png');
-background-size: cover;
+background-size: contain;
+background-repeat: no-repeat;
 }
 .shawarma{
     width: 105px;
     height: 90px;
 background-image: url('../assets/shawarma.png');
-background-size: cover;
+background-size: contain;
+background-repeat: no-repeat;
 }
 .chicken{
     width: 105px;
     height: 90px;
 background-image: url('../assets/chicken.png');
-background-size: cover;
+background-size: contain;
+background-repeat: no-repeat;
 }
 .plate-chicken{
     width: 105px;
     height: 90px;
 background-image: url('../assets/plate-chicken.png');
-background-size: cover;
+background-size: contain;
+background-repeat: no-repeat;
 }
 .bento-burger{
     width: 105px;
     height: 90px;
 background-image: url('../assets/bento-burger.png');
-background-size: cover;
+background-size: contain;
+background-repeat: no-repeat;
+}
+.shawarma-small{
+    align-self: center;
+    width: 75px;
+    height: 50px;
+background-image: url('../assets/shawarma-small.png');
+background-size: contain;
+background-repeat: no-repeat;
 }
 
-
+.burger-small{
+    align-self: center;
+    width: 75px;
+    height: 50px;
+background-image: url('../assets/burger-small.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
+.burger{
+    width: 105px;
+    height: 90px;
+background-image: url('../assets/burger.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
 .btn-floating{
     background-color: rgba(0,0,0,0.1);
     &:hover{

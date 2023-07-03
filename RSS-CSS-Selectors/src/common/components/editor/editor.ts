@@ -229,6 +229,12 @@ export class Editor {
         let checkingHash = +window.location.hash.slice(7);
         const buttonKey = `btn-level-${checkingHash}`
         if (input.value === checkButtonText[buttonKey]) {
+          const navItem: HTMLElement | null = document.querySelector(`#nav-item-${checkingHash-1}`);
+          if(navItem){
+            const checkmark = document.createElement('span');
+            checkmark.className = 'checkmark';
+            navItem.append(checkmark);
+          }
           if ((checkingHash + 1) <= maxLevel) {
             window.location.hash = `${hashes[checkingHash]}`;
             Navigation.changeLevel(10);

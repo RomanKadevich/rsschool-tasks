@@ -1,15 +1,15 @@
 import { hashes } from './vars';
-import { NavigationHeader } from '../components/nav_header';
+import { NavigationContent } from '../components/nav_content';
 
 export class Navigation {
   protected container: HTMLElement;
 
-  protected navigatonHeader:NavigationHeader;
+  protected navigatonContent:NavigationContent;
 
   constructor(id:string) {
     this.container = document.createElement('div');
     this.container.id = id;
-    this.navigatonHeader = new NavigationHeader();
+    this.navigatonContent = new NavigationContent();
   }
 
   static changeLevelInfo(currentHash:number) {
@@ -20,10 +20,20 @@ export class Navigation {
   static changeLevel(maxLevel:number) {
     const navBtn1HTML:HTMLElement | null = document.querySelector('#navBtn0');
     const navBtn2HTML:HTMLElement | null = document.querySelector('#navBtn1');
-    let currentHash = +window.location.hash.slice(7);
+    const navList: NodeList | null = document.querySelectorAll('.nav-list');
+    if(navList){navList.forEach(item=> {
+      item.addEventListener('click', (event)=>{
+        const clickedItem = event.target as HTMLElement;
+        const idNum = +clickedItem.id.slice(9)+1;
+        window.location.hash =  `level-${idNum}`
+      })
+    })}
+    
+   
+
     if (navBtn1HTML && navBtn2HTML) {
       navBtn2HTML.addEventListener('click', ()=>{
-      
+        let currentHash = +window.location.hash.slice(7);
         if ((currentHash + 1) <= maxLevel) {
 
           window.location.hash = `${hashes[currentHash]}`;
@@ -32,6 +42,7 @@ export class Navigation {
         }
       });
       navBtn1HTML.addEventListener('click', ()=>{
+        let currentHash = +window.location.hash.slice(7);
         if ((currentHash - 1) > 0) {
           window.location.hash = `${hashes[currentHash - 2]}`;
         
@@ -43,7 +54,7 @@ export class Navigation {
   }
 
   render() {
-    this.container.append(this.navigatonHeader.render());
+    this.container.append(this.navigatonContent.render());
     this.container.className = 'navigation col s4 sidenav-fixed';
     return this.container;
   }

@@ -19,8 +19,8 @@ export class Level10 extends Level {
     this.table = new Table(TablesIds.table10);
   }
  
-  render() {
-    this.container.className = 'level-container col s8';
+  render():HTMLElement {
+    this.container.className = 'level-container col l8 m10 s10';
     this.renderHeader('Select all the things!');
     const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements);
     this.container.append(tableHTML);
@@ -37,8 +37,6 @@ export class Level10 extends Level {
  
     this.container.append(this.Editor.render(`btn-${this.container.id}`,
       `html-${this.container.id}`, HTMLCode ));
-    
-    
     return this.container;
     
   }

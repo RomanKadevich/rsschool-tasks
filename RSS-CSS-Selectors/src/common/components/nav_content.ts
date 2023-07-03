@@ -7,20 +7,19 @@ export class NavigationContent {
     this.container.className = 'navigation__header';
   }
     
-  renderNavButtons() {
+  renderNavButtons():HTMLElement[] {
     const navBtns: HTMLElement[] = [];
-    
-    for (let i = 0; i < 2; i++) {
+    const quantityOfButtons = 2;
+    for (let i = 0; i < quantityOfButtons; i++) {
       const navBtn: HTMLElement = document.createElement('div');
       navBtn.className = `navBtn navBtn${i}`;
       navBtn.id = `navBtn${i}`;
       navBtns.push(navBtn);
     }
-    // const [navBtn1, navBtn2] = navBtns;
     return navBtns;
   }
 
-  renderLevelInfo() {
+  renderLevelInfo():HTMLElement  {
     const levelInfo: HTMLElement = document.createElement('h2');
     levelInfo.textContent = 'Level 1 of 10';
     levelInfo.className = 'level-info';
@@ -28,7 +27,7 @@ export class NavigationContent {
    
    
   }
-  renderNavHeading(){
+  renderNavHeading():HTMLElement {
       const levelHeading: HTMLElement = document.createElement('div');
       levelHeading.className = 'nav-heading';
       levelHeading.append(this.renderNavButtons()[0]);
@@ -37,7 +36,7 @@ export class NavigationContent {
       return levelHeading;
   }
 
-  renderNavList(quantityOfLevels:number){
+  renderNavList(quantityOfLevels:number):HTMLElement {
     const levelList: HTMLElement = document.createElement('ul');
     levelList.className = 'nav-list';
     for (let i = 0; i < quantityOfLevels; i +=1){
@@ -54,8 +53,9 @@ export class NavigationContent {
 }
 
   render() {
+    const maxLevel = 10;
     this.container.append(this.renderNavHeading());
-    this.container.append(this.renderNavList(10));
+    this.container.append(this.renderNavList(maxLevel));
     return this.container;
   }
   

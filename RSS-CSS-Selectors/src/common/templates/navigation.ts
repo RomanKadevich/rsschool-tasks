@@ -6,18 +6,17 @@ export class Navigation {
 
   protected navigatonContent:NavigationContent;
 
-  constructor(id:string) {
+  constructor() {
     this.container = document.createElement('div');
-    this.container.id = id;
     this.navigatonContent = new NavigationContent();
   }
 
-  static changeLevelInfo(currentHash:number) {
+  static changeLevelInfo(currentHash:number):void {
     const levelInfo: HTMLElement | null = document.querySelector('.level-info');
     if (levelInfo) {    levelInfo.textContent = `Level ${currentHash} of 10`;}
   }
     
-  static changeLevel(maxLevel:number) {
+  static changeLevel(maxLevel:number):void {
     const navBtn1HTML:HTMLElement | null = document.querySelector('#navBtn0');
     const navBtn2HTML:HTMLElement | null = document.querySelector('#navBtn1');
     const navList: NodeList | null = document.querySelectorAll('.nav-list');
@@ -53,13 +52,9 @@ export class Navigation {
     }
   }
 
-  render() {
-    const navigation:HTMLElement|null = document.querySelector('.nav-list');
-    const savedNavList:string|null = localStorage.getItem('savedElement');
-    if(navigation&&savedNavList){
-      navigation.innerHTML = savedNavList}else{console.log('xxx')}
+  render():HTMLElement {
     this.container.append(this.navigatonContent.render());
-    this.container.className = 'navigation col s4 sidenav-fixed';
+    this.container.className = 'navigation col l4 m2 s2';
     return this.container;
   }
 

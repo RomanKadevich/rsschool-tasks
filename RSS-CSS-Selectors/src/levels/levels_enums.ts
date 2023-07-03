@@ -25,6 +25,7 @@ export enum TablesIds {
 }
 
 export enum TableItems {
+  // classes
   plate = 'plate',
   plateBlue = 'plate-blue',
   bento = 'bento',
@@ -42,8 +43,7 @@ export enum TableItems {
   bentoChicken ='bento-chicken',
   burgerSmall = 'burger-small',
   burger = 'burger',
-
-
+// for animation
   pulse = ' btn-floating pulse animate__animated animate__pulse animate__infinite',
   pulseShake = ' animate__animated animate__headShake animate__infinite',
   squareRadius = ' radius',

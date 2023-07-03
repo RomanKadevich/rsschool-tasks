@@ -1,4 +1,3 @@
-import { Navigation1 } from '../navigation/index';
 import { Level1 } from '../levels/level_1';
 import { Level2 } from '../levels/level_2';
 import { Level3 } from '../levels/level_3';
@@ -17,27 +16,21 @@ import { Editor } from '../common/components/editor/editor';
 
 export class App {
   private static container: HTMLElement =  document.body;
-
-  private navigation: Navigation1;
-
+  private navigation: Navigation;
   private static currId = 'current-level';
-
-  private startLevel: Level1;
-
   constructor() {
-    this.navigation = new Navigation1('nav-1');
-    this.startLevel = new Level1('lev-1');
+    this.navigation = new Navigation();
    
   }
 
-
   static renderNewLevel(idLevel: string, navHTML: HTMLElement) {
     const currentLevel:HTMLElement|null = document.querySelector(`#${this.currId}`);
-  
     
     if (currentLevel) {
       currentLevel.remove();
     }
+
+    // rendering depending on the hash
     let level: Level | null = null;
     switch (idLevel) {
       case LevelsIds.level1:
@@ -95,37 +88,34 @@ export class App {
       const hash = hashName.slice(1);
       const navigation: HTMLElement | null = document.querySelector('.navigation');
       if (navigation) {
+        // switch page on hash change
         App.renderNewLevel(hash, navigation);
         Editor.highlightCode();
         Editor.highlightInputCode();
         const currHash = +hashName.slice(7);
         Editor.checkInputText(10)
         Navigation.changeLevelInfo(currHash);
-        
       }
     });
   }
-
- 
     
   run() {
-  
+    // start page rendering
     App.container.className = 'row';
     App.container.append(this.navigation.render());
     const navigation: HTMLElement | null = document.querySelector('.navigation');
     if (navigation) {App.renderNewLevel('level-1', navigation);}
+    // enable navigation and change hashes
     App.listenHashChange();
     Navigation.changeLevel(10);
+    // turn on code highlighting
     Editor.highlightCode();
     Editor.highlightInputCode();
-
+    // save information about the levels passed on reboot
     const nav:HTMLElement|null = document.querySelector('.nav-list');
     const savedNavList:string|null = localStorage.getItem('nav-list');
     if(nav&&savedNavList){
-      nav.innerHTML = savedNavList}else{console.log('xxx')}
-  
-   
+      nav.innerHTML = savedNavList}
   }
-
 }
 

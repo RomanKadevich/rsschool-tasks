@@ -10,7 +10,7 @@ export abstract class Level {
     this.Editor = new Editor();
   }
 
-  protected renderHeader(text:string) {
+  protected renderHeader(text:string):void {
     const heading:HTMLElement = document.createElement('h1');
     heading.textContent = text;
     heading.className = 'heading';

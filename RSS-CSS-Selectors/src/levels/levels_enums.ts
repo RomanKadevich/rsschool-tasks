@@ -43,7 +43,7 @@ export enum TableItems {
   bentoChicken ='bento-chicken',
   burgerSmall = 'burger-small',
   burger = 'burger',
-// for animation
+  // for animation
   pulse = ' btn-floating pulse animate__animated animate__pulse animate__infinite',
   pulseShake = ' animate__animated animate__headShake animate__infinite',
   squareRadius = ' radius',

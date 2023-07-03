@@ -256,9 +256,8 @@ export class Editor {
             checkingHash = +window.location.hash.slice(numberInHash);
           }
         }else if(input.value === 'help'){
-            const help:HTMLElement = document.createElement('span');
-            const inputView: HTMLElement | null = document.querySelector('.inputCSS-view');
-            if (inputView){  inputView.innerHTML = `<span class= "help">${checkButtonText[buttonKey]}</span>`}
+          const inputView: HTMLElement | null = document.querySelector('.inputCSS-view');
+          if (inputView){  inputView.innerHTML = `<span class= "help">${checkButtonText[buttonKey]}</span>`}
           
         } else {
           const editor: HTMLElement | null = document.querySelector('.editor');

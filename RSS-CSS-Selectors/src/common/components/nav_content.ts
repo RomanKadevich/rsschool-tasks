@@ -28,12 +28,12 @@ export class NavigationContent {
    
   }
   renderNavHeading():HTMLElement {
-      const levelHeading: HTMLElement = document.createElement('div');
-      levelHeading.className = 'nav-heading';
-      levelHeading.append(this.renderNavButtons()[0]);
-      levelHeading.append(this.renderNavButtons()[1]);
-      levelHeading.append(this.renderLevelInfo());
-      return levelHeading;
+    const levelHeading: HTMLElement = document.createElement('div');
+    levelHeading.className = 'nav-heading';
+    levelHeading.append(this.renderNavButtons()[0]);
+    levelHeading.append(this.renderNavButtons()[1]);
+    levelHeading.append(this.renderLevelInfo());
+    return levelHeading;
   }
 
   renderNavList(quantityOfLevels:number):HTMLElement {
@@ -45,12 +45,12 @@ export class NavigationContent {
       levelItem.className = 'nav-item'
       levelItem.textContent = `Level ${i+1}`
       const checkmark = document.createElement('span');
-            checkmark.className = 'checkmark';
-            levelItem.append(checkmark);
+      checkmark.className = 'checkmark';
+      levelItem.append(checkmark);
       levelList.append(levelItem)
     }
     return levelList;
-}
+  }
 
   render() {
     const maxLevel = 10;

@@ -87,12 +87,129 @@ export class Editor {
     });
     const handleMouseOver = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (target.classList.contains('code')) { target.classList.add('hovered-tag'); }
+      if (target.classList.contains('code') && target.textContent) {
+        target.classList.add('hovered-tag');
+        if (target.textContent.includes('plate') && !target.textContent.includes('fancy')) {
+          const plate = document.querySelectorAll('.plate')
+          const plateBurger = document.querySelectorAll('.plate-burger')
+          const plateChicken = document.querySelectorAll('.plate-chicken')
+          const plateShawarmaSmall = document.querySelectorAll('.plate-shawarma-small')
+          const plateBurgerSmall = document.querySelectorAll('.plate-burger-small')
+          plate?.forEach(item => item.classList.add('hover-element'));
+          plateBurger?.forEach(item => item.classList.add('hover-element'))
+          plateChicken?.forEach(item => item.classList.add('hover-element'))
+          plateShawarmaSmall?.forEach(item => item.classList.add('hover-element'));
+          plateBurgerSmall?.forEach(item => item.classList.add('hover-element'))
+          
+        }
+        if (target.textContent.includes('bento')) {
+          const bento = document.querySelectorAll('.bento')
+          const bentoBurger = document.querySelectorAll('.bento-burger')
+          const bentoChicken = document.querySelectorAll('.bento-chicken')
+          const bentoShawarmaSmall = document.querySelectorAll('.bento-shawarma-small')
+          const bentoBurgerSmall = document.querySelectorAll('.bento-burger-small')
+          bento?.forEach(item => item.classList.add('hover-element'));
+          bentoBurger?.forEach(item => item.classList.add('hover-element'))
+          bentoChicken?.forEach(item => item.classList.add('hover-element'))
+          bentoShawarmaSmall?.forEach(item => item.classList.add('hover-element'));
+          bentoBurgerSmall?.forEach(item => item.classList.add('hover-element'))
+        }
+        if (target.textContent.includes('id')) {
+          const fancy = document.querySelectorAll('.plate-blue')
+          fancy?.forEach(item => item.classList.add('hover-element'))
+        }
+        if (target.textContent.includes('shawarma')) {
+
+          const shawarma = document.querySelectorAll('.shawarma')
+          shawarma?.forEach(item => item.classList.add('hover-element'))
+        }
+
+        if (target.textContent.includes('burger')) {
+          const burger = document.querySelectorAll('.burger')
+          burger?.forEach(item => item.classList.add('hover-element'))
+        }
+        if (target.textContent.includes('chicken')) {
+          const chicken = document.querySelectorAll('.chicken')
+          chicken?.forEach(item => item.classList.add('hover-element'))
+        }
+
+        if (target.textContent.includes('small') && target.textContent.includes('burger')) {
+          const burgerSmall = document.querySelectorAll('.burger-small')
+          burgerSmall?.forEach(item => item.classList.add('hover-element'))
+        }
+        if (target.textContent.includes('small') && target.textContent.includes('shawarma')) {
+          const shawarmaSmall = document.querySelectorAll('.shawarma-small')
+          shawarmaSmall?.forEach(item => item.classList.add('hover-element'))
+        }
+        if (target.textContent.includes('small') && target.textContent.includes('chicken')) {
+          const chickenSmall = document.querySelectorAll('.chicken-small')
+          chickenSmall?.forEach(item => item.classList.add('hover-element'))
+        }
+      }
+
+
     };
 
     const handleMouseOut = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (target.tagName === 'DIV') { target.classList.remove('hovered-tag'); }
+      if (target.classList.contains('code') && target.textContent) {
+        target.classList.remove('hovered-tag');
+        if (target.textContent.includes('plate') && !target.textContent.includes('fancy')) {
+          const plate = document.querySelectorAll('.plate')
+          const plateBurger = document.querySelectorAll('.plate-burger')
+          const plateChicken = document.querySelectorAll('.plate-chicken')
+          const plateShawarmaSmall = document.querySelectorAll('.plate-shawarma-small')
+          const plateBurgerSmall = document.querySelectorAll('.plate-burger-small')
+          plate?.forEach(item => item.classList.remove('hover-element'));
+          plateBurger?.forEach(item => item.classList.remove('hover-element'))
+          plateChicken?.forEach(item => item.classList.remove('hover-element'))
+          plateShawarmaSmall?.forEach(item => item.classList.remove('hover-element'));
+          plateBurgerSmall?.forEach(item => item.classList.remove('hover-element'))
+          
+        }
+        if (target.textContent.includes('bento')) {
+          const bento = document.querySelectorAll('.bento')
+          const bentoBurger = document.querySelectorAll('.bento-burger')
+          const bentoChicken = document.querySelectorAll('.bento-chicken')
+          const bentoShawarmaSmall = document.querySelectorAll('.bento-shawarma-small')
+          const bentoBurgerSmall = document.querySelectorAll('.bento-burger-small')
+          bento?.forEach(item => item.classList.remove('hover-element'));
+          bentoBurger?.forEach(item => item.classList.remove('hover-element'))
+          bentoChicken?.forEach(item => item.classList.remove('hover-element'))
+          bentoShawarmaSmall?.forEach(item => item.classList.remove('hover-element'));
+          bentoBurgerSmall?.forEach(item => item.classList.remove('hover-element'))
+        }
+        if (target.textContent.includes('id')) {
+          const fancy = document.querySelectorAll('.plate-blue')
+          fancy?.forEach(item => item.classList.remove('hover-element'))
+        }
+        if (target.textContent.includes('shawarma')) {
+
+          const shawarma = document.querySelectorAll('.shawarma')
+          shawarma?.forEach(item => item.classList.remove('hover-element'))
+        }
+
+        if (target.textContent.includes('burger')) {
+          const burger = document.querySelectorAll('.burger')
+          burger?.forEach(item => item.classList.remove('hover-element'))
+        }
+        if (target.textContent.includes('chicken')) {
+          const chicken = document.querySelectorAll('.chicken')
+          chicken?.forEach(item => item.classList.remove('hover-element'))
+        }
+
+        if (target.textContent.includes('small') && target.textContent.includes('burger')) {
+          const burgerSmall = document.querySelectorAll('.burger-small')
+          burgerSmall?.forEach(item => item.classList.remove('hover-element'))
+        } if (target.textContent.includes('small') && target.textContent.includes('shawarma')) {
+          const shawarmaSmall = document.querySelectorAll('.shawarma-small')
+          shawarmaSmall?.forEach(item => item.classList.remove('hover-element'))
+        }
+        if (target.textContent.includes('small') && target.textContent.includes('chicken')) {
+          const chickenSmall = document.querySelectorAll('.chicken-small')
+          chickenSmall?.forEach(item => item.classList.remove('hover-element'))
+        }
+      }
 
     };
     document.querySelectorAll<HTMLElement>('.Html-editor__viewer').forEach((elem) => {
@@ -118,21 +235,21 @@ export class Editor {
             checkingHash = +window.location.hash.slice(7);
 
           }
-        } else{
+        } else {
           const editor = document.querySelector('.editor');
-          if(editor){
+          if (editor) {
             editor.classList.add('animate__animated');
             editor.classList.add('animate__shakeX');
-            editor.classList.add('animate__animate__faster') 
+            editor.classList.add('animate__animate__faster')
             setTimeout(() => {
               editor.classList.remove('animate__animated');
               editor.classList.remove('animate__shakeX');
-              editor.classList.remove('animate__animate__faster') 
+              editor.classList.remove('animate__animate__faster')
 
-              
+
             }, 800);
           }
-       
+
         }
 
       }

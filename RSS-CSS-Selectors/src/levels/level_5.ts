@@ -22,8 +22,8 @@ export class Level5 extends Level {
     const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements, 
       TableItems.chicken+TableItems.pulseShake,2);
     this.container.append(tableHTML);
-    const HTMLCode = this.Editor.highlightOpenTag('&lt;plate&gt;')+
-    this.Editor.highlightAllTag('&lt;burger&gt;&lt;/shawarma&gt;')+this.Editor.highlightCloseTag('&lt;/plate&gt;')
+    const HTMLCode = this.Editor.highlightOpenTag('&lt;bento&gt;')+
+    this.Editor.highlightAllTag('&lt;burger&gt;&lt;/burger&gt;')+this.Editor.highlightCloseTag('&lt;/bento&gt;')
     + this.Editor.highlightOpenTag('&lt;plate id = "fancy"&gt;')+
     this.Editor.highlightAllTag('&lt;chicken&gt;&lt;/shawarma&gt;')+this.Editor.highlightCloseTag('&lt;/plate&gt;')
     + this.Editor.highlightOpenTag('&lt;plate&gt;')+

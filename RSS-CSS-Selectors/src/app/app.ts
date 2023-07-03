@@ -67,17 +67,17 @@ export class App {
         level = new Level7(idLevel);
         break;
       case LevelsIds.level8:
-      window.location.hash = `${idLevel}`;
-      level = new Level8(idLevel);
-      break;
+        window.location.hash = `${idLevel}`;
+        level = new Level8(idLevel);
+        break;
       case LevelsIds.level9:
         window.location.hash = `${idLevel}`;
         level = new Level9(idLevel);
         break;
       case LevelsIds.level10:
-      window.location.hash = `${idLevel}`;
-      level = new Level10(idLevel);
-      break;
+        window.location.hash = `${idLevel}`;
+        level = new Level10(idLevel);
+        break;
       
     }
     if (level) {

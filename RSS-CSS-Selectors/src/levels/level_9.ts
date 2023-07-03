@@ -26,12 +26,17 @@ export class Level9 extends Level {
     this.renderHeader('Select all the plates and bentos');
     const tableHTML: HTMLElement = this.table.renderTableItems(listOfElements);
     this.container.append(tableHTML);
-    const HTMLCode = this.Editor.highlightAllTag('&lt;shawarma&gt;&lt;/shawarma&gt;') +
-    this.Editor.highlightAllTag('&lt;shawarma class = "small"&gt;&lt;/shawarma&gt;') 
+    const HTMLCode = this.Editor.highlightAllTag('&lt;chicken&gt;&lt;/chicken&gt;') 
     + this.Editor.highlightOpenTag('&lt;plate&gt;')+
-    this.Editor.highlightAllTag('&lt;shawarma class = "small"&gt;&lt;/shawarma&gt;')
+    this.Editor.highlightAllTag('&lt;chicken&gt;&lt;/chicken&gt;')
     +this.Editor.highlightCloseTag('&lt;/plate&gt;')
-    + this.Editor.highlightAllTag('&lt;plate&gt;&lt;/plate&gt;') 
+    + this.Editor.highlightOpenTag('&lt;bento&gt;')+
+    this.Editor.highlightAllTag('&lt;chicken&gt;&lt;/chicken&gt;')
+    +this.Editor.highlightCloseTag('&lt;/bento&gt;')
+    + this.Editor.highlightOpenTag('&lt;plate&gt;')+
+    this.Editor.highlightAllTag('&lt;chicken&gt;&lt;/chicken&gt;')
+    +this.Editor.highlightCloseTag('&lt;/plate&gt;')
+    + this.Editor.highlightAllTag('&lt;chicken&gt;&lt;/chicken&gt;') 
  
     this.container.append(this.Editor.render(`btn-${this.container.id}`,
       `html-${this.container.id}`, HTMLCode ));

@@ -54,6 +54,10 @@ export class Navigation {
   }
 
   render() {
+    const navigation:HTMLElement|null = document.querySelector('.nav-list');
+    const savedNavList:string|null = localStorage.getItem('savedElement');
+    if(navigation&&savedNavList){
+      navigation.innerHTML = savedNavList}else{console.log('xxx')}
     this.container.append(this.navigatonContent.render());
     this.container.className = 'navigation col s4 sidenav-fixed';
     return this.container;

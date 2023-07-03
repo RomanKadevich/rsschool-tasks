@@ -45,6 +45,9 @@ export class NavigationContent {
       levelItem.id = `nav-item-${i}`
       levelItem.className = 'nav-item'
       levelItem.textContent = `Level ${i+1}`
+      const checkmark = document.createElement('span');
+            checkmark.className = 'checkmark';
+            levelItem.append(checkmark);
       levelList.append(levelItem)
     }
     return levelList;
@@ -58,3 +61,4 @@ export class NavigationContent {
   
 
 } 
+

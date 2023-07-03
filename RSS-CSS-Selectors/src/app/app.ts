@@ -32,7 +32,9 @@ export class App {
 
 
   static renderNewLevel(idLevel: string, navHTML: HTMLElement) {
-    const currentLevel = document.querySelector(`#${this.currId}`);
+    const currentLevel:HTMLElement|null = document.querySelector(`#${this.currId}`);
+  
+    
     if (currentLevel) {
       currentLevel.remove();
     }
@@ -116,6 +118,11 @@ export class App {
     Navigation.changeLevel(10);
     Editor.highlightCode();
     Editor.highlightInputCode();
+
+    const nav:HTMLElement|null = document.querySelector('.nav-list');
+    const savedNavList:string|null = localStorage.getItem('nav-list');
+    if(nav&&savedNavList){
+      nav.innerHTML = savedNavList}else{console.log('xxx')}
   
    
   }

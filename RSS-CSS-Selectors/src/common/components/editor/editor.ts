@@ -223,7 +223,15 @@ export class Editor {
     const enterBtn: HTMLElement | null = document.querySelector(`#btn-level-${checkingHash}`);
 
     const input: HTMLInputElement | null = document.querySelector('.inputCSS');
-
+    
+    const saveElementToLocalStorage = (element: HTMLElement|null, key: string)=> {
+      if(element){
+        const elementString = element.innerHTML;
+        localStorage.setItem(key, elementString);
+      }
+      }
+  
+    
     const makeCheck = () => {
       if (enterBtn && input) {
         let checkingHash = +window.location.hash.slice(7);
@@ -231,9 +239,14 @@ export class Editor {
         if (input.value === checkButtonText[buttonKey]) {
           const navItem: HTMLElement | null = document.querySelector(`#nav-item-${checkingHash-1}`);
           if(navItem){
-            const checkmark = document.createElement('span');
-            checkmark.className = 'checkmark';
-            navItem.append(checkmark);
+            const checkmark:HTMLElement | null = navItem.querySelector('.checkmark')
+            if(checkmark){
+               checkmark.classList.add('checkmark-active')
+               const navList: HTMLElement|null = document.querySelector('.nav-list')
+               if (navList){saveElementToLocalStorage(navList ,`nav-list`)}
+              
+           }
+           
           }
           if ((checkingHash + 1) <= maxLevel) {
             window.location.hash = `${hashes[checkingHash]}`;

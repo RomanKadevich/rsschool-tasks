@@ -54,11 +54,10 @@
 
 
 .checkmark{
-    display: inline-block;
-    background-image: url('../assets/checkmark.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 23px;
-    height: 24px;
-
+    &-active{display: inline-block;
+        background-image: url('../assets/checkmark.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 23px;
+        height: 24px;}
 }

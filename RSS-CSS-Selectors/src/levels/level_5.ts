@@ -34,6 +34,7 @@ export class Level5 extends Level {
             + this.Editor.highlightCloseTag('&lt;/plate&gt;')
     this.container.append(this.Editor.render(`btn-${this.container.id}`,
       `html-${this.container.id}`, HTMLCode));
+      this.renderFooter();
     return this.container;
 
   }

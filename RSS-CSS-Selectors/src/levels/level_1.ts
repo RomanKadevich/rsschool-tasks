@@ -25,6 +25,7 @@ export class Level1 extends Level {
     const HTMLCode = this.Editor.highlightAllTag('&lt;plate&gt;&lt;/plate&gt;');
     this.container.append(this.Editor.render(`btn-${this.container.id}`,
       `html-${this.container.id}`, HTMLCode));
+    this.renderFooter();
     return this.container;
   }
 }

@@ -27,6 +27,7 @@ export class Level2 extends Level {
       + this.Editor.highlightAllTag('&lt;bento&gt;&lt;/bento&gt;');
     this.container.append(this.Editor.render(`btn-${this.container.id}`,
       `html-${this.container.id}`, HTMLCode));
+      this.renderFooter();
     return this.container;
   }
 }

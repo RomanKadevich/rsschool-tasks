@@ -39,7 +39,7 @@ export class Level7 extends Level {
 
     this.container.append(this.Editor.render(`btn-${this.container.id}`,
       `html-${this.container.id}`, HTMLCode));
-      this.renderFooter();
+    this.renderFooter();
     return this.container;
 
   }

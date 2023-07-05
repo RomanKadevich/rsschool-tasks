@@ -116,6 +116,7 @@ export class App {
     const savedNavList:string|null = localStorage.getItem('nav-list');
     if(nav&&savedNavList){
       nav.innerHTML = savedNavList}
+    Navigation.restartGame();
   }
 }
 

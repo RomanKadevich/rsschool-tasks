@@ -52,10 +52,17 @@ export class NavigationContent {
     return levelList;
   }
 
+  renderBtnReset():HTMLElement{
+    const btnReset: HTMLElement = document.createElement('button');
+    btnReset.className = 'btn-reset'
+    btnReset.textContent = 'Reset'
+    return btnReset;
+  }
   render() {
     const maxLevel = 10;
     this.container.append(this.renderNavHeading());
     this.container.append(this.renderNavList(maxLevel));
+    this.container.append(this.renderBtnReset());
     return this.container;
   }
   

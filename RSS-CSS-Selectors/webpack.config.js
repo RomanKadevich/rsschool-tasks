@@ -26,7 +26,7 @@ module.exports = ({ develop }) => ({
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext]',
   },
-
+  // target: 'node',
   // подключение typescript
   module: {
     rules: [
@@ -64,6 +64,10 @@ module.exports = ({ develop }) => ({
       '.js': ['.js', '.ts'],
       '.cjs': ['.cjs', '.cts'],
       '.mjs': ['.mjs', '.mts'],
+      
+    },
+    alias: {
+      'test-utils': path.resolve(__dirname, 'test-utils'), // Путь к утилитам для тестирования (если есть)
     },
   },
   plugins: [

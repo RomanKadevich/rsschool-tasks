@@ -15,9 +15,9 @@ import { Editor } from '../common/components/editor/editor';
 
 
 export class App {
-  private static container: HTMLElement =  document.body;
+  static container: HTMLElement =  document.body;
   private navigation: Navigation;
-  private static currId = 'current-level';
+  static currId = 'current-level';
   constructor() {
     this.navigation = new Navigation();
    

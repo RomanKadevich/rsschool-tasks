@@ -1,23 +1,10 @@
-@import './var';
+@import './_var.scss';
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  html{
-    background-color: $level_bg;
-    font-size: 16px;
-  }
-  .row{
-    margin-bottom: 0;
-  }
-h2,h3{
-  margin: 0;
-}
 body{
-  overflow-y: hidden;
+  background: black;
 }
-// pre{
-//   margin-top: 0;
-//   margin-bottom: 0;
-// }
+

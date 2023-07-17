@@ -1,4 +1,8 @@
-import { createHTMLElement } from "../functions/createHTMLElement";
+import {
+  createInputForm,
+  createHTMLElement,
+  createSubmitForm,
+} from "../functions/createElement";
 
 export class ControlPanel {
   private container: HTMLElement;
@@ -8,34 +12,37 @@ export class ControlPanel {
     this.container.className = "controlPanel";
   }
 
-  renderCreatePanel(): void {
-    const panel = <HTMLFormElement>(
-      createHTMLElement("form", "controlPanel__create create")
+  renderControlPanels(): void {
+    const createPanel = <HTMLFormElement>(
+      createInputForm("create", "CREATE", "post")
     );
-    panel.method = "post";
-    panel.action = "";
-    const input = <HTMLInputElement>(
-      createHTMLElement("input", "controlPanel__input")
+    this.container.append(createPanel);
+    const updatePanel = <HTMLFormElement>(
+      createInputForm("update", "UPDATE", "post")
     );
-    input.name = "name";
-    input.type = "text";
-    const inputColor = <HTMLInputElement>(
-      createHTMLElement("input", "controlPanel__input-color")
+    this.container.append(updatePanel);
+  }
+
+  renderControlButtons(): void {
+    const controlButtons = <HTMLElement>(
+      createHTMLElement("div", "controlPanel__buttons buttons")
     );
-    inputColor.name = "color";
-    inputColor.type = "color";
-    const button = <HTMLButtonElement>(
-      createHTMLElement("button", "controlPanel__button")
+    const raceButton = <HTMLFormElement>createSubmitForm("race", "RACE", "get");
+    const resetButton = <HTMLFormElement>(
+      createSubmitForm("reset", "RESET", "get")
     );
-    button.textContent = "CREATE";
-    panel.append(input);
-    panel.append(inputColor);
-    panel.append(button);
-    this.container.append(panel);
+    const generateButton = <HTMLFormElement>(
+      createSubmitForm("generate", "GENERATE CARS", "get")
+    );
+    controlButtons.append(raceButton);
+    controlButtons.append(resetButton);
+    controlButtons.append(generateButton);
+    this.container.append(controlButtons);
   }
 
   render(): HTMLElement {
-    this.renderCreatePanel();
+    this.renderControlPanels();
+    this.renderControlButtons();
     return this.container;
   }
 }

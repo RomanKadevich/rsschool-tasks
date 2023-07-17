@@ -1,4 +1,4 @@
-import { createHTMLElement } from "../functions/createHTMLElement";
+import { createHTMLElement } from "../functions/createElement";
 
 export class Navigation {
   private container: HTMLElement;
@@ -14,7 +14,7 @@ export class Navigation {
     for (let i = 0; i < quantityOfButtons; i++) {
       const navBtn: HTMLElement = createHTMLElement(
         "button",
-        `navigation__btn navigation__btn-${i}`,
+        `navigation__btn navigation__btn-${i} button`,
         `navigation__btn-${i}`,
       );
       navBtns.push(navBtn);

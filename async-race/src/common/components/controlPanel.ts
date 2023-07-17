@@ -2,7 +2,7 @@ import {
   createInputForm,
   createHTMLElement,
   createSubmitForm,
-} from "../functions/createElement";
+} from "../templates/createElementFunc";
 
 export class ControlPanel {
   private container: HTMLElement;
@@ -29,10 +29,10 @@ export class ControlPanel {
     );
     const raceButton = <HTMLFormElement>createSubmitForm("race", "RACE", "get");
     const resetButton = <HTMLFormElement>(
-      createSubmitForm("reset", "RESET", "get")
+      createSubmitForm("buttons__reset", "RESET", "get")
     );
     const generateButton = <HTMLFormElement>(
-      createSubmitForm("generate", "GENERATE CARS", "get")
+      createSubmitForm("buttons__generate", "GENERATE CARS", "get")
     );
     controlButtons.append(raceButton);
     controlButtons.append(resetButton);

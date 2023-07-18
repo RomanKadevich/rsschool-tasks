@@ -5,13 +5,14 @@
 }
 
 .item{
+    padding-top: 0.6rem;
     border-bottom:1px ;
     border-bottom-color: bisque;
     border-bottom-style: dashed;
     &__content{
         display: flex;
        flex-wrap: wrap;
-       max-width: 13rem;;
+       max-width: 13.8rem;;
     }
     &__car-name{
        margin-right:0;

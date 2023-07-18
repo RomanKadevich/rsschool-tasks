@@ -1,12 +1,13 @@
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
+import { getCars } from "../AsyncFunctions/getCars";
 
 import { createSvg } from "../DOMFunctions/createSvg";
 
 interface Car {
-  name: string;
   color: string;
   id: number;
+  name: string;
 }
 export class Garage {
   private container: HTMLElement;
@@ -27,16 +28,27 @@ export class Garage {
     this.container.append(info);
   }
 
-  renderList(): void {
-    const list: HTMLElement = createHTMLElement("ul", "garage__list");
-    list.append(
-      this.renderItem({
-        name: "Ford",
-        color: "#ef3c40",
-        id: 4,
-      }),
-    );
-    this.container.append(list);
+  async renderList(itemsFromStorage: Car[] | null = null): Promise<void> {
+    try {
+      let items: Car[] | null = itemsFromStorage;
+      if (!itemsFromStorage) {
+        items = await getCars();
+        const serializedItems = JSON.stringify(items);
+        localStorage.removeItem("savedItems");
+        localStorage.setItem("savedItems", serializedItems);
+      }
+      const list: HTMLElement = createHTMLElement("ul", "garage__list");
+
+      const garage: HTMLElement | null = document.querySelector("#garage");
+      if (garage) {
+        garage.innerHTML = "";
+      }
+      items?.forEach((item) => list.append(this.renderItem(item)));
+
+      this.container.append(list);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   // Disable 'class-methods-use-this' rule for the 'renderItem' method
@@ -70,10 +82,10 @@ export class Garage {
     return item;
   }
 
-  render() {
+  render(itemsFromStorage: Car[] | null = null) {
     this.renderHeading(1);
     this.renderInfo(1);
-    this.renderList();
+    this.renderList(itemsFromStorage);
     return this.container;
   }
 }

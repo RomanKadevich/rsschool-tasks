@@ -1,6 +1,6 @@
-import { createHTMLElement } from "../functions/createElementFunc";
-import { createInputForm } from "../functions/createInputForm";
-import { createSubmitForm } from "../functions/createSubmitForm";
+import { createHTMLElement } from "../DOMFunctions/createElementFunc";
+import { createInputForm } from "../DOMFunctions/createInputForm";
+import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 
 export class ControlPanel {
   private container: HTMLElement;

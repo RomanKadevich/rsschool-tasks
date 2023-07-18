@@ -1,4 +1,4 @@
-import { createHTMLElement } from "../functions/createElementFunc";
+import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 
 export class Navigation {
   private container: HTMLElement;

@@ -1,7 +1,7 @@
-import { createHTMLElement } from "../functions/createElementFunc";
-import { createSubmitForm } from "../functions/createSubmitForm";
+import { createHTMLElement } from "../DOMFunctions/createElementFunc";
+import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 
-import { createSvg } from "../functions/createSvg";
+import { createSvg } from "../DOMFunctions/createSvg";
 
 interface Car {
   name: string;

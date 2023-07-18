@@ -1,0 +1,35 @@
+@import './_var.scss';
+
+.garage{
+    color: $textColor;
+}
+
+.item{
+    border-bottom:1px ;
+    border-bottom-color: bisque;
+    border-bottom-style: dashed;
+    &__content{
+        display: flex;
+       flex-wrap: wrap;
+       max-width: 13rem;;
+    }
+    &__car-name{
+       margin-right:0;
+    }
+    &__select-input{
+        margin-bottom:1rem;
+    }
+    &__remove-input{
+        margin-bottom:0.8rem;
+    }
+    &__start-input{
+        margin-right:0;
+    }
+    &__end-input{
+        margin-right:0;
+    }
+    &__car-img svg{
+        height:4rem;
+        width: 5rem;
+    }
+}

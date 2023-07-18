@@ -1,8 +1,6 @@
-import {
-  createInputForm,
-  createHTMLElement,
-  createSubmitForm,
-} from "../templates/createElementFunc";
+import { createHTMLElement } from "../functions/createElementFunc";
+import { createInputForm } from "../functions/createInputForm";
+import { createSubmitForm } from "../functions/createSubmitForm";
 
 export class ControlPanel {
   private container: HTMLElement;

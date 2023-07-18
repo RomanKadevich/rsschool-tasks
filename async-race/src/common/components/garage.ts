@@ -1,9 +1,7 @@
-import {
-  createHTMLElement,
-  createSubmitForm,
-} from "../templates/createElementFunc";
+import { createHTMLElement } from "../functions/createElementFunc";
+import { createSubmitForm } from "../functions/createSubmitForm";
 
-import { createSvg } from "../templates/createSvg";
+import { createSvg } from "../functions/createSvg";
 
 interface Car {
   name: string;
@@ -45,6 +43,7 @@ export class Garage {
   // eslint-disable-next-line class-methods-use-this
   renderItem(car: Car): HTMLElement {
     const item: HTMLElement = createHTMLElement("li", "item");
+    const itemContent: HTMLElement = createHTMLElement("div", "item__content");
     const selectButton = <HTMLFormElement>(
       createSubmitForm("item__select", "select", "get")
     );
@@ -57,16 +56,17 @@ export class Garage {
     const endButton = <HTMLFormElement>(
       createSubmitForm("item__end", "B", "get")
     );
-    const carName: HTMLElement = createHTMLElement("div", "garage__car-name");
+    const carName: HTMLElement = createHTMLElement("div", "item__car-name");
     carName.textContent = car.name;
-    const carImg: HTMLElement = createHTMLElement("div", "garage__car-img");
+    const carImg: HTMLElement = createHTMLElement("div", "item__car-img");
     carImg.innerHTML = createSvg(car.color);
-    item.append(selectButton);
-    item.append(removeButton);
-    item.append(carName);
-    item.append(startButton);
-    item.append(endButton);
-    item.append(carImg);
+    itemContent.append(selectButton);
+    itemContent.append(removeButton);
+    itemContent.append(carName);
+    itemContent.append(startButton);
+    itemContent.append(endButton);
+    itemContent.append(carImg);
+    item.append(itemContent);
     return item;
   }
 

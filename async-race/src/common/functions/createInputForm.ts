@@ -1,15 +1,4 @@
-type HtmlElement = HTMLElement | HTMLFormElement | HTMLInputElement;
-
-export function createHTMLElement(
-  tagName: string,
-  className: string,
-  id: string = className,
-): HtmlElement {
-  const element: HtmlElement = document.createElement(tagName);
-  element.className = className;
-  element.id = id;
-  return element;
-}
+import { createHTMLElement } from "./createElementFunc";
 
 export function createInputForm(
   className: string,
@@ -32,6 +21,7 @@ export function createInputForm(
   );
   inputColor.name = "color";
   inputColor.type = "color";
+  inputColor.value = "#D5F0C7";
   const button = <HTMLButtonElement>(
     createHTMLElement("button", `${className}__button button`)
   );
@@ -40,22 +30,4 @@ export function createInputForm(
   panel.append(inputColor);
   panel.append(button);
   return panel;
-}
-export function createSubmitForm(
-  className: string,
-  text: string,
-  method: string,
-): HTMLFormElement {
-  const submitForm = <HTMLFormElement>createHTMLElement("form", className);
-  submitForm.method = method;
-  submitForm.action = "";
-  // panel.id = id;
-  const input = <HTMLInputElement>(
-    createHTMLElement("input", `${className}-input button`)
-  );
-  input.name = "name";
-  input.type = "submit";
-  input.value = text;
-  submitForm.append(input);
-  return submitForm;
 }

@@ -1,7 +1,7 @@
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 import { getCars } from "../AsyncFunctions/getCars";
-
+import { getCountOfCars } from "../AsyncFunctions/getCountOfCars";
 import { createSvg } from "../DOMFunctions/createSvg";
 
 export interface Car {
@@ -16,9 +16,9 @@ export class Garage {
     this.container = createHTMLElement("div", "garage");
   }
 
-  renderHeading(amountOfElements: number): void {
+  async renderHeading(): Promise<void> {
     const heading: HTMLElement = createHTMLElement("h1", "garage__heading");
-    heading.textContent = `Garage (${amountOfElements})`;
+    heading.textContent = `Garage (${await getCountOfCars()})`;
     this.container.append(heading);
   }
 
@@ -32,17 +32,12 @@ export class Garage {
     try {
       let items: Car[] | null = itemsFromStorage;
       if (!itemsFromStorage) {
-        items = await getCars([{ key: "name", value: "Ford" }]);
+        items = await getCars();
         const serializedItems = JSON.stringify(items);
         localStorage.removeItem("savedItems");
         localStorage.setItem("savedItems", serializedItems);
       }
       const list: HTMLElement = createHTMLElement("ul", "garage__list");
-
-      const garage: HTMLElement | null = document.querySelector("#garage");
-      if (garage) {
-        garage.innerHTML = "";
-      }
       items?.forEach((item) => list.append(this.renderItem(item)));
 
       this.container.append(list);
@@ -83,7 +78,7 @@ export class Garage {
   }
 
   render(itemsFromStorage: Car[] | null = null) {
-    this.renderHeading(1);
+    this.renderHeading();
     this.renderInfo(1);
     this.renderList(itemsFromStorage);
     return this.container;

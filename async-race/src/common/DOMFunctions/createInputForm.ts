@@ -1,4 +1,5 @@
 import { createHTMLElement } from "./createElementFunc";
+import { url, path } from "../AsyncFunctions/vars";
 
 export function createInputForm(
   className: string,
@@ -9,7 +10,7 @@ export function createInputForm(
     createHTMLElement("form", `controlPanel__${className} ${className}`)
   );
   panel.method = method;
-  panel.action = "";
+  panel.action = `${url}${path}`;
   // panel.id = id;
   const input = <HTMLInputElement>(
     createHTMLElement("input", `${className}__input`)

@@ -6,7 +6,7 @@ import { createSvg } from "../DOMFunctions/createSvg";
 
 export interface Car {
   color: string;
-  id: number;
+  id?: number;
   name: string;
 }
 export class Garage {

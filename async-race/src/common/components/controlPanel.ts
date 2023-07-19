@@ -1,6 +1,8 @@
+import { setNewCar } from "../AsyncFunctions/setNewCar";
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createInputForm } from "../DOMFunctions/createInputForm";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
+import { Car } from "./garage";
 
 export class ControlPanel {
   private container: HTMLElement;
@@ -12,7 +14,7 @@ export class ControlPanel {
 
   renderControlPanels(): void {
     const createPanel = <HTMLFormElement>(
-      createInputForm("create", "CREATE", "post")
+      createInputForm("create", "CREATE", "POST")
     );
     this.container.append(createPanel);
     const updatePanel = <HTMLFormElement>(
@@ -36,6 +38,28 @@ export class ControlPanel {
     controlButtons.append(resetButton);
     controlButtons.append(generateButton);
     this.container.append(controlButtons);
+  }
+
+  static async createNewCar() {
+    const inputButton: HTMLButtonElement | null =
+      document.querySelector("#create__button");
+
+    if (inputButton) {
+      inputButton.addEventListener("click", async () => {
+        const input: HTMLInputElement | null =
+          document.querySelector("#create__input");
+        const inputColor: HTMLInputElement | null = document.querySelector(
+          "#create__input-color",
+        );
+        if (input && inputColor) {
+          const newCar: Car = {
+            color: `${inputColor.value}`,
+            name: `${input.value}`,
+          };
+          await setNewCar(newCar);
+        }
+      });
+    }
   }
 
   render(): HTMLElement {

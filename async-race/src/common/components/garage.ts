@@ -4,7 +4,7 @@ import { getCars } from "../AsyncFunctions/getCars";
 
 import { createSvg } from "../DOMFunctions/createSvg";
 
-interface Car {
+export interface Car {
   color: string;
   id: number;
   name: string;
@@ -32,7 +32,7 @@ export class Garage {
     try {
       let items: Car[] | null = itemsFromStorage;
       if (!itemsFromStorage) {
-        items = await getCars();
+        items = await getCars([{ key: "name", value: "Ford" }]);
         const serializedItems = JSON.stringify(items);
         localStorage.removeItem("savedItems");
         localStorage.setItem("savedItems", serializedItems);

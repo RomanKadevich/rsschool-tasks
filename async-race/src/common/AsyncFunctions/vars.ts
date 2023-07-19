@@ -1,6 +1,11 @@
 export const url = "http://127.0.0.1:3000";
-export const enum Path {
-  garage = "/garage",
-  engine = "/engine",
-  winners = "/winners",
+interface Path {
+  garage: string;
+  engine: string;
+  winner: string;
 }
+export const path: Path = {
+  garage: "/garage",
+  engine: "/engine",
+  winner: "/winners",
+};

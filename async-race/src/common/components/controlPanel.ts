@@ -1,9 +1,9 @@
+import { deleteCar, deleteCar } from "../AsyncFunctions/deleteCar";
 import { setNewCar } from "../AsyncFunctions/setNewCar";
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createInputForm } from "../DOMFunctions/createInputForm";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 import { Garage } from "./garage";
-import { removeAllCars } from "../AsyncFunctions/removeAllCars";
 
 export class ControlPanel {
   private container: HTMLElement;
@@ -64,20 +64,20 @@ export class ControlPanel {
     }
   }
 
-  static async clearGarage() {
-    const form: HTMLFormElement | null =
-      document.querySelector(".buttons__reset");
-    if (form) {
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        await removeAllCars();
-        // const garage: Garage = new Garage();
-        const garage: HTMLElement | null = document.querySelector("#garage");
-
-        garage!.innerHTML = "";
-        // container.append(garage.render()); });
-      });
-    }
+  static removeCar() {
+    const container = document.body;
+    let id = 0;
+    document.addEventListener("click", (event: MouseEvent) => {
+      const target = event.target as HTMLButtonElement;
+      if (target.classList.contains("remove-button")) {
+        id = +target.id.slice(7);
+        console.log(id);
+      }
+      deleteCar(id);
+      const garage: Garage = new Garage();
+      container.lastChild?.remove();
+      container.append(garage.render());
+    });
   }
 
   render(): HTMLElement {

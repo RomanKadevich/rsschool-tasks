@@ -58,7 +58,8 @@ export class App {
     this.container.append(this.garage.render());
     this.loadGarage();
     this.loadWinners();
-    ControlPanel.clearGarage();
+
     ControlPanel.createNewCar();
+    ControlPanel.removeCar();
   }
 }

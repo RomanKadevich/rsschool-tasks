@@ -49,14 +49,16 @@ export class Garage {
   // Disable 'class-methods-use-this' rule for the 'renderItem' method
   // eslint-disable-next-line class-methods-use-this
   renderItem(car: Car): HTMLElement {
-    const item: HTMLElement = createHTMLElement("li", "item");
+    const item: HTMLElement = createHTMLElement("li", "item", `item-${car.id}`);
     const itemContent: HTMLElement = createHTMLElement("div", "item__content");
-    const selectButton = <HTMLFormElement>(
-      createSubmitForm("item__select", "select", "get")
+    const selectButton = <HTMLButtonElement>(
+      createHTMLElement("button", "select-button button", `select-${car.id}`)
     );
-    const removeButton = <HTMLFormElement>(
-      createSubmitForm("item__remove", "remove", "get")
+    selectButton.textContent = "select";
+    const removeButton = <HTMLButtonElement>(
+      createHTMLElement("button", "remove-button button", `remove-${car.id}`)
     );
+    removeButton.textContent = "remove";
     const startButton = <HTMLFormElement>(
       createSubmitForm("item__start", "A", "get")
     );

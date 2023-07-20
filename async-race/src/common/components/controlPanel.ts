@@ -2,7 +2,6 @@ import { setNewCar } from "../AsyncFunctions/setNewCar";
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createInputForm } from "../DOMFunctions/createInputForm";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
-import { Car } from "./garage";
 
 export class ControlPanel {
   private container: HTMLElement;
@@ -13,13 +12,9 @@ export class ControlPanel {
   }
 
   renderControlPanels(): void {
-    const createPanel = <HTMLFormElement>(
-      createInputForm("create", "CREATE", "POST")
-    );
+    const createPanel = <HTMLFormElement>createInputForm("create", "CREATE");
     this.container.append(createPanel);
-    const updatePanel = <HTMLFormElement>(
-      createInputForm("update", "UPDATE", "post")
-    );
+    const updatePanel = <HTMLFormElement>createInputForm("update", "UPDATE");
     this.container.append(updatePanel);
   }
 
@@ -41,24 +36,26 @@ export class ControlPanel {
   }
 
   static async createNewCar() {
-    const inputButton: HTMLButtonElement | null =
-      document.querySelector("#create__button");
+    const form: HTMLFormElement | null = document.querySelector(
+      ".controlPanel__create",
+    );
 
-    if (inputButton) {
-      inputButton.addEventListener("click", async () => {
-        const input: HTMLInputElement | null =
-          document.querySelector("#create__input");
-        const inputColor: HTMLInputElement | null = document.querySelector(
-          "#create__input-color",
-        );
-        if (input && inputColor) {
-          const newCar: Car = {
-            color: `${inputColor.value}`,
-            name: `${input.value}`,
-          };
-          await setNewCar(newCar);
+    if (form) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        interface json {
+          color: string;
+          name: string;
         }
-      });
+
+        const formData = new FormData(form);
+        const jsonData: json = { color: "", name: "" };
+
+        formData.forEach((value, key) => {
+          jsonData[key as keyof json] = value as string;
+        });
+        await setNewCar(jsonData);
+      }); //  });
     }
   }
 

@@ -1,5 +1,6 @@
 import { Header } from "../common/components/header";
 import { Garage } from "../common/components/garage";
+import { ControlPanel } from "../common/components/controlPanel";
 
 export class App {
   private container: HTMLElement;
@@ -57,5 +58,6 @@ export class App {
     this.container.append(this.garage.render());
     this.loadGarage();
     this.loadWinners();
+    ControlPanel.createNewCar();
   }
 }

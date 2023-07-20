@@ -7,7 +7,6 @@ export function createSubmitForm(
 ): HTMLFormElement {
   const submitForm = <HTMLFormElement>createHTMLElement("form", className);
   submitForm.method = method;
-  submitForm.action = "";
   // panel.id = id;
   const input = <HTMLInputElement>(
     createHTMLElement("input", `${className}-input button`)

@@ -3,12 +3,9 @@ import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 import { getCars } from "../AsyncFunctions/getCars";
 import { getCountOfCars } from "../AsyncFunctions/getCountOfCars";
 import { createSvg } from "../DOMFunctions/createSvg";
+import { deleteCar } from "../AsyncFunctions/deleteCar";
+import { Car } from "../../types";
 
-export interface Car {
-  color: string;
-  id?: number;
-  name: string;
-}
 export class Garage {
   private container: HTMLElement;
 
@@ -77,6 +74,22 @@ export class Garage {
     itemContent.append(carImg);
     item.append(itemContent);
     return item;
+  }
+
+  static removeCar() {
+    const container = document.body;
+    let id = 0;
+    document.addEventListener("click", (event: MouseEvent) => {
+      const target = event.target as HTMLButtonElement;
+      if (target.classList.contains("remove-button")) {
+        id = +target.id.slice(7);
+        console.log(id);
+        deleteCar(id);
+        const garage: Garage = new Garage();
+        container.lastChild?.remove();
+        container.append(garage.render());
+      }
+    });
   }
 
   render(itemsFromStorage: Car[] | null = null) {

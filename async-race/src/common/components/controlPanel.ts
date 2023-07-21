@@ -1,9 +1,10 @@
-import { deleteCar, deleteCar } from "../AsyncFunctions/deleteCar";
 import { setNewCar } from "../AsyncFunctions/setNewCar";
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createInputForm } from "../DOMFunctions/createInputForm";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 import { Garage } from "./garage";
+import { jsonBody } from "../../types";
+import { updateCar } from "../AsyncFunctions/updateCar";
 
 export class ControlPanel {
   private container: HTMLElement;
@@ -45,18 +46,25 @@ export class ControlPanel {
     if (form) {
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        interface json {
-          color: string;
-          name: string;
-        }
 
         const formData = new FormData(form);
-        const jsonData: json = { color: "", name: "" };
+        const jsonData: jsonBody = { color: "", name: "" };
 
         formData.forEach((value, key) => {
-          jsonData[key as keyof json] = value as string;
+          jsonData[key as keyof jsonBody] = value as string;
         });
         await setNewCar(jsonData);
+        const input: HTMLFormElement | null =
+          document.querySelector("#create__input");
+        if (input) {
+          input.value = "";
+        }
+        const inputColor: HTMLFormElement | null = document.querySelector(
+          "#create__input-color",
+        );
+        if (inputColor) {
+          inputColor.value = "#D5F0C7";
+        }
         const garage: Garage = new Garage();
         container.lastChild?.remove();
         container.append(garage.render());
@@ -64,20 +72,57 @@ export class ControlPanel {
     }
   }
 
-  static removeCar() {
-    const container = document.body;
+  static updateCar() {
+    // const container = document.body;
     let id = 0;
     document.addEventListener("click", (event: MouseEvent) => {
       const target = event.target as HTMLButtonElement;
-      if (target.classList.contains("remove-button")) {
+      if (target.classList.contains("select-button")) {
         id = +target.id.slice(7);
         console.log(id);
+        // const garage: Garage = new Garage();
+        // container.lastChild?.remove();
+        // container.append(garage.render());
       }
-      deleteCar(id);
-      const garage: Garage = new Garage();
-      container.lastChild?.remove();
-      container.append(garage.render());
     });
+    const form: HTMLFormElement | null = document.querySelector(
+      ".controlPanel__update",
+    );
+    const container = document.body;
+    if (form) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        // const jsonData: jsonBody = { color: "", name: "" };
+        const newJsonData: jsonBody = {};
+
+        formData.forEach((value, key) => {
+          if (!(value === "") && !(value === "#d5f0c7")) {
+            newJsonData[key as keyof jsonBody] = value as string;
+            console.log(JSON.stringify(newJsonData));
+          }
+        });
+        console.log(JSON.stringify(newJsonData.color));
+        console.log(JSON.stringify(newJsonData.name));
+        console.log(JSON.stringify(newJsonData));
+        await updateCar(id, newJsonData);
+        const input: HTMLFormElement | null =
+          document.querySelector("#update__input");
+        if (input) {
+          input.value = "";
+        }
+        const inputColor: HTMLFormElement | null = document.querySelector(
+          "#update__input-color",
+        );
+        if (inputColor) {
+          inputColor.value = "#D5F0C7";
+        }
+        const garage: Garage = new Garage();
+        container.lastChild?.remove();
+        container.append(garage.render());
+      });
+    }
   }
 
   render(): HTMLElement {

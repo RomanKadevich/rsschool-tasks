@@ -60,6 +60,7 @@ export class App {
     this.loadWinners();
 
     ControlPanel.createNewCar();
-    ControlPanel.removeCar();
+    Garage.removeCar();
+    ControlPanel.updateCar();
   }
 }

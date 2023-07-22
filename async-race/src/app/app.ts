@@ -1,6 +1,7 @@
 import { Header } from "../common/components/header";
 import { Garage } from "../common/components/garage";
 import { ControlPanel } from "../common/components/controlPanel";
+import { NavigationGarage } from "../common/components/navGarageButton";
 
 export class App {
   private container: HTMLElement;
@@ -8,11 +9,12 @@ export class App {
   private header: Header;
 
   private garage: Garage;
-
+  private navigationGarage: NavigationGarage;
   constructor() {
     this.container = document.body;
     this.header = new Header();
     this.garage = new Garage();
+    this.navigationGarage = new NavigationGarage();
   }
 
 
@@ -86,7 +88,9 @@ export class App {
 
   run() {
     this.container.append(this.header.render());
+    this.container.append(this.navigationGarage.render());
     this.container.append(this.garage.render());
+    
     
 
     ControlPanel.createNewCar();
@@ -94,5 +98,7 @@ export class App {
     ControlPanel.updateCar();
     this.loadGarage();
     this.loadWinners();
+    NavigationGarage.pagination()
+  
   }
 }

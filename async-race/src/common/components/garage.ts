@@ -5,6 +5,10 @@ import { getCountOfCars } from "../AsyncFunctions/getCountOfCars";
 import { createSvg } from "../DOMFunctions/createSvg";
 import { deleteCar } from "../AsyncFunctions/deleteCar";
 import { Car } from "../../types";
+import { itemsResponse } from "../../types";
+import { QueryParams } from "../../types";
+import { NavigationGarage } from "./navGarageButton";
+
 
 export class Garage {
   private container: HTMLElement;
@@ -25,17 +29,11 @@ export class Garage {
     this.container.append(info);
   }
 
-  async renderList(itemsFromStorage: Car[] | null = null): Promise<void> {
+  async renderList(items: QueryParams[]): Promise<void> {
     try {
-      let items: Car[] | null = itemsFromStorage;
-      if (!itemsFromStorage) {
-        items = await getCars();
-        const serializedItems = JSON.stringify(items);
-        localStorage.removeItem("savedItems");
-        localStorage.setItem("savedItems", serializedItems);
-      }
+      const itemsRes: itemsResponse<Car> = await getCars(items);
       const list: HTMLElement = createHTMLElement("ul", "garage__list");
-      items?.forEach((item) => list.append(this.renderItem(item)));
+      itemsRes.items?.forEach((item) => list.append(this.renderItem(item)));
 
       this.container.append(list);
     } catch (err) {
@@ -76,6 +74,10 @@ export class Garage {
     return item;
   }
 
+
+
+
+
   static removeCar() {
     const container = document.body;
     let id = 0;
@@ -88,14 +90,29 @@ export class Garage {
         const garage: Garage = new Garage();
         container.lastChild?.remove();
         container.append(garage.render());
+
       }
     });
   }
 
-  render(itemsFromStorage: Car[] | null = null) {
+  
+
+  render(currentPage:number = 1) {
+   
+    const itemsPerPage = 7;
     this.renderHeading();
     this.renderInfo(1);
-    this.renderList(itemsFromStorage);
+    console.log([
+      { key: '_page', value: currentPage },
+      { key: '_limit', value: itemsPerPage },
+    ])
+    this.renderList([
+      { key: '_page', value: currentPage },
+      { key: '_limit', value: itemsPerPage },
+    ]);
+    
+    // NavigationGarage.pagination();
     return this.container;
   }
+  
 }

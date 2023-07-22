@@ -5,6 +5,7 @@ import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 import { Garage } from "./garage";
 import { jsonBody } from "../../types";
 import { updateCar } from "../AsyncFunctions/updateCar";
+import { App } from "../../app/app";
 
 export class ControlPanel {
   private container: HTMLElement;
@@ -65,9 +66,13 @@ export class ControlPanel {
         if (inputColor) {
           inputColor.value = "#D5F0C7";
         }
-        const garage: Garage = new Garage();
-        container.lastChild?.remove();
-        container.append(garage.render());
+        container.innerHTML ="";
+        const app = new App();
+        app.run();
+        // const garage: Garage = new Garage();
+        // container.lastChild?.remove();
+        // container.append(garage.render());
+      
       });
     }
   }
@@ -118,9 +123,9 @@ export class ControlPanel {
         if (inputColor) {
           inputColor.value = "#D5F0C7";
         }
-        const garage: Garage = new Garage();
-        container.lastChild?.remove();
-        container.append(garage.render());
+        container.innerHTML ="";
+        const app = new App();
+        app.run();
       });
     }
   }

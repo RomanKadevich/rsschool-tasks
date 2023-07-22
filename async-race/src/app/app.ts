@@ -15,52 +15,84 @@ export class App {
     this.garage = new Garage();
   }
 
-  loadGarage(): void {
-    const garageButton: HTMLElement | null =
-      document.querySelector("#navigation__btn-0");
-    const garage: HTMLElement | null = document.querySelector("#garage");
-    const handle = () => {
-      garage!.innerHTML = "";
-      if (garage) {
-        const serializedItems: string | null =
-          localStorage.getItem("savedItems");
-        if (serializedItems) {
-          const items = JSON.parse(serializedItems);
-          this.container.append(this.garage.render(items));
-        }
-      }
-    };
-    if (garageButton) {
-      garageButton.addEventListener("click", handle);
-      // garageButton.removeEventListener('click',handle )
-    }
-  }
 
-  loadWinners(): void {
-    const winnerButton: HTMLElement | null =
-      document.querySelector("#navigation__btn-1");
-    const garage: HTMLElement | null = document.querySelector("#garage");
+  loadGarage(): void {
+    const garageButton: HTMLButtonElement | null =
+      document.querySelector("#navigation__btn-0");
+    const garage: HTMLElement | null = document.querySelector(".garage");
     const handle = () => {
+      // garage!.innerHTML = "";
       if (garage) {
+         garage.remove();
         while (garage.firstChild) {
           garage.firstChild.remove();
         }
       }
+      //    this.container.append(this.garage.render(items));
+      //   const serializedItems: string | null =
+      //     localStorage.getItem("savedItems");
+      //   if (serializedItems) {
+      //     const items = JSON.parse(serializedItems);
+         
+      //   }
+      // }
+      if (!garage) {
+        // Если элемент "garage" еще не существует, создаем его и добавляем в DOM
+        this.container.append(this.garage.render());
+      } else {
+        // Если элемент "garage" уже существует, очищаем его содержимое
+        garage.remove();
+      }
+      this.container.append(this.garage.render());
+     
+      if (garageButton){  garageButton.disabled= true;}
+      const winnerButton: HTMLButtonElement | null =
+      document.querySelector("#navigation__btn-1");
+      if (winnerButton){  winnerButton.disabled= false;}
+    };
+    if (garageButton) {
+      garageButton.removeEventListener("click", handle);
+      garageButton.addEventListener("click", handle);
+      garageButton.disabled= true;
+      // garageButton.removeEventListener('click',handle )
+    }
+  
+  }
+
+  loadWinners(): void {
+    const winnerButton: HTMLButtonElement | null =
+      document.querySelector("#navigation__btn-1");
+    const garage: HTMLElement | null = document.querySelector(".garage");
+    const handle = () => {
+      const garages: NodeListOf<Element>|null = document.querySelectorAll(".garage");
+      if(garages){
+          garages.forEach(garage=>garage.remove())
+      }
+      // if (garage) {
+      //   garage.remove();
+      // }
+      const garageButton: HTMLButtonElement | null =
+      document.querySelector("#navigation__btn-0");
+      if (garageButton){  garageButton.disabled= false;}
+      if (winnerButton){  winnerButton.disabled= true;}
     };
     if (winnerButton) {
+      winnerButton.removeEventListener("click", handle);
       winnerButton.addEventListener("click", handle);
       // winnerButton.removeEventListener('click',handle )
     }
+
   }
 
   run() {
     this.container.append(this.header.render());
     this.container.append(this.garage.render());
-    this.loadGarage();
-    this.loadWinners();
+    
 
     ControlPanel.createNewCar();
     Garage.removeCar();
     ControlPanel.updateCar();
+    this.loadGarage();
+    this.loadWinners();
   }
 }

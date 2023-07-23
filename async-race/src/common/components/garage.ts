@@ -4,11 +4,9 @@ import { getCars } from "../AsyncFunctions/getCars";
 import { getCountOfCars } from "../AsyncFunctions/getCountOfCars";
 import { createSvg } from "../DOMFunctions/createSvg";
 import { deleteCar } from "../AsyncFunctions/deleteCar";
-import { Car } from "../../types";
-import { itemsResponse } from "../../types";
-import { QueryParams } from "../../types";
-import { NavigationGarage } from "./navGarageButton";
+import { Car, itemsResponse, QueryParams } from "../../types";
 
+import { NavigationGarage } from "./navGarageButton";
 
 export class Garage {
   private container: HTMLElement;
@@ -61,7 +59,7 @@ export class Garage {
       createSubmitForm("item__end", "B", "get")
     );
     const carName: HTMLElement = createHTMLElement("div", "item__car-name");
-    carName.textContent = car.name;
+    carName.textContent = car.name || "";
     const carImg: HTMLElement = createHTMLElement("div", "item__car-img");
     carImg.innerHTML = createSvg(car.color);
     itemContent.append(selectButton);
@@ -73,10 +71,6 @@ export class Garage {
     item.append(itemContent);
     return item;
   }
-
-
-
-
 
   static removeCar() {
     const container = document.body;
@@ -90,29 +84,24 @@ export class Garage {
         const garage: Garage = new Garage();
         container.lastChild?.remove();
         container.append(garage.render());
-
       }
     });
   }
 
-  
-
-  render(currentPage:number = 1) {
-   
+  render(currentPage = 1) {
     const itemsPerPage = 7;
     this.renderHeading();
     this.renderInfo(1);
     console.log([
-      { key: '_page', value: currentPage },
-      { key: '_limit', value: itemsPerPage },
-    ])
-    this.renderList([
-      { key: '_page', value: currentPage },
-      { key: '_limit', value: itemsPerPage },
+      { key: "_page", value: currentPage },
+      { key: "_limit", value: itemsPerPage },
     ]);
-    
+    this.renderList([
+      { key: "_page", value: currentPage },
+      { key: "_limit", value: itemsPerPage },
+    ]);
+
     // NavigationGarage.pagination();
     return this.container;
   }
-  
 }

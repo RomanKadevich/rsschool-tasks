@@ -14,9 +14,8 @@ export class Header {
     this.controlPanel = new ControlPanel();
   }
 
-  renderOnlyNavigation(){
+  renderOnlyNavigation() {
     return this.navigation.render();
-   
   }
 
   render(): HTMLElement {

@@ -4,7 +4,9 @@
     color: $textColor;
 }
 
+   
 .item{
+
     padding-top: 0.6rem;
     border-bottom:1px ;
     border-bottom-color: bisque;
@@ -12,8 +14,13 @@
     &__content{
         display: flex;
        flex-wrap: wrap;
-       max-width: 14rem;;
+       max-width: 23rem;;
     }
+    &__content >:nth-child(-n+3){
+        flex-basis: calc(33.33% - 10px); 
+     
+    }
+    
     &__car-name{
        margin-right:0;
     }

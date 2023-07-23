@@ -9,14 +9,15 @@ export class App {
   private header: Header;
 
   private garage: Garage;
+
   private navigationGarage: NavigationGarage;
+
   constructor() {
     this.container = document.body;
     this.header = new Header();
     this.garage = new Garage();
     this.navigationGarage = new NavigationGarage();
   }
-
 
   loadGarage(): void {
     const garageButton: HTMLButtonElement | null =
@@ -25,7 +26,7 @@ export class App {
     const handle = () => {
       // garage!.innerHTML = "";
       if (garage) {
-         garage.remove();
+        garage.remove();
         while (garage.firstChild) {
           garage.firstChild.remove();
         }
@@ -35,7 +36,7 @@ export class App {
       //     localStorage.getItem("savedItems");
       //   if (serializedItems) {
       //     const items = JSON.parse(serializedItems);
-         
+
       //   }
       // }
       if (!garage) {
@@ -46,19 +47,22 @@ export class App {
         garage.remove();
       }
       this.container.append(this.garage.render());
-     
-      if (garageButton){  garageButton.disabled= true;}
+
+      if (garageButton) {
+        garageButton.disabled = true;
+      }
       const winnerButton: HTMLButtonElement | null =
-      document.querySelector("#navigation__btn-1");
-      if (winnerButton){  winnerButton.disabled= false;}
+        document.querySelector("#navigation__btn-1");
+      if (winnerButton) {
+        winnerButton.disabled = false;
+      }
     };
     if (garageButton) {
       garageButton.removeEventListener("click", handle);
       garageButton.addEventListener("click", handle);
-      garageButton.disabled= true;
+      garageButton.disabled = true;
       // garageButton.removeEventListener('click',handle )
     }
-  
   }
 
   loadWinners(): void {
@@ -66,39 +70,41 @@ export class App {
       document.querySelector("#navigation__btn-1");
     const garage: HTMLElement | null = document.querySelector(".garage");
     const handle = () => {
-      const garages: NodeListOf<Element>|null = document.querySelectorAll(".garage");
-      if(garages){
-          garages.forEach(garage=>garage.remove())
+      const garages: NodeListOf<Element> | null =
+        document.querySelectorAll(".garage");
+      if (garages) {
+        garages.forEach((garage) => garage.remove());
       }
       // if (garage) {
       //   garage.remove();
       // }
       const garageButton: HTMLButtonElement | null =
-      document.querySelector("#navigation__btn-0");
-      if (garageButton){  garageButton.disabled= false;}
-      if (winnerButton){  winnerButton.disabled= true;}
+        document.querySelector("#navigation__btn-0");
+      if (garageButton) {
+        garageButton.disabled = false;
+      }
+      if (winnerButton) {
+        winnerButton.disabled = true;
+      }
     };
     if (winnerButton) {
       winnerButton.removeEventListener("click", handle);
       winnerButton.addEventListener("click", handle);
       // winnerButton.removeEventListener('click',handle )
     }
-
   }
 
   run() {
     this.container.append(this.header.render());
     this.container.append(this.navigationGarage.render());
     this.container.append(this.garage.render());
-    
-    
 
     ControlPanel.createNewCar();
     Garage.removeCar();
     ControlPanel.updateCar();
+    ControlPanel.setRandomCars();
     this.loadGarage();
     this.loadWinners();
-    NavigationGarage.pagination()
-  
+    NavigationGarage.pagination();
   }
 }

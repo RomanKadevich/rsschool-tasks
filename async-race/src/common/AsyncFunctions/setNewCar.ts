@@ -1,7 +1,7 @@
-import { Car } from "../components/garage";
+import { Car, jsonBody } from "../../types";
 import { url, path } from "./vars";
 
-export async function setNewCar(car: Car) {
+export async function setNewCar(car: jsonBody | Car[]) {
   try {
     const response = await fetch(`${url}${path.garage}`, {
       method: "POST",

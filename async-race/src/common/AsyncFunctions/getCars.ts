@@ -1,10 +1,9 @@
 import { url, path } from "./vars";
-import { QueryParams } from "../../types";
-import { itemsResponse } from "../../types";
-import { Car } from "../../types";
+import { QueryParams, itemsResponse, Car } from "../../types";
 
-
-export async function getCars(queryParams: QueryParams[] = []): Promise<itemsResponse<Car>>  {
+export async function getCars(
+  queryParams: QueryParams[] = [],
+): Promise<itemsResponse<Car>> {
   try {
     const createQueryString = (Params: QueryParams[] = []) => {
       return Params.length
@@ -15,9 +14,9 @@ export async function getCars(queryParams: QueryParams[] = []): Promise<itemsRes
       `${url}${path.garage}${createQueryString(queryParams)}`,
     );
     const items: Car[] = await res.json();
-    const count: number = Number(res.headers.get("X-Total-Count"));
+    const count = Number(res.headers.get("X-Total-Count"));
     console.log(res.headers.get("X-Total-Count"));
-    return {items, count};
+    return { items, count };
   } catch (err) {
     throw err;
   }

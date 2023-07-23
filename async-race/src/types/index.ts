@@ -1,7 +1,7 @@
 export interface Car {
   color: string;
   id?: number;
-  name: string;
+  name?: string;
 }
 
 export interface jsonBody {
@@ -11,7 +11,7 @@ export interface jsonBody {
 
 export interface QueryParams {
   key: string;
-  value: string|number;
+  value: string | number;
 }
 
 export interface itemsResponse<T> {

@@ -5,6 +5,7 @@ import { getCountOfCars } from "../AsyncFunctions/getCountOfCars";
 import { createSvg } from "../DOMFunctions/createSvg";
 import { deleteCar } from "../AsyncFunctions/deleteCar";
 import { Car, itemsResponse, QueryParams } from "../../types";
+import { deleteWinner } from "../AsyncFunctions/deleteWiner";
 
 import { NavigationGarage } from "./navGarageButton";
 
@@ -81,6 +82,7 @@ export class Garage {
         id = +target.id.slice(7);
         console.log(id);
         deleteCar(id);
+        deleteWinner(id);
         const garage: Garage = new Garage();
         container.lastChild?.remove();
         container.append(garage.render());

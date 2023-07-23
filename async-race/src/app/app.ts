@@ -2,6 +2,7 @@ import { Header } from "../common/components/header";
 import { Garage } from "../common/components/garage";
 import { ControlPanel } from "../common/components/controlPanel";
 import { NavigationGarage } from "../common/components/navGarageButton";
+import { Winners } from "../common/components/winners";
 
 export class App {
   private container: HTMLElement;
@@ -10,6 +11,8 @@ export class App {
 
   private garage: Garage;
 
+  private winners: Winners;
+
   private navigationGarage: NavigationGarage;
 
   constructor() {
@@ -17,6 +20,7 @@ export class App {
     this.header = new Header();
     this.garage = new Garage();
     this.navigationGarage = new NavigationGarage();
+    this.winners = new Winners();
   }
 
   loadGarage(): void {
@@ -30,6 +34,11 @@ export class App {
         while (garage.firstChild) {
           garage.firstChild.remove();
         }
+      }
+      const winners: NodeListOf<Element> | null =
+        document.querySelectorAll(".winners");
+      if (winners) {
+        winners.forEach((winner) => winner.remove());
       }
       //    this.container.append(this.garage.render(items));
       //   const serializedItems: string | null =
@@ -56,6 +65,11 @@ export class App {
       if (winnerButton) {
         winnerButton.disabled = false;
       }
+      const controlPanel: HTMLElement | null =
+        document.querySelector(".controlPanel");
+      if (controlPanel) {
+        controlPanel.classList.remove("disactive");
+      }
     };
     if (garageButton) {
       garageButton.removeEventListener("click", handle);
@@ -68,13 +82,25 @@ export class App {
   loadWinners(): void {
     const winnerButton: HTMLButtonElement | null =
       document.querySelector("#navigation__btn-1");
-    const garage: HTMLElement | null = document.querySelector(".garage");
+    const winner: HTMLElement | null = document.querySelector(".winners");
+    const winners: NodeListOf<Element> | null =
+      document.querySelectorAll(".winners");
     const handle = () => {
       const garages: NodeListOf<Element> | null =
         document.querySelectorAll(".garage");
       if (garages) {
         garages.forEach((garage) => garage.remove());
       }
+
+      if (winners) {
+        winners.forEach((winner) => (winner.innerHTML = ""));
+      }
+      if (winner) {
+        while (winner.firstChild) {
+          winner.firstChild.remove();
+        }
+      }
+
       // if (garage) {
       //   garage.remove();
       // }
@@ -86,6 +112,12 @@ export class App {
       if (winnerButton) {
         winnerButton.disabled = true;
       }
+      const controlPanel: HTMLElement | null =
+        document.querySelector(".controlPanel");
+      if (controlPanel) {
+        controlPanel.classList.add("disactive");
+      }
+      this.container.append(this.winners.render());
     };
     if (winnerButton) {
       winnerButton.removeEventListener("click", handle);

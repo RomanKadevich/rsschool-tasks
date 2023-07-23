@@ -18,3 +18,8 @@ export interface itemsResponse<T> {
   items: T[];
   count: number;
 }
+export interface Winner {
+  id: number;
+  wins: number;
+  time: number;
+}

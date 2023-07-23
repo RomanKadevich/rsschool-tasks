@@ -32,7 +32,7 @@ export class Winners {
       itemsRes.items?.forEach(async (item) => {
         list.append(await this.renderItem(item, item.id));
       });
-
+      this.container.append(this.renderHederOfTable());
       this.container.append(list);
     } catch (err) {
       console.error(err);
@@ -71,6 +71,22 @@ export class Winners {
     winnerItem.append(winnerContent);
     return winnerItem;
   }
+  renderHederOfTable(): HTMLElement {
+
+    const table: HTMLElement = createHTMLElement("div", "table");
+
+    const tableHeader: HTMLElement = createHTMLElement("div", "table__header");
+    const headers: string[] = ["#", "Car", "Name", "Wins", "Best Times (sec)"];
+    headers.forEach((header) => {
+      const th: HTMLElement = createHTMLElement("div", "table__header-cell");
+      th.textContent = header;
+      tableHeader.append(th);
+    });
+    table.append(tableHeader);
+   return table;
+}
+
+
 
   async renderHeading(): Promise<void> {
     const heading: HTMLElement = createHTMLElement("h1", "winner__heading");

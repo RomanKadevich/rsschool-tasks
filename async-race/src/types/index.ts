@@ -23,10 +23,10 @@ export interface Winner {
   wins: number;
   time: number;
 }
-export interface startEngine{
+export interface startEngine {
   velocity: number;
   distance: number;
   ok: boolean;
-  status:string|number;
+  status: string | number;
   statusText: string;
 }

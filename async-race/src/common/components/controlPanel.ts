@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { setNewCar } from "../APIFunctions/setNewCar";
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createInputForm } from "../DOMFunctions/createInputForm";
@@ -89,7 +90,6 @@ export class ControlPanel {
         event.preventDefault();
 
         const formData = new FormData(form);
-        // const jsonData: jsonBody = { color: "", name: "" };
         const newJsonData: jsonBody = {};
 
         formData.forEach((value, key) => {
@@ -182,35 +182,35 @@ export class ControlPanel {
     ];
 
     const colors = [
-      "#FF0000", // Red
-      "#0000FF", // Blue
-      "#00FF00", // Green
-      "#FFFF00", // Yellow
-      "#000000", // Black
-      "#FFFFFF", // White
-      "#C0C0C0", // Silver
-      "#808080", // Gray
-      "#FFA500", // Orange
-      "#800080", // Purple
-      "#FFC0CB", // Pink
-      "#A52A2A", // Brown
-      "#FFD700", // Gold
-      "#CD7F32", // Bronze
-      "#B87333", // Copper
-      "#008080", // Teal
-      "#000080", // Navy
-      "#800000", // Burgundy
-      "#00FF00", // Lime
-      "#FF00FF", // Magenta
-      "#40E0D0", // Turquoise
-      "#708090", // Slate
-      "#4B0082", // Indigo
-      "#F5F5DC", // Beige
-      "#808000", // Olive
-      "#800000", // Maroon
-      "#98FF98", // Mint
-      "#E6E6FA", // Lavender
-      "#36454F", // Charcoal
+      "#FF0000",
+      "#0000FF",
+      "#00FF00",
+      "#FFFF00",
+      "#000000",
+      "#FFFFFF",
+      "#C0C0C0",
+      "#808080",
+      "#FFA500",
+      "#800080",
+      "#FFC0CB",
+      "#A52A2A",
+      "#FFD700",
+      "#CD7F32",
+      "#B87333",
+      "#008080",
+      "#000080",
+      "#800000",
+      "#00FF00",
+      "#FF00FF",
+      "#40E0D0",
+      "#708090",
+      "#4B0082",
+      "#F5F5DC",
+      "#808000",
+      "#800000",
+      "#98FF98",
+      "#E6E6FA",
+      "#36454F",
     ];
 
     const container = document.body;
@@ -219,8 +219,9 @@ export class ControlPanel {
     }
 
     const createRandomCars = async () => {
-      // const randomCars = [];
       const countOfElements = 100;
+      const promises = [];
+
       for (let i = 0; i < countOfElements; i++) {
         const brand = brandNames[getRandomIndex(brandNames.length)];
         const model = modelNames[getRandomIndex(modelNames.length)];
@@ -229,23 +230,19 @@ export class ControlPanel {
           color: `${color}`,
           name: `${brand} ${model}`,
         };
-        await setNewCar(carName);
-        // randomCars.push(carName);
+        promises.push(setNewCar(carName));
       }
-      // return randomCars;
+
+      await Promise.all(promises);
     };
 
     if (form) {
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
         await createRandomCars();
-
         container.innerHTML = "";
         const app = new App();
         app.run();
-        // const garage: Garage = new Garage();
-        // container.lastChild?.remove();
-        // container.append(garage.render());
       });
     }
   }

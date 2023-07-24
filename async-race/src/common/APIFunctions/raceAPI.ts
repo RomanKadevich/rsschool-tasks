@@ -1,6 +1,6 @@
 import { url, path } from "./vars";
-import { QueryParams, itemsResponse, Car } from "../../types";
-import { startEngine } from "../../types";
+import { QueryParams, startEngine } from "../../types";
+
 export async function raceApi(
   queryParams: QueryParams[] = [],
 ): Promise<startEngine> {
@@ -11,11 +11,12 @@ export async function raceApi(
         : "";
     };
     const res = await fetch(
-      `${url}${path.engine}${createQueryString(queryParams)}`,{
+      `${url}${path.engine}${createQueryString(queryParams)}`,
+      {
         method: "PATCH",
-      });
-    const items:startEngine = await res.json();
-    console.log(items)
+      },
+    );
+    const items: startEngine = await res.json();
     return items;
   } catch (err) {
     throw new Error("Ошибка при выполнении запроса к серверу");

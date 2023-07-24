@@ -87,8 +87,7 @@ export class Winners {
     this.container.append(heading);
   }
 
-  render(currentPage = 1) {
-    // const itemsPerPage = 7;
+  render() {
     this.container.innerHTML = "";
     this.renderHeading();
     this.renderInfo(1);
@@ -96,13 +95,6 @@ export class Winners {
       { key: "_page", value: 0 },
       { key: "_limit", value: 10 },
     ]);
-    // console.log([
-    //   { key: "_page", value: currentPage },
-    //   { key: "_limit", value: itemsPerPage },
-    // ]);
-
-    // NavigationGarage.pagination();
-
     return this.container;
   }
 }

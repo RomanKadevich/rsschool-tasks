@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { Header } from "../common/components/header";
 import { Garage } from "../common/components/garage";
 import { ControlPanel } from "../common/components/controlPanel";
@@ -32,7 +33,6 @@ export class App {
       document.querySelector("#navigation__btn-0");
     const garage: HTMLElement | null = document.querySelector(".garage");
     const handle = () => {
-      // garage!.innerHTML = "";
       if (garage) {
         garage.remove();
         while (garage.firstChild) {
@@ -44,19 +44,9 @@ export class App {
       if (winners) {
         winners.forEach((winner) => winner.remove());
       }
-      //    this.container.append(this.garage.render(items));
-      //   const serializedItems: string | null =
-      //     localStorage.getItem("savedItems");
-      //   if (serializedItems) {
-      //     const items = JSON.parse(serializedItems);
-
-      //   }
-      // }
       if (!garage) {
-        // Если элемент "garage" еще не существует, создаем его и добавляем в DOM
         this.container.append(this.garage.render());
       } else {
-        // Если элемент "garage" уже существует, очищаем его содержимое
         garage.remove();
       }
       this.container.append(this.garage.render());
@@ -79,7 +69,6 @@ export class App {
       garageButton.removeEventListener("click", handle);
       garageButton.addEventListener("click", handle);
       garageButton.disabled = true;
-      // garageButton.removeEventListener('click',handle )
     }
   }
 
@@ -106,10 +95,6 @@ export class App {
           winner.firstChild.remove();
         }
       }
-
-      // if (garage) {
-      //   garage.remove();
-      // }
       const garageButton: HTMLButtonElement | null =
         document.querySelector("#navigation__btn-0");
       if (garageButton) {
@@ -128,7 +113,6 @@ export class App {
     if (winnerButton) {
       winnerButton.removeEventListener("click", handle);
       winnerButton.addEventListener("click", handle);
-      // winnerButton.removeEventListener('click',handle )
     }
   }
 
@@ -136,7 +120,6 @@ export class App {
     this.container.append(this.header.render());
     this.container.append(this.navigationGarage.render());
     this.container.append(this.garage.render());
-
     ControlPanel.createNewCar();
     Garage.removeCar();
     ControlPanel.updateCar();

@@ -1,7 +1,7 @@
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { itemsResponse, Car } from "../../types";
 import { Garage } from "./garage";
-import { getCars } from "../AsyncFunctions/getCars";
+import { getCars } from "../APIFunctions/getCars";
 
 export class NavigationGarage {
   private container: HTMLElement;

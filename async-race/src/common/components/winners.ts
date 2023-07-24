@@ -1,10 +1,10 @@
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
-import { getCars } from "../AsyncFunctions/getCars";
+import { getCars } from "../APIFunctions/getCars";
 import { createSvg } from "../DOMFunctions/createSvg";
 import { itemsResponse, QueryParams, Winner } from "../../types";
 
-import { getWinners } from "../AsyncFunctions/getWinnerss";
-import { getCountOfWinners } from "../AsyncFunctions/getCountOfWinners";
+import { getWinners } from "../APIFunctions/getWinnerss";
+import { getCountOfWinners } from "../APIFunctions/getCountOfWinners";
 
 export class Winners {
   private container: HTMLElement;

@@ -3,6 +3,7 @@ import { Garage } from "../common/components/garage";
 import { ControlPanel } from "../common/components/controlPanel";
 import { NavigationGarage } from "../common/components/navGarageButton";
 import { Winners } from "../common/components/winners";
+import { RaceAction } from "../common/ApiClasses/raceAction";
 
 export class App {
   private container: HTMLElement;
@@ -15,12 +16,15 @@ export class App {
 
   private navigationGarage: NavigationGarage;
 
+  private raceAction: RaceAction;
+
   constructor() {
     this.container = document.body;
     this.header = new Header();
     this.garage = new Garage();
     this.navigationGarage = new NavigationGarage();
     this.winners = new Winners();
+    this.raceAction = new RaceAction();
   }
 
   loadGarage(): void {
@@ -140,5 +144,7 @@ export class App {
     this.loadGarage();
     this.loadWinners();
     NavigationGarage.pagination();
+    this.raceAction.startAnimation();
+    this.raceAction.restart();
   }
 }

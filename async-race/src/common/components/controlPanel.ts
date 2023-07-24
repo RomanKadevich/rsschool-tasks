@@ -1,9 +1,9 @@
-import { setNewCar } from "../AsyncFunctions/setNewCar";
+import { setNewCar } from "../APIFunctions/setNewCar";
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createInputForm } from "../DOMFunctions/createInputForm";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 import { jsonBody } from "../../types";
-import { updateCar } from "../AsyncFunctions/updateCar";
+import { updateCar } from "../APIFunctions/updateCar";
 import { App } from "../../app/app";
 
 export class ControlPanel {

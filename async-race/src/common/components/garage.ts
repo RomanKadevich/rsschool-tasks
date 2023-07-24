@@ -1,11 +1,11 @@
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
-import { getCars } from "../AsyncFunctions/getCars";
-import { getCountOfCars } from "../AsyncFunctions/getCountOfCars";
+import { getCars } from "../APIFunctions/getCars";
+import { getCountOfCars } from "../APIFunctions/getCountOfCars";
 import { createSvg } from "../DOMFunctions/createSvg";
-import { deleteCar } from "../AsyncFunctions/deleteCar";
+import { deleteCar } from "../APIFunctions/deleteCar";
 import { Car, itemsResponse, QueryParams } from "../../types";
-import { deleteWinner } from "../AsyncFunctions/deleteWiner";
+import { deleteWinner } from "../APIFunctions/deleteWiner";
 
 export class Garage {
   private container: HTMLElement;
@@ -51,17 +51,18 @@ export class Garage {
       createHTMLElement("button", "remove-button button", `remove-${car.id}`)
     );
     removeButton.textContent = "remove";
-    const startButton = <HTMLFormElement>(
-      createSubmitForm("item__start", "A", "get")
-    );
-    const endButton = <HTMLFormElement>(
-      createSubmitForm("item__end", "B", "get")
-    );
+    const startButton:HTMLElement = createHTMLElement("button", "item__start button", `item__start-${car.id}`);
+    startButton.textContent = "A";
+
+
+    const endButton = <HTMLButtonElement>createHTMLElement("button", "item__end button", `item__end-${car.id}`);
+    endButton.textContent = "B";
+    endButton.disabled = true;
     const carName: HTMLElement = createHTMLElement("div", "item__car-name");
     carName.textContent = car.name || "";
-    const carImg: HTMLElement = createHTMLElement("div", "item__car-img");
+    const carImg: HTMLElement = createHTMLElement("div", "item__car-img", `item__car-img-${car.id}`);
     carImg.innerHTML = createSvg(car.color);
-    const endImg: HTMLElement = createHTMLElement("div", "item__flag-img");
+    const endImg: HTMLElement = createHTMLElement("div", "item__flag-img", `item__flag-img-${car.id}`);
     const flag = () => {
       const svg = `<svg width="31" height="60" viewBox="0 0 31 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="6" y="2" width="2" height="58" fill="#9E4E4E"/>

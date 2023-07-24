@@ -68,24 +68,16 @@ export class ControlPanel {
         container.innerHTML = "";
         const app = new App();
         app.run();
-        // const garage: Garage = new Garage();
-        // container.lastChild?.remove();
-        // container.append(garage.render());
       });
     }
   }
 
   static updateCar() {
-    // const container = document.body;
     let id = 0;
     document.addEventListener("click", (event: MouseEvent) => {
       const target = event.target as HTMLButtonElement;
       if (target.classList.contains("select-button")) {
         id = +target.id.slice(7);
-        console.log(id);
-        // const garage: Garage = new Garage();
-        // container.lastChild?.remove();
-        // container.append(garage.render());
       }
     });
     const form: HTMLFormElement | null = document.querySelector(
@@ -103,12 +95,8 @@ export class ControlPanel {
         formData.forEach((value, key) => {
           if (!(value === "") && !(value === "#d5f0c7")) {
             newJsonData[key as keyof jsonBody] = value as string;
-            console.log(JSON.stringify(newJsonData));
           }
         });
-        console.log(JSON.stringify(newJsonData.color));
-        console.log(JSON.stringify(newJsonData.name));
-        console.log(JSON.stringify(newJsonData));
         await updateCar(id, newJsonData);
         const input: HTMLFormElement | null =
           document.querySelector("#update__input");

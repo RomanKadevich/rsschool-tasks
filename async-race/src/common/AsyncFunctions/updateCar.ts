@@ -11,6 +11,6 @@ export async function updateCar(id: number, car: jsonBody) {
       body: JSON.stringify(car),
     });
   } catch (err) {
-    console.error(err);
+    throw new Error();
   }
 }

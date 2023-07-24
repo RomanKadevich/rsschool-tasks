@@ -15,9 +15,8 @@ export async function getCars(
     );
     const items: Car[] = await res.json();
     const count = Number(res.headers.get("X-Total-Count"));
-    console.log(res.headers.get("X-Total-Count"));
     return { items, count };
   } catch (err) {
-    throw err;
+    throw new Error();
   }
 }

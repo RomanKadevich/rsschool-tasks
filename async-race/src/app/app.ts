@@ -93,7 +93,9 @@ export class App {
       }
 
       if (winners) {
-        winners.forEach((winner) => (winner.innerHTML = ""));
+        winners.forEach((el) => {
+          el.innerHTML = "";
+        });
       }
       if (winner) {
         while (winner.firstChild) {

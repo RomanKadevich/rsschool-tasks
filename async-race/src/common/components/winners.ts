@@ -1,12 +1,8 @@
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
-import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
 import { getCars } from "../AsyncFunctions/getCars";
-import { getCountOfCars } from "../AsyncFunctions/getCountOfCars";
 import { createSvg } from "../DOMFunctions/createSvg";
-import { deleteCar } from "../AsyncFunctions/deleteCar";
-import { Car, itemsResponse, QueryParams, Winner } from "../../types";
+import { itemsResponse, QueryParams, Winner } from "../../types";
 
-import { NavigationGarage } from "./navGarageButton";
 import { getWinners } from "../AsyncFunctions/getWinnerss";
 import { getCountOfWinners } from "../AsyncFunctions/getCountOfWinners";
 
@@ -26,16 +22,14 @@ export class Winners {
   async renderList(items: QueryParams[]): Promise<void> {
     try {
       const itemsRes: itemsResponse<Winner> = await getWinners(items);
-      console.log(JSON.stringify(itemsRes));
       const list: HTMLElement = createHTMLElement("ul", "winner__list");
-      console.log(itemsRes.items);
       itemsRes.items?.forEach(async (item) => {
         list.append(await this.renderItem(item, item.id));
       });
       this.container.append(this.renderHederOfTable());
       this.container.append(list);
     } catch (err) {
-      console.error(err);
+      throw new Error();
     }
   }
 
@@ -56,7 +50,6 @@ export class Winners {
     );
     numberWinner.textContent = "1";
     const car = await getCars([{ key: "id", value: id }]);
-    console.log(JSON.stringify(car));
     const carImg: HTMLElement = createHTMLElement("div", "winner__car-img");
     carImg.innerHTML = createSvg(car.items[0].color);
     const carName: HTMLElement = createHTMLElement("div", "winner__car-name");
@@ -71,8 +64,10 @@ export class Winners {
     winnerItem.append(winnerContent);
     return winnerItem;
   }
-  renderHederOfTable(): HTMLElement {
 
+  // Disable 'class-methods-use-this' rule for the 'renderHederOfTable' method
+  // eslint-disable-next-line class-methods-use-this
+  renderHederOfTable(): HTMLElement {
     const table: HTMLElement = createHTMLElement("div", "table");
 
     const tableHeader: HTMLElement = createHTMLElement("div", "table__header");
@@ -83,10 +78,8 @@ export class Winners {
       tableHeader.append(th);
     });
     table.append(tableHeader);
-   return table;
-}
-
-
+    return table;
+  }
 
   async renderHeading(): Promise<void> {
     const heading: HTMLElement = createHTMLElement("h1", "winner__heading");

@@ -40,9 +40,8 @@ export class NavigationGarage {
       const garageInfo = document.querySelector("#garage__info");
       let currentPage = 0;
       if (garageInfo) {
-        currentPage = Number(garageInfo.textContent!.slice(6));
+        currentPage = Number(garageInfo.textContent?.slice(6));
       }
-      console.log(currentPage);
 
       const itemsPerPage = 7;
 
@@ -51,11 +50,7 @@ export class NavigationGarage {
         { key: "_limit", value: itemsPerPage },
       ]);
       const countOfItems: number = itemsRes.count;
-      console.log(JSON.stringify(itemsRes));
-      console.log(typeof itemsRes.count);
-      console.log(`this-${itemsRes.count}`);
       const limitPage: number = Math.ceil(countOfItems / 7);
-      console.log(limitPage);
 
       if (currentPage < limitPage) {
         if (prevButton) {
@@ -65,12 +60,10 @@ export class NavigationGarage {
         const garage: Garage = new Garage();
         container.lastChild?.remove();
         container.append(garage.render(currentPage));
-        const garageInfo = document.querySelector("#garage__info");
-        if (garageInfo) {
-          garageInfo.textContent = `Page #${currentPage}`;
+        const garageInf = document.querySelector("#garage__info");
+        if (garageInf) {
+          garageInf.textContent = `Page #${currentPage}`;
         }
-
-        console.log("prev");
       }
       if (currentPage === limitPage) {
         if (nextButton) {
@@ -78,15 +71,12 @@ export class NavigationGarage {
         }
       }
     };
-
-    // Функция для загрузки предыдущей страницы
     const loadPreviousPage = () => {
       const garageInfo = document.querySelector("#garage__info");
       let currentPage = 0;
       if (garageInfo) {
-        currentPage = Number(garageInfo.textContent!.slice(6));
+        currentPage = Number(garageInfo.textContent?.slice(6));
       }
-      console.log(currentPage);
       if (currentPage > 1) {
         if (nextButton) {
           nextButton.disabled = false;
@@ -95,9 +85,9 @@ export class NavigationGarage {
         const garage: Garage = new Garage();
         container.lastChild?.remove();
         container.append(garage.render(currentPage));
-        const garageInfo = document.querySelector("#garage__info");
-        if (garageInfo) {
-          garageInfo.textContent = `Page #${currentPage}`;
+        const garageInf = document.querySelector("#garage__info");
+        if (garageInf) {
+          garageInf.textContent = `Page #${currentPage}`;
         }
       }
       if (currentPage === 1) {
@@ -105,7 +95,6 @@ export class NavigationGarage {
           prevButton.disabled = true;
         }
       }
-      console.log("prev");
     };
     if (nextButton) {
       nextButton.addEventListener("click", () => loadNextPage());

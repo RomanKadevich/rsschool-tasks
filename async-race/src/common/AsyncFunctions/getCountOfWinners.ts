@@ -6,6 +6,6 @@ export async function getCountOfWinners() {
     const items = await res.json();
     return items.length;
   } catch (err) {
-    return err;
+    throw new Error();
   }
 }

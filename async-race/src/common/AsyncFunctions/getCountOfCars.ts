@@ -6,6 +6,6 @@ export async function getCountOfCars() {
     const items = await res.json();
     return items.length;
   } catch (err) {
-    return err;
+    throw new Error();
   }
 }

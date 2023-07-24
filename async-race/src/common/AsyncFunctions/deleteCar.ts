@@ -9,6 +9,6 @@ export async function deleteCar(id: number) {
       },
     });
   } catch (err) {
-    console.error(err);
+    throw new Error();
   }
 }

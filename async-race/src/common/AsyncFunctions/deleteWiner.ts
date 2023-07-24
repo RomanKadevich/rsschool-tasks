@@ -9,6 +9,6 @@ export async function deleteWinner(id: number) {
       },
     });
   } catch (err) {
-    console.error(err);
+    throw new Error();
   }
 }

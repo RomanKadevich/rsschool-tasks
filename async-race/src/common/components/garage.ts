@@ -7,8 +7,6 @@ import { deleteCar } from "../AsyncFunctions/deleteCar";
 import { Car, itemsResponse, QueryParams } from "../../types";
 import { deleteWinner } from "../AsyncFunctions/deleteWiner";
 
-import { NavigationGarage } from "./navGarageButton";
-
 export class Garage {
   private container: HTMLElement;
 
@@ -36,7 +34,7 @@ export class Garage {
 
       this.container.append(list);
     } catch (err) {
-      console.error(err);
+      throw new Error();
     }
   }
 
@@ -63,6 +61,15 @@ export class Garage {
     carName.textContent = car.name || "";
     const carImg: HTMLElement = createHTMLElement("div", "item__car-img");
     carImg.innerHTML = createSvg(car.color);
+    const endImg: HTMLElement = createHTMLElement("div", "item__flag-img");
+    const flag = () => {
+      const svg = `<svg width="31" height="60" viewBox="0 0 31 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="2" width="2" height="58" fill="#9E4E4E"/>
+      <path d="M30.8278 17.4543L8.09547 32.3266L8.00646 2.71908L30.8278 17.4543Z" fill="#F40707"/>
+      </svg>`;
+      return svg;
+    };
+    endImg.innerHTML = flag();
     itemContent.append(selectButton);
     itemContent.append(removeButton);
     itemContent.append(carName);
@@ -70,6 +77,7 @@ export class Garage {
     itemContent.append(endButton);
     itemContent.append(carImg);
     item.append(itemContent);
+    item.append(endImg);
     return item;
   }
 
@@ -80,7 +88,6 @@ export class Garage {
       const target = event.target as HTMLButtonElement;
       if (target.classList.contains("remove-button")) {
         id = +target.id.slice(7);
-        console.log(id);
         deleteCar(id);
         deleteWinner(id);
         const garage: Garage = new Garage();
@@ -94,10 +101,6 @@ export class Garage {
     const itemsPerPage = 7;
     this.renderHeading();
     this.renderInfo(1);
-    console.log([
-      { key: "_page", value: currentPage },
-      { key: "_limit", value: itemsPerPage },
-    ]);
     this.renderList([
       { key: "_page", value: currentPage },
       { key: "_limit", value: itemsPerPage },

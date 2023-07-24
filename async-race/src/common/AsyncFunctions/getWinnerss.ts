@@ -1,5 +1,5 @@
 import { url, path } from "./vars";
-import { QueryParams, itemsResponse, Car, Winner } from "../../types";
+import { QueryParams, itemsResponse, Winner } from "../../types";
 
 export async function getWinners(
   queryParams: QueryParams[] = [],
@@ -15,9 +15,8 @@ export async function getWinners(
     );
     const items: Winner[] = await res.json();
     const count = Number(res.headers.get("X-Total-Count"));
-    console.log(res.headers.get("X-Total-Count"));
     return { items, count };
   } catch (err) {
-    throw err;
+    throw new Error();
   }
 }

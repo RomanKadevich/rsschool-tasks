@@ -4,44 +4,48 @@
     color: $textColor;
 }
 
-.table{ margin-bottom: 0;
+.table {
+    margin-bottom: 0;
     padding-left: 2rem;
-    &__header{
-        
-       
-        gap:0;
+
+    &__header {
+
+
+        gap: 0;
         display: flex;
         justify-content: space-between;
-      
+
         border: 1px;
         border-color: bisque;
         border-style: solid;
         max-width: 23rem;
 
-}
-&__header>* {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 20%;
-    border: 1px;
-    border-color: bisque;
-    border-style: solid;
+    }
 
+    &__header>* {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 20%;
+        border: 1px;
+        border-color: bisque;
+        border-style: solid;
+
+    }
 }
-}
+
 .winner {
 
     &__content {
-        gap:0;
+        gap: 0;
         display: flex;
         justify-content: space-between;
-      
+
         border: 1px;
         border-color: bisque;
         border-style: solid;
         max-width: 23rem;
-        
+
     }
 
     &__content>* {

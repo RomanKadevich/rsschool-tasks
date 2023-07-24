@@ -27,7 +27,7 @@ export class NavigationGarage {
     this.container.append(navigationGarageBtns[1]);
   }
 
-  static pagination() {
+  static pagination(): void {
     const nextButton: HTMLButtonElement | null = document.querySelector(
       ".navigation-garage__btn-1",
     );
@@ -71,7 +71,7 @@ export class NavigationGarage {
         }
       }
     };
-    const loadPreviousPage = () => {
+    const loadPreviousPage = (): void => {
       const garageInfo = document.querySelector("#garage__info");
       let currentPage = 0;
       if (garageInfo) {
@@ -104,7 +104,7 @@ export class NavigationGarage {
     }
   }
 
-  render() {
+  render(): HTMLElement {
     this.renderGarageNavButtons();
     return this.container;
   }

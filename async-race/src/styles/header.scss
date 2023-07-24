@@ -1,7 +1,8 @@
 .navigation {
     display: flex;
-        gap: 0.5rem;
-        padding: 0.5rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
+
     &__btn {
         background: $btnColor;
     }
@@ -41,12 +42,12 @@
     &__update {
         display: flex;
         gap: 0.5rem;
-padding: 0.5rem;
+        padding: 0.5rem;
     }
 
     &__create {
         display: flex;
         gap: 0.5rem;
-padding: 0.5rem;
+        padding: 0.5rem;
     }
 }

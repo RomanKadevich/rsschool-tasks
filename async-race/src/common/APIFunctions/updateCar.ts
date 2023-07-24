@@ -1,7 +1,7 @@
 import { url, path } from "./vars";
 import { jsonBody } from "../../types";
 
-export async function updateCar(id: number, car: jsonBody) {
+export async function updateCar(id: number, car: jsonBody): Promise<void> {
   try {
     await fetch(`${url}${path.garage}/${id}`, {
       method: "PATCH",

@@ -3,7 +3,7 @@ import { setNewCar } from "../APIFunctions/setNewCar";
 import { createHTMLElement } from "../DOMFunctions/createElementFunc";
 import { createInputForm } from "../DOMFunctions/createInputForm";
 import { createSubmitForm } from "../DOMFunctions/createSubmitForm";
-import { jsonBody } from "../../types";
+import { jsonBody, Car } from "../../types";
 import { updateCar } from "../APIFunctions/updateCar";
 import { App } from "../../app/app";
 
@@ -39,16 +39,16 @@ export class ControlPanel {
     this.container.append(controlButtons);
   }
 
-  static async createNewCar() {
+  static async createNewCar(): Promise<void> {
     const form: HTMLFormElement | null = document.querySelector(
       ".controlPanel__create",
     );
-    const container = document.body;
+    const container: HTMLElement = document.body;
     if (form) {
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const formData = new FormData(form);
+        const formData: FormData = new FormData(form);
         const jsonData: jsonBody = { color: "", name: "" };
 
         formData.forEach((value, key) => {
@@ -67,15 +67,15 @@ export class ControlPanel {
           inputColor.value = "#D5F0C7";
         }
         container.innerHTML = "";
-        const app = new App();
+        const app: App = new App();
         app.run();
       });
     }
   }
 
-  static updateCar() {
+  static updateCar(): void {
     let id = 0;
-    document.addEventListener("click", (event: MouseEvent) => {
+    document.addEventListener("click", (event: MouseEvent): void => {
       const target = event.target as HTMLButtonElement;
       if (target.classList.contains("select-button")) {
         id = +target.id.slice(7);
@@ -84,12 +84,12 @@ export class ControlPanel {
     const form: HTMLFormElement | null = document.querySelector(
       ".controlPanel__update",
     );
-    const container = document.body;
+    const container: HTMLElement = document.body;
     if (form) {
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const formData = new FormData(form);
+        const formData: FormData = new FormData(form);
         const newJsonData: jsonBody = {};
 
         formData.forEach((value, key) => {
@@ -110,16 +110,16 @@ export class ControlPanel {
           inputColor.value = "#D5F0C7";
         }
         container.innerHTML = "";
-        const app = new App();
+        const app: App = new App();
         app.run();
       });
     }
   }
 
-  static setRandomCars() {
+  static setRandomCars(): void {
     const form: HTMLFormElement | null =
       document.querySelector("#buttons__generate");
-    const brandNames = [
+    const brandNames: string[] = [
       "Tesla",
       "Ford",
       "Chevrolet",
@@ -150,7 +150,7 @@ export class ControlPanel {
       "Lincoln",
       "Cadillac",
     ];
-    const modelNames = [
+    const modelNames: string[] = [
       "Model S",
       "Mustang",
       "Civic",
@@ -181,7 +181,7 @@ export class ControlPanel {
       "Escalade",
     ];
 
-    const colors = [
+    const colors: string[] = [
       "#FF0000",
       "#0000FF",
       "#00FF00",
@@ -213,20 +213,20 @@ export class ControlPanel {
       "#36454F",
     ];
 
-    const container = document.body;
-    function getRandomIndex(maxIndex: number) {
+    const container: HTMLElement = document.body;
+    const getRandomIndex = (maxIndex: number): number => {
       return Math.floor(Math.random() * maxIndex);
-    }
+    };
 
-    const createRandomCars = async () => {
+    const createRandomCars = async (): Promise<void> => {
       const countOfElements = 100;
       const promises = [];
 
       for (let i = 0; i < countOfElements; i++) {
-        const brand = brandNames[getRandomIndex(brandNames.length)];
-        const model = modelNames[getRandomIndex(modelNames.length)];
-        const color = colors[getRandomIndex(colors.length)];
-        const carName = {
+        const brand: string = brandNames[getRandomIndex(brandNames.length)];
+        const model: string = modelNames[getRandomIndex(modelNames.length)];
+        const color: string = colors[getRandomIndex(colors.length)];
+        const carName: Car = {
           color: `${color}`,
           name: `${brand} ${model}`,
         };

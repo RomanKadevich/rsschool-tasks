@@ -50,7 +50,18 @@ export class App {
         garage.remove();
       }
       this.container.append(this.garage.render());
-
+      const navigationBtn1: HTMLButtonElement | null = document.querySelector(
+        "#navigation-garage__btn-1",
+      );
+      if (navigationBtn1) {
+        navigationBtn1.disabled = false;
+      }
+      const navigationBtn0: HTMLButtonElement | null = document.querySelector(
+        "#navigation-garage__btn-0",
+      );
+      if (navigationBtn0) {
+        navigationBtn0.disabled = false;
+      }
       if (garageButton) {
         garageButton.disabled = true;
       }
@@ -78,7 +89,7 @@ export class App {
     const winner: HTMLElement | null = document.querySelector(".winners");
     const winners: NodeListOf<Element> | null =
       document.querySelectorAll(".winners");
-    const handle = () => {
+    const handle = (): void => {
       const garages: NodeListOf<Element> | null =
         document.querySelectorAll(".garage");
       if (garages) {
@@ -108,6 +119,18 @@ export class App {
       if (controlPanel) {
         controlPanel.classList.add("disactive");
       }
+      const navigationBtn1: HTMLButtonElement | null = document.querySelector(
+        "#navigation-garage__btn-1",
+      );
+      if (navigationBtn1) {
+        navigationBtn1.disabled = true;
+      }
+      const navigationBtn0: HTMLButtonElement | null = document.querySelector(
+        "#navigation-garage__btn-0",
+      );
+      if (navigationBtn0) {
+        navigationBtn0.disabled = true;
+      }
       this.container.append(this.winners.render());
     };
     if (winnerButton) {
@@ -116,7 +139,7 @@ export class App {
     }
   }
 
-  run() {
+  run(): void {
     this.container.append(this.header.render());
     this.container.append(this.navigationGarage.render());
     this.container.append(this.garage.render());

@@ -4,14 +4,10 @@ import { createHTMLElement } from "./createElementFunc";
 export function createInputForm(
   className: string,
   text: string,
-  // method: string,
 ): HTMLFormElement {
   const panel = <HTMLFormElement>(
     createHTMLElement("form", `controlPanel__${className} ${className}`)
   );
-  // panel.method = method;
-  // panel.action = `${url}${path.garage}`;
-  // panel.id = id;
   const input = <HTMLInputElement>(
     createHTMLElement("input", `${className}__input`)
   );

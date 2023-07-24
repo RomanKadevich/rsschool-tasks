@@ -1,5 +1,5 @@
 export interface Car {
-  color: string;
+  color?: string;
   id?: number;
   name?: string;
 }
@@ -29,4 +29,9 @@ export interface startEngine {
   ok: boolean;
   status: string | number;
   statusText: string;
+}
+export interface Path {
+  garage: string;
+  engine: string;
+  winner: string;
 }

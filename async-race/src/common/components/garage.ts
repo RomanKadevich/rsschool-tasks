@@ -94,10 +94,10 @@ export class Garage {
     return item;
   }
 
-  static removeCar() {
+  static removeCar(): void {
     const container = document.body;
     let id = 0;
-    document.addEventListener("click", (event: MouseEvent) => {
+    document.addEventListener("click", (event: MouseEvent): void => {
       const target = event.target as HTMLButtonElement;
       if (target.classList.contains("remove-button")) {
         id = +target.id.slice(7);
@@ -118,8 +118,6 @@ export class Garage {
       { key: "_page", value: currentPage },
       { key: "_limit", value: itemsPerPage },
     ]);
-
-    // NavigationGarage.pagination();
     return this.container;
   }
 }

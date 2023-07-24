@@ -1,6 +1,6 @@
 import { url, path } from "./vars";
 
-export async function deleteCar(id: number) {
+export async function deleteCar(id: number): Promise<void> {
   try {
     await fetch(`${url}${path.garage}/${id}`, {
       method: "DELETE",

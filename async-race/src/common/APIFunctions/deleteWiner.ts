@@ -1,6 +1,6 @@
 import { url, path } from "./vars";
 
-export async function deleteWinner(id: number) {
+export async function deleteWinner(id: number): Promise<void> {
   try {
     await fetch(`${url}${path.winner}/${id}`, {
       method: "DELETE",

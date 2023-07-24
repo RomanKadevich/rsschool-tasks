@@ -87,7 +87,7 @@ export class Winners {
     this.container.append(heading);
   }
 
-  render() {
+  render(): HTMLElement {
     this.container.innerHTML = "";
     this.renderHeading();
     this.renderInfo(1);

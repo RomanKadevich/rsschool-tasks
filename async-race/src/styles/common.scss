@@ -1,26 +1,29 @@
 @import './_var.scss';
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
   font-family: 'Maven Pro', sans-serif;
 }
-body{
+
+body {
   background: black;
   overflow-x: hidden;
 }
 
-ul, li{
+ul,
+li {
   list-style-type: none;
 }
 
-input{
+input {
   margin-right: 0;
 }
 
-.disactive{
-  display:none;
+.disactive {
+  display: none;
 }
-

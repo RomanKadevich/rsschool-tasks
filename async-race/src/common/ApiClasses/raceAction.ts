@@ -1,5 +1,6 @@
 import { raceApi } from "../APIFunctions/raceAPI";
 import { startEngine } from "../../types";
+import { getCountOfCars } from "../APIFunctions/getCountOfCars";
 
 export class RaceAction {
   private animationFrameId: number | null = null;
@@ -44,52 +45,65 @@ export class RaceAction {
     }
   }
 
-  startAnimation(): void {
-    document.addEventListener(
-      "click",
-      async (event: MouseEvent): Promise<void> => {
-        try {
-          const target = event.target as HTMLButtonElement;
-          const id = +target.id.slice("item__start-".length);
+  async doAnimationProcess(
+    event: MouseEvent | SubmitEvent,
+    id?: number | undefined,
+  ): Promise<void> {
+    try {
+      const target = event.target as HTMLButtonElement;
+      let animationId = id;
+      if (!animationId) {
+        animationId = +target.id.slice("item__start-".length);
+      }
 
-          if (target.id === `item__start-${id}`) {
-            const end: HTMLButtonElement | null = document.querySelector(
-              `#item__end-${id}`,
-            );
-            if (end) {
-              end.disabled = false;
-            }
-            target.disabled = true;
-            const startRace = await raceApi([
-              { key: "id", value: id },
-              { key: "status", value: "started" },
-            ]);
-            const time = startRace.distance / startRace.velocity;
-            this.carAnimation(time, id);
+      if (target.id === `item__start-${animationId}` || target.id === "race") {
+        const end: HTMLButtonElement | null = document.querySelector(
+          `#item__end-${animationId}`,
+        );
+        if (end) {
+          end.disabled = false;
+        }
+        const start: HTMLButtonElement | null = document.querySelector(
+          `#item__start-${animationId}`,
+        );
+        if (start) {
+          start.disabled = true;
+        }
 
-            const startDrive: startEngine = await raceApi([
-              { key: "id", value: id },
-              { key: "status", value: "drive" },
-            ]);
+        const startRace = await raceApi([
+          { key: "id", value: animationId },
+          { key: "status", value: "started" },
+        ]);
+        const time = startRace.distance / startRace.velocity;
+        this.carAnimation(time, animationId);
 
-            if (!startDrive.ok) {
-              this.stopAnimation();
-            }
-          }
-        } catch (err) {
-          if (err instanceof Error) {
+        const startDrive: startEngine = await raceApi([
+          { key: "id", value: animationId },
+          { key: "status", value: "drive" },
+        ]);
+
+        if (!startDrive.ok) {
+          if (startDrive.status === 500) {
             // eslint-disable-next-line no-console
             console.error(
-              `Car has been stopped suddenly. It's engine was broken down.${err}`,
+              `Car has been stopped suddenly. It's engine was broken down.`,
             );
-            // eslint-disable-next-line no-alert
-            alert(
-              "Car has been stopped suddenly. It's engine was broken down.",
-            );
-            this.stopAnimation();
           }
+          this.stopAnimation();
         }
-      },
+      }
+    } catch (err) {
+      if (err instanceof Error) {
+        // eslint-disable-next-line no-console
+        console.error(`Something wrong. Problem is "${err}"`);
+        this.stopAnimation();
+      }
+    }
+  }
+
+  startAnimation(): void {
+    document.addEventListener("click", (event: MouseEvent) =>
+      this.doAnimationProcess(event),
     );
   }
 
@@ -127,11 +141,118 @@ export class RaceAction {
             console.error(
               `Car has been stopped suddenly. It's engine was broken down.${err}`,
             );
-            // eslint-disable-next-line no-alert
-            alert("Car has not been stopped");
           }
         }
       },
     );
+  }
+
+  allCarAnimation(): void {
+    const form: HTMLButtonElement | null = document.querySelector("#race");
+    if (form) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        try {
+          const count: number = await getCountOfCars();
+          const promiseStart = [];
+          for (let i = 0; i < count; i++) {
+            promiseStart.push(
+              raceApi([
+                { key: "id", value: i + 1 },
+                { key: "status", value: "started" },
+              ]),
+            );
+          }
+          const arrayOfStartRace = Promise.all(promiseStart);
+          const arrayOfTime = (await arrayOfStartRace).map(
+            (item) => item.distance / item.velocity,
+          );
+          for (let i = 0; i < count; i++) {
+            const end: HTMLButtonElement | null = document.querySelector(
+              `#item__end-${i + 1}`,
+            );
+            if (end) {
+              end.disabled = false;
+            }
+            const start: HTMLButtonElement | null = document.querySelector(
+              `#item__start-${i + 1}`,
+            );
+            if (start) {
+              start.disabled = true;
+            }
+            this.carAnimation(arrayOfTime[i], i + 1);
+          }
+          const promiseDrive = [];
+          for (let i = 0; i < count; i++) {
+            promiseDrive.push(
+              raceApi([
+                { key: "id", value: i + 1 },
+                { key: "status", value: "drive" },
+              ]),
+            );
+          }
+          Promise.any(promiseDrive);
+        } catch (err) {
+          if (err instanceof Error) {
+            // eslint-disable-next-line no-console
+            console.error(
+              `Car has been stopped suddenly. It's engine was broken down.${err}`,
+            );
+          }
+        }
+      });
+    }
+  }
+
+  allCarAnimationRestart(): void {
+    const form: HTMLFormElement | null =
+      document.querySelector("#buttons__reset");
+    if (form) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        try {
+          const count: number = await getCountOfCars();
+          const promiseRestart = [];
+          for (let i = 0; i < count; i++) {
+            promiseRestart.push(
+              raceApi([
+                { key: "id", value: i + 1 },
+                { key: "status", value: "stopped" },
+              ]),
+            );
+          }
+          await Promise.all(promiseRestart);
+          for (let i = 0; i < count; i++) {
+            const end: HTMLButtonElement | null = document.querySelector(
+              `#item__end-${i + 1}`,
+            );
+            if (end) {
+              end.disabled = true;
+            }
+            const start: HTMLButtonElement | null = document.querySelector(
+              `#item__start-${i + 1}`,
+            );
+            if (start) {
+              start.disabled = false;
+            }
+            const cars: NodeList | null =
+              document.querySelectorAll(`.item__car-img`);
+            cars?.forEach((car) => {
+              const carElement = car as HTMLElement;
+              this.stopAnimation();
+              carElement.style.transform = "translateX(0)";
+            });
+          }
+        } catch (err) {
+          if (err instanceof Error) {
+            // eslint-disable-next-line no-console
+            console.error(
+              `Car has been stopped suddenly. It's engine was broken down.${err}`,
+            );
+          }
+        }
+      });
+    }
   }
 }

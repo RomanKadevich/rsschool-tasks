@@ -152,5 +152,7 @@ export class App {
     NavigationGarage.pagination();
     this.raceAction.startAnimation();
     this.raceAction.restart();
+    this.raceAction.allCarAnimation();
+    this.raceAction.allCarAnimationRestart();
   }
 }

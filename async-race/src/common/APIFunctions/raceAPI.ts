@@ -16,6 +16,14 @@ export async function raceApi(
         method: "PATCH",
       },
     );
+    if (!res.ok) {
+      if (res.status === 500) {
+        // eslint-disable-next-line no-console
+        console.error(
+          `Car has been stopped suddenly. It's engine was broken down.`,
+        );
+      }
+    }
     const items: startEngine = await res.json();
     return items;
   } catch (err) {

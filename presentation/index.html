@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>About Me</h2>
+				<p class="fragment">Hello! My name is Roman Kadevich.</p>
+				<p class="fragment">I am a student at The Rolling Scopes School.</p>
+				<p class="fragment">Today, I'm excited to present on the topic of React!</p>
+			</section>
+
+			<section>
+				<h2>Introduction to React</h2>
+				<div><img src="./img/react.gif"></div>
+			</section>
+
+			<section>
+				<h2>Components</h2>
+				<p class="fragment">Concept of components in React</p>
+				<p class="fragment">Examples of components and their role in development</p>
+				<pre class="fragment"><code data-trim data-noescape>
+					import React from 'react';
+
+					export const Greeting = () => {
+					return &lt;h1&gt;Hello, world!&lt;/h1&gt;;
+					};
+
+				  </code></pre>
+			</section>
+
+			<section>
+				<h2>JSX</h2>
+				<p class="fragment">What is JSX and why is it used?</p>
+				<p class="fragment">Examples of using JSX to create components</p>
+				<pre class="fragment"><code data-trim data-noescape> 
+				import React from 'react';
+
+				const WelcomeMessage = (props) => {
+				return &lt;h1&gt;Welcome, {props.name}!&lt;/h1&gt;;
+				};
+
+				export default WelcomeMessage;
+
+				  </code></pre>
+			</section>
+
+			<section>
+				<h2>Virtual DOM</h2>
+				<p class="fragment">How does the Virtual DOM work in React?</p>
+				<p class="fragment">Benefits of using Virtual DOM</p>
+			</section>
+
+			<section>
+				<h2>State and Props</h2>
+				<p class="fragment">Difference between state and props in components</p>
+				<p class="fragment">How to manage state and props in React</p>
+			</section>
+
+			<section>
+				<h2>React's Lifecycle Methods</h2>
+				<p class="fragment">Overview of React's lifecycle methods</p>
+				<p class="fragment">When and how to use each method</p>
+			</section>
+
+			<section>
+				<h2>Managing State in React</h2>
+				<p class="fragment">How to manage application state in React</p>
+				<p class="fragment">Using state hooks (useState) and other methods</p>
+				<p class="fragment">Example of Using State in a Component</p>
+				<pre class="fragment"><code data-trim data-noescape>
+					import React, { useState } from 'react';
+
+					const Counter = () => {
+					const [count, setCount] = useState(0);
+
+					const increment = () => {
+						setCount(count + 1);
+					};
+
+					return (
+						&lt;div&gt
+							&lt;h3&gt>Counter:{count}&lt;/h3&gt
+							&lt;button onClick={increment}>Increment&lt;/button&gt
+						&lt;/div&gt
+					);
+					};
+
+					export default Counter;
+
+				  </code></pre>
+			</section>
+
+			<section>
+				<h2>React Routing</h2>
+				<p class="fragment">Brief overview of routing in React applications</p>
+				<p class="fragment">How to use React Router for navigation</p>
+				<p class="fragment">Example of Using React Router for Navigation</p>
+
+				<pre class="fragment"><code data-trim data-noescape data-line-numbers class="cpp"><script type="text/template">
+				import React from 'react';
+				import { BrowserRouter as Router, Route, Link } 
+				from 'react-router-dom';
+
+				const Home = () => <h2>Welcome to the Home Page</h2>;
+				const About = () => <h2>About Us</h2>;
+				const Contact = () => <h2>Contact Information</h2>;
+
+				const App = () => {
+				return (
+					<Router>
+					<nav>
+						<ul>
+						<li>
+							<Link to="/">Home</Link>
+						</li>
+						<li>
+							<Link to="/about">About</Link>
+						</li>
+						<li>
+							<Link to="/contact">Contact</Link>
+						</li>
+						</ul>
+					</nav>
+					<Route exact path="/" component={Home} />
+					<Route path="/about" component={About} />
+					<Route path="/contact" component={Contact} />
+					</Router>
+				);
+				};
+
+				export default App;
+
+				</script></code></pre>
+
+			</section>
+
+			<section>
+				<h2>Styling Components</h2>
+				<p class="fragment">Methods for styling components in React</p>
+				<p class="fragment">CSS Modules, styling with libraries (e.g., styled-components)</p>
+				<p class="fragment">Example of Using Styled Components for Styling</p>
+				<pre class="fragment"><code data-trim data-noescape data-line-numbers class="cpp"><script type="text/template">
+				import React from 'react';
+				import styled from 'styled-components';
+
+				const StyledButton = styled.button`
+				padding: 10px 20px;
+				background-color: #007bff;
+				color: #fff;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #0056b3;
+				}
+
+				const StyledComponentExample = () => {
+				return (
+					<div>
+						<h3>Styling with Styled Components</h3>
+						<StyledButton>Click Me</StyledButton>
+					</div>
+				);
+				};
+
+				export default StyledComponentExample;
+				</script></code></pre>
+	
+			</section>
+			<section>
+				<h2>Testing in React</h2>
+				<p class="fragment">The importance of testing components</p>
+				<p class="fragment">Jest and React Testing Library</p>
+			</section>
+
+			<section>
+				<h2>Conclusion</h2>
+				<p class="fragment">React is a powerful and popular JavaScript library for building dynamic user
+					interfaces.</p>
+				<p class="fragment">Thank you for attention!</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>

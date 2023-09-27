@@ -1,0 +1,12 @@
+@import "_var.scss";
+.dark{
+    &_bg{
+        background-color: $bgDark;
+    }
+    &_header{
+        background-color: $headerDark;
+    }
+    &_info{
+        background-color: $infoDark;
+    }
+}

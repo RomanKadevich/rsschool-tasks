@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-BoldItalic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia.woff2") format("woff2"), url("../../../assets/fonts/Georgia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Italic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/ArialMT.woff2") format("woff2"), url("../../../assets/fonts/ArialMT.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-BoldMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-BoldMT.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  padding: 93px 190px 83px 175px;
+}
+.about__heading {
+  padding-right: 119px;
+  margin-bottom: 25px;
+  color: #545454;
+}
+.about__description {
+  font-size: 15px;
+  line-height: 160%;
+  color: #4C4C4C;
+}
+.about__first-text {
+  margin-bottom: 25px;
+}/*# sourceMappingURL=about.css.map */

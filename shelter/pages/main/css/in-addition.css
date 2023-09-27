@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-BoldItalic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia.woff2") format("woff2"), url("../../../assets/fonts/Georgia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Italic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/ArialMT.woff2") format("woff2"), url("../../../assets/fonts/ArialMT.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-BoldMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-BoldMT.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+.in-addition {
+  background-color: #F6F6F6;
+}
+.in-addition__container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 100%;
+  gap: 20px;
+  padding-top: 76px;
+  padding-bottom: 100px;
+}
+.in-addition__image {
+  grid-column: 2/span 4;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.in-addition__info {
+  grid-column: 6/span 3;
+}
+.in-addition__heading {
+  margin-bottom: 20px;
+  padding-right: 80px;
+}
+.in-addition__description {
+  margin-bottom: 20px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+.in-addition__check {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  width: 349px;
+  height: 43px;
+  background: #F1CDB3;
+  border-radius: 9px;
+}
+.in-addition__link {
+  display: flex;
+  align-items: center;
+}
+.in-addition__check-img {
+  width: 30px;
+  height: 23px;
+  margin-right: 15px;
+  background: url("../../../assets/img/img/items/credit-card.svg") center center no-repeat;
+  background-size: cover;
+}
+.in-addition__check-num {
+  display: inline-block;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: #545454;
+}
+.in-addition__text {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
+}/*# sourceMappingURL=in-addition.css.map */

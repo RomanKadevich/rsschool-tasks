@@ -1,0 +1,54 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
+
+  
+  .header {
+    display: inline-block;
+  
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  
+  }
+  
+  .nav {
+    &__list {
+      display: flex;
+    }
+  
+    &__item:not(:last-child) {
+      margin-right: 35px;
+    }
+  
+    &__link {
+      font-size: 15px;
+      color: $section-heading-textcolor;
+    }
+    &__burger{
+      display: none;
+    }
+  }
+  
+  .logo {
+    &__heading {
+      margin-bottom: 10px;
+      font-family: "Georgia";
+      font-weight: 400;
+      font-size: 32px;
+      color: $section-heading-textcolor;
+      letter-spacing: 0.06em;
+    }
+  
+    &__description {
+      font-size: 13px;
+      color: $btn-dark-rextcolor;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+  }
+  
+  

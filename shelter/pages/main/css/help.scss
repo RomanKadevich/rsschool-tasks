@@ -1,0 +1,82 @@
+@import "_variables.scss";
+@import "../../../assets/styles/fonts.scss";
+@import '_mixins.scss';
+
+.help {
+    &__container{
+        padding: 80px 87px 45px 87px;
+    }
+    &__heading{
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 0 20%;
+        padding-bottom: 55px;
+    }
+
+    &__image1 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-pet-food.svg') center center no-repeat;
+    }
+
+    &__image2 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-transportation.svg') center center no-repeat;
+    }
+
+    &__image3 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-toys.svg') center center no-repeat;
+    }
+
+    &__image4 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-bowls-and-cups.svg') center center no-repeat;
+    }
+
+    &__image5 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-shampoos.svg') center center no-repeat;
+    }
+
+    &__image6 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-vitamins.svg') center center no-repeat;
+    }
+
+    &__image7 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-medicines.svg') center center no-repeat;
+    }
+
+    &__image8 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-collars-leashes.svg') center center no-repeat;
+    }
+
+    &__image9 {
+        @include help-items;
+        background: url('../../../assets/img/img/items/icon-sleeping-area.svg') center center no-repeat;
+    }
+
+    &__title {
+        margin-top: 30px;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: $section-heading-textcolor;
+    }
+
+
+}

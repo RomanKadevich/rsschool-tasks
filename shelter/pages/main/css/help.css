@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-BoldItalic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia.woff2") format("woff2"), url("../../../assets/fonts/Georgia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Italic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/ArialMT.woff2") format("woff2"), url("../../../assets/fonts/ArialMT.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-BoldMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-BoldMT.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+.help__container {
+  padding: 80px 87px 45px 87px;
+}
+.help__heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.help__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.help__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 20%;
+  padding-bottom: 55px;
+}
+.help__image1 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-pet-food.svg") center center no-repeat;
+}
+.help__image2 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-transportation.svg") center center no-repeat;
+}
+.help__image3 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-toys.svg") center center no-repeat;
+}
+.help__image4 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-bowls-and-cups.svg") center center no-repeat;
+}
+.help__image5 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-shampoos.svg") center center no-repeat;
+}
+.help__image6 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-vitamins.svg") center center no-repeat;
+}
+.help__image7 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-medicines.svg") center center no-repeat;
+}
+.help__image8 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-collars-leashes.svg") center center no-repeat;
+}
+.help__image9 {
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background: url("../../../assets/img/img/items/icon-sleeping-area.svg") center center no-repeat;
+}
+.help__title {
+  margin-top: 30px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #545454;
+}/*# sourceMappingURL=help.css.map */

@@ -1,0 +1,131 @@
+@media only screen and (max-width: 767px) {
+
+    .nav {
+        &__list {
+            display: none;
+        }
+
+        &__burger {
+            display: block;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 732px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .section__heading {
+        font-size: 25px;
+        text-align: center;
+        padding-right: 0;
+        padding-right: 0;
+    }
+
+
+
+    .our-friends {
+        &__container {
+
+            padding-top: 42px;
+            padding-bottom: 42px;
+
+        }
+
+        &__heading {
+            margin-bottom: 42px;
+            font-size: 24.5px;
+
+        }
+
+        &__info {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
+
+        &__nav-btn-mob {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 20px;
+        }
+
+
+
+        &__info {
+            grid-template-columns: 1fr;
+
+        }
+
+        &__card {
+            &:nth-child(4) {
+                display: none;
+            }
+
+            &:nth-child(5) {
+                display: none;
+            }
+
+            &:nth-child(6) {
+                display: none;
+            }
+
+        }
+
+    }
+
+
+    .footer {
+
+        &__container {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+        &__tel{
+            margin-top: 30px;
+        }
+        &__contact-box {
+
+            padding-left: 0;
+            padding-right: 0;
+            a{
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            &:nth-child(1) {
+                grid-row: 1/span 1;
+                grid-column: auto;
+                padding-bottom: 23px;
+                
+            }
+
+            &:nth-child(2) {
+                .section__heading{
+                    padding-right: 10px;
+                }
+                grid-row: 2/span 1;
+                grid-column: auto;
+                a{
+                    margin-top: 18px;
+                   
+                }
+            }
+        }
+
+        &__img {
+            grid-column: auto;
+            grid-row: 3/span 1;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+        }
+    }
+}

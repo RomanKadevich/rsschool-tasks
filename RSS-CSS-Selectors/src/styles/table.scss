@@ -1,0 +1,178 @@
+@import './var';
+
+.table {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 20px 27px 20px;
+    border-radius: 10px;
+    gap: 19px;
+    background: linear-gradient(180deg, #FFE074 0%, #F48926 66.15%);
+    box-shadow: 0px 40px 10px 0px rgba(0, 0, 0, 0.20);
+}
+
+.plate {
+    display: flex;
+    justify-content: center;
+    width: 90.77px;
+    height: 90.953px;
+    background-image: url('../assets/plate.svg');
+    background-size: cover;
+}
+
+.plate-blue {
+    width: 95px;
+    height: 90.953px;
+    background-image: url('../assets/plate-blue.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.plate-burger {
+    width: 95px;
+    height: 90.953px;
+    background-image: url('../assets/plate-burger.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bento {
+    display: flex;
+    justify-content: center;
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/bento.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.plate-shawarma {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/plate-shawarma.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.shawarma {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/shawarma.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.chicken {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/chicken.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.plate-chicken {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/plate-chicken.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bento-burger {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/bento-burger.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bento-chicken {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/bento-chicken.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bento-burger-small {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/bento-burger-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.plate-burger-small {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/plate-burger-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bento-shawarma-small {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/bento-shawarma-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.shawarma-small {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/shawarma-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.chicken-small {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/chicken-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.burger-small {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/burger-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.burger {
+    width: 105px;
+    height: 90px;
+    background-image: url('../assets/burger.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btn-floating {
+    background-color: rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.radius {
+    border-radius: 10%;
+}
+
+.level-info {
+    color: $level-info_color;
+    font-size: 1.5rem;
+    font-family: Exo;
+    font-weight: 600;
+}
+
+.hover-element {
+    filter: opacity(50%);
+}

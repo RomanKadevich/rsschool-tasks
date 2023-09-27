@@ -1,0 +1,10 @@
+import 'highlight.js/styles/default.css'; 
+import hljs from 'highlight.js/lib/core'; 
+import css from 'highlight.js/lib/languages/css'; 
+hljs.registerLanguage('css', css); 
+import 'materialize-css/dist/css/materialize.min.css';
+import './styles/style.scss';
+import 'animate.css/animate.min.css';
+import { App } from './app/app';
+const app: App = new App();
+app.run();

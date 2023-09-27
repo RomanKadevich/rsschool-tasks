@@ -1,0 +1,67 @@
+@import './var';
+.level-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $level_bg;
+    height: 100vh;
+}
+.heading{
+    margin-right: 16px;
+    color: $heading_color;
+    font-size: 2.8rem;
+    font-family: Consolas;
+    }
+.editor{
+    display: flex;
+    z-index: 10;
+
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .copyright {
+    font-size: 14px;
+    color: #c2c2c2;
+    text-align: center;
+}
+footer .copyright a 
+{
+    color: #c2c2c2;;
+}
+footer .copyright a:hover {
+    color: #ffffff;
+}
+a{
+    display: inline-block;
+}
+.github{
+    background-image: url('../assets/github.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+.RS{
+    background-image: url('../assets/rs_school_js.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+footer span{
+    margin-right: 10px;
+}

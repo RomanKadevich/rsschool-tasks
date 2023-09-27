@@ -1,0 +1,86 @@
+@import './_var.scss';
+
+.winners {
+    color: $textColor;
+}
+
+.table {
+    margin-bottom: 0;
+    padding-left: 2rem;
+
+    &__header {
+
+
+        gap: 0;
+        display: flex;
+        justify-content: space-between;
+
+        border: 1px;
+        border-color: bisque;
+        border-style: solid;
+        max-width: 23rem;
+
+    }
+
+    &__header>* {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 20%;
+        border: 1px;
+        border-color: bisque;
+        border-style: solid;
+
+    }
+}
+
+.winner {
+
+    &__content {
+        gap: 0;
+        display: flex;
+        justify-content: space-between;
+
+        border: 1px;
+        border-color: bisque;
+        border-style: solid;
+        max-width: 23rem;
+
+    }
+
+    &__content>* {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 20%;
+        border: 1px;
+        border-color: bisque;
+        border-style: solid;
+
+    }
+
+    &__car-name {
+        margin-right: 0;
+    }
+
+    &__select-input {
+        margin-bottom: 1rem;
+    }
+
+    &__remove-input {
+        margin-bottom: 0.8rem;
+    }
+
+    &__start-input {
+        margin-right: 0;
+    }
+
+    &__end-input {
+        margin-right: 0;
+    }
+
+    &__car-img svg {
+        height: 4rem;
+        width: 5rem;
+    }
+}

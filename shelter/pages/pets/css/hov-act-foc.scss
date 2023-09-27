@@ -35,11 +35,18 @@
 
 .card {
   transition: box-shadow 300ms ease-in-out;
-
+  cursor: pointer;
   &:hover {
+   
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  
+    .btn {
+      transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+        background-color: $btn-hover-color;
+        border-color: $btn-hover-color;
+      }
+    }
   }
-}
 
 .btn {
   transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;

@@ -9,9 +9,41 @@
     <link rel="icon" type="image/x-icon" href="../../assets/img/img/items/favicon.png">
     <link rel="stylesheet" href="../../assets/styles/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+    <script src="popup.js"></script>
 </head>
 
 <body>
+    <div class="screen" id="screen">
+    </div>
+
+    <div class="screen-popup"></div>
+    <div class="popup">
+        <div class="popup__card" id="popupCard">
+            <svg class="popup__exit" width="52" height="52" viewBox="0 0 52 52" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M27.4262 26L31.7046 21.7216C32.0985 21.3277 32.0985 20.6892 31.7046 20.2954C31.3108 19.9016 30.6723 19.9016 30.2785 20.2954L26 24.5739L21.7215 20.2954C21.3276 19.9015 20.6892 19.9015 20.2953 20.2954C19.9016 20.6892 19.9016 21.3277 20.2953 21.7215L24.5738 26L20.2953 30.2785C19.9016 30.6723 19.9016 31.3108 20.2953 31.7046C20.6892 32.0985 21.3276 32.0985 21.7215 31.7046L26 27.4261L30.2785 31.7046C30.6723 32.0985 31.3108 32.0985 31.7046 31.7046C32.0985 31.3108 32.0985 30.6723 31.7046 30.2785L27.4262 26Z"
+                    fill="#292929" />
+                <rect x="1" y="1" width="50" height="50" rx="25" stroke="#F1CDB3" stroke-width="2" />
+            </svg>
+            <div class="popup__img"><img id="img" src="" alt=""></div>
+            <div class="popup__content">
+                <h2 class="popup__name section__heading" id="name"></h2>
+                <div class="popup__info">
+                    <span class="popup__type" id="type"></span> -
+                    <span class="popup__breed" id="breed"></span>
+                </div>
+                <p class="popup__description" id="description"></p>
+                <ul class="popup__list">
+                    <li class="popup__age" id="age"></li>
+                    <li class="popup__inoculations" id="inoculations"></li>
+                    <li class="popup__diseases" id="diseases"></li>
+                    <li class="popup__parasites" id="parasites"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <header>
         <div class="container header__container">
             <a class="logo" href="../main/index.html">
@@ -22,15 +54,28 @@
                     Shelter for pets in Boston
                 </div>
             </a>
+            <nav class="nav-mob" id="menu">
+                <ul class="nav-mob__list">
+                    <li class="nav-mob__item"><a href="../main/index.html" class="nav-mob__link">About
+                            the
+                            shelter</a></li>
+                    <li class="nav-mob__item"><a href="../pets/index.html" class="nav-mob__link nav__link--active">Our
+                            pets</a></li>
+                    <li class="nav-mob__item"><a href="../main/index.html#help" class="nav-mob__link">Help the
+                            shelter</a></li>
+                    <li class="nav-mob__item"><a href="#footer" class="nav-mob__link">Contacts</a></li>
+                </ul>
+            </nav>
             <nav class="header__nav nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="../main/index.html" class="nav__link">About the
                             shelter</a></li>
-                    <li class="nav__item"><a href="../pets/index.html" class="nav__link nav__link--active">Our pets</a></li>
+                    <li class="nav__item"><a href="../pets/index.html" class="nav__link nav__link--active">Our pets</a>
+                    </li>
                     <li class="nav__item"><a href="../main/index.html#help" class="nav__link">Help the shelter</a></li>
                     <li class="nav__item"><a href="#footer" class="nav__link">Contacts</a></li>
                 </ul>
-                <div class="nav__burger">
+                <div class="nav__burger" id="burger">
                     <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line y1="21" x2="30" y2="21" stroke="#F1CDB3" stroke-width="2" />
                         <line y1="11" x2="30" y2="11" stroke="#F1CDB3" stroke-width="2" />
@@ -48,42 +93,42 @@
                     are looking for a house
                 </h1>
                 <div class="our-friends__info">
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card1">
                         <img src="../../assets/img/img/img/pets-katrine.png" alt="Katrine" class="card__image">
                         <div class="card__name">Katrine</div>
                         <button class="card__btn btn">Learn more</button>
                     </div>
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card2">
                         <img src="../../assets/img/img/img/pets-jennifer.png" alt="Jennifer" class="card__image">
                         <div class="card__name">Jennifer</div>
                         <button class="card__btn btn">Learn more</button>
                     </div>
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card3">
                         <img src="../../assets/img/img/img/pets-woody.png" alt="Woody" class="card__image">
                         <div class="card__name">Woody</div>
                         <button class="card__btn btn">Learn more</button>
                     </div>
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card4">
                         <img src="../../assets/img/img/img/pets-Sophia.png" alt="Sophia" class="card__image">
                         <div class="card__name">Sophia</div>
                         <button class="card__btn btn">Learn more</button>
                     </div>
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card5">
                         <img src="../../assets/img/img/img/pets-timmy.png" alt="Timmy" class="card__image">
                         <div class="card__name">Timmy</div>
                         <button class="card__btn btn">Learn more</button>
                     </div>
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card6">
                         <img src="../../assets/img/img/img/pets-charly.png" alt="Charly" class="card__image">
                         <div class="card__name">Charly</div>
                         <button class="card__btn btn">Learn more</button>
                     </div>
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card7">
                         <img src="../../assets/img/img/img/pets-scarlet.png" alt="Scarlett" class="card__image">
                         <div class="card__name">Scarlett</div>
                         <button class="card__btn btn">Learn more</button>
                     </div>
-                    <div class="our-friends__card card">
+                    <div class="our-friends__card card" data-id="card8">
                         <img src="../../assets/img/img/img/pets-Freddie.png" alt="Freddie" class="card__image">
                         <div class="card__name">Freddie</div>
                         <button class="card__btn btn">Learn more</button>
@@ -93,32 +138,33 @@
                     <ul class="our-friends__nav-list">
                         <li class="our-friends__nav-item">
                             <button class="our-friends__nav-btn our-friends__nav-btn--disable">
-                                <svg width="25"
-                                    height="11" viewBox="0 0 25 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="25" height="11" viewBox="0 0 25 11" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
-                                        fill="#CDCDCD"/>
+                                        fill="#CDCDCD" />
                                 </svg>
                             </button>
                         </li>
                         <li class="our-friends__nav-item">
                             <button class="our-friends__nav-btn our-friends__nav-btn--disable">
-                                <svg width="10"
-                                    height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="10" height="11" viewBox="0 0 10 11" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
-                                        fill="#CDCDCD"/>
+                                        fill="#CDCDCD" />
                                 </svg>
                             </button>
                         </li>
-                        <li class="our-friends__nav-item"><button class="our-friends__nav-btn our-friends__nav-btn--active">1</button></li>
+                        <li class="our-friends__nav-item"><button
+                                class="our-friends__nav-btn our-friends__nav-btn--active">1</button></li>
                         <li class="our-friends__nav-item">
                             <button class="our-friends__nav-btn">
                                 <svg width="10" height="11" viewBox="0 0 10 11" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M9.04102 6.08789L0.0078125 10.7852V9.44727L7.51758 5.53125L0.0078125 1.625V0.287109L9.04102 4.98438V6.08789Z"
-                                        fill="#292929"/>
+                                        fill="#292929" />
                                 </svg>
                             </button>
                         </li>
@@ -128,7 +174,7 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M10.0055 6.08789L0.972265 10.7852V9.44727L8.48203 5.53125L0.972265 1.625V0.287109L10.0055 4.98438V6.08789ZM24.0766 6.08789L15.0434 10.7852V9.44727L22.5531 5.53125L15.0434 1.625V0.287109L24.0766 4.98438V6.08789Z"
-                                        fill="#292929"/>
+                                        fill="#292929" />
                                 </svg>
                             </button>
                         </li>
@@ -153,7 +199,7 @@
             </address>
             <img src="../../assets/img/img/img/footer-puppy.png" alt="dog" class="footer__img">
         </div>
-        
+
 
     </footer>
     <script src="../myCheck.js"></script>

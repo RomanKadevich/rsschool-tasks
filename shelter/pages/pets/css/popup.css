@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Bold.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-BoldItalic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia.woff2") format("woff2"), url("../../../assets/fonts/Georgia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../../assets/fonts/Georgia-Italic.woff2") format("woff2"), url("../../../assets/fonts/Georgia-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-ItalicMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-ItalicMT.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/ArialMT.woff2") format("woff2"), url("../../../assets/fonts/ArialMT.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../../assets/fonts/Arial-BoldMT.woff2") format("woff2"), url("../../../assets/fonts/Arial-BoldMT.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+.screen-popup {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: 0, 0, 0, 0.5;
+  z-index: -9;
+  background: rgba(41, 41, 41, 0);
+}
+.screen-popup--active {
+  transition-property: background-color;
+  transition-duration: 10000ms;
+  transition-timing-function: ease-in-out;
+  display: block;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: 9;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup__card {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  background-color: #F6F6F6;
+  z-index: 12;
+  border-radius: 16px;
+}
+.popup__card--active {
+  display: flex;
+}
+.popup__exit {
+  cursor: pointer;
+  position: absolute;
+  top: -52px;
+  right: -52px;
+}
+.popup__content {
+  flex-basis: 45%;
+  padding: 50px 20px 88px 29px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+}
+.popup__content li::before {
+  color: #F1CDB3;
+  content: "•";
+  padding-right: 10px;
+}
+.popup__content span {
+  font-weight: 700;
+}
+.popup__name {
+  margin-bottom: 10px;
+}
+.popup__info {
+  margin-bottom: 40px;
+}
+.popup__description {
+  margin-bottom: 40px;
+}
+.popup__list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.popup__img {
+  flex-basis: 55.5%;
+  height: 100%;
+}
+.popup__img img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom-left-radius: 16px;
+}
+
+@media only screen and (max-width: 1008px) {
+  .popup__info {
+    margin-bottom: 20px;
+  }
+  .popup__description {
+    margin-bottom: 20px;
+  }
+  .popup__card {
+    width: 682px;
+  }
+  .popup__content {
+    padding: 10px 9px 37px 11px;
+  }
+  .popup__exit {
+    right: -40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .popup__img {
+    display: none;
+  }
+  .popup__card {
+    width: 240px;
+  }
+  .popup__content {
+    flex-basis: 100%;
+  }
+}/*# sourceMappingURL=popup.css.map */
